@@ -1,0 +1,8 @@
+best_cv_pr_auc: 0.22376801807201435
+best_params:
+  C: 0.01460828723637196
+model: logistic_regression
+optuna_trials_complete: 100
+optuna_trials_target: 100
+optuna_trials_total: 100
+threshold: 0.8824317903364226

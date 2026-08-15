@@ -1,0 +1,5 @@
+model,brier_raw,brier_platt,mean_probability_platt,ece_platt_10bin
+Logistic Regression,0.18403,0.015,0.0304,0.01456
+Random Forest,0.08167,0.01482,0.02587,0.01031
+XGBoost,0.11378,0.01471,0.02703,0.01119
+Neural Network,0.17031,0.01542,0.03232,0.01648

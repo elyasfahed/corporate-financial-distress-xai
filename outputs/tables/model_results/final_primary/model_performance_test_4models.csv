@@ -1,0 +1,5 @@
+model,prevalence_baseline_pr_auc,pr_auc,pr_auc_ci_lower,pr_auc_ci_upper,roc_auc,precision,recall,f1,ks_stat,threshold
+Logistic Regression (ridge),0.0158,0.1751,0.1461,0.2114,0.9203,0.1201,0.6931,0.2047,0.7187,0.1382
+Random Forest,0.0158,0.1608,0.1346,0.1908,0.9272,0.1574,0.4975,0.2391,0.7339,0.794
+XGBoost,0.0158,0.1729,0.145,0.2061,0.9303,0.1579,0.5396,0.2443,0.7369,0.8508
+Neural Network,0.0158,0.1338,0.1131,0.1603,0.914,0.1053,0.7327,0.1841,0.7061,0.869

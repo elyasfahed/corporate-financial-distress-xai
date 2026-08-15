@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{RC1 under the primary specification: distress restricted to the CRSP bankruptcy-reason proxy (DelReasonType=BKPY), nested inside the primary financial-distress label. This is a CRSP reason proxy, not a verified Chapter 7/11 court-filing measure. All other design dimensions unchanged; LR/RF/XGBoost re-tuned per the robustness-check convention (100-trial Optuna, spec-specific artifacts).}
+\label{tab:v2_rc1}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+logistic\_regression & 0.0027 & 0.0291 & 0.9269 & 0.0332 & 0.3188 & 0.0601 & 0.7811 & 0.2143 & 0.9696 & 0.0208 & 0.0479 \\
+random\_forest & 0.0027 & 0.0513 & 0.9338 & 0.0896 & 0.0870 & 0.0882 & 0.7185 & 0.0610 & 0.8872 & 0.0324 & 0.0963 \\
+xgboost & 0.0027 & 0.0507 & 0.9337 & 0.1053 & 0.1449 & 0.1220 & 0.7361 & 0.0836 & 0.9116 & 0.0338 & 0.0865 \\
+\bottomrule
+\end{tabular}
+\end{table}

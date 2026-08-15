@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering
+\caption{Imbalance-matched neural network (co-primary model) under the final primary data policy: standard FYE dating and the literature-aligned CRSP performance-delisting definition, date-ranged universe, FY2023 cutoff, 18 predictors incl. MB\_MISSING, market-feature imputation, fold-safe purged CV. Random minority oversampling to parity matches the class weighting of LR/RF/XGBoost (RC7b design). Brier(Platt) is the validation-fit Platt-scaled Brier.}
+\label{tab:v2_nn_balanced}
+\small
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+check & model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & brier\_calibrated & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+Primary specification & neural\_network\_balanced & 0.0158 & 0.1338 & 0.9140 & 0.1053 & 0.7327 & 0.1841 & 0.7061 & 0.1703 & 0.0154 & 0.8690 & 0.1131 & 0.1603 \\
+\bottomrule
+\end{tabular}
+\end{table}

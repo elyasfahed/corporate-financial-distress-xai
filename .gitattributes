@@ -1,0 +1,9 @@
+* text=auto
+
+# Keep generated and source media byte-for-byte unchanged.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering
+\caption{H2 estimand on the primary cleaned label: the machine-learning advantage over the logistic benchmark by split design, and its movement relative to the chronological design.}
+\label{tab:v2_h2_advantage_differential}
+\small
+\begin{tabular}{lrrrrrrrrrrrrrrrrr}
+\toprule
+ml\_model & adv\_chronological & lift\_adv\_chronological & adv\_firm\_random & delta\_adv\_firm\_random & lift\_adv\_firm\_random & delta\_lift\_adv\_firm\_random & sd\_adv\_firm\_random & adv\_obs\_random & delta\_adv\_obs\_random & lift\_adv\_obs\_random & delta\_lift\_adv\_obs\_random & sd\_adv\_obs\_random & adv\_chronological\_leaky\_train & delta\_adv\_chronological\_leaky\_train & lift\_adv\_chronological\_leaky\_train & delta\_lift\_adv\_chronological\_leaky\_train & sd\_adv\_chronological\_leaky\_train \\
+\midrule
+random\_forest & -0.0099 & -0.6300 & 0.0238 & 0.0337 & 0.9800 & 1.6000 & 0.0091 & 0.0193 & 0.0292 & 0.7500 & 1.3800 & 0.0068 & -0.0028 & 0.0071 & -0.1800 & 0.4500 & 0.0120 \\
+xgboost & -0.0149 & -0.9400 & 0.0263 & 0.0412 & 1.0800 & 2.0300 & 0.0120 & 0.0237 & 0.0386 & 0.9400 & 1.8800 & 0.0049 & -0.0131 & 0.0018 & -0.8300 & 0.1100 & 0.0125 \\
+\bottomrule
+\end{tabular}
+\end{table}

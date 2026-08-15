@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Which reported quantities are sensitive to the base rate (post-hoc supplementary). Prevalence drift is disclosed and measured; it is not used to make a prospective recalibration claim, because doing so would require the test prevalence to be known in advance.}
+\label{tab:supp_prevalence_sensitivity}
+\small
+\begin{tabular}{p{0.22\textwidth}p{0.15\textwidth}p{0.53\textwidth}}
+\toprule
+quantity & sensitive & consequence \\
+\midrule
+PR-AUC & yes (baseline shifts) & The no-skill baseline equals the prevalence, so PR-AUC levels are not comparable across periods or label definitions; only the gap to the baseline is. \\
+ROC-AUC & no & Invariant to the base rate; comparable across periods. \\
+F1 and the operating threshold & yes & The threshold is tuned on a 1.31\% validation base rate and applied to a 1.58\% test base rate, having been trained under class weights targeting 3.01\%. \\
+Brier score and calibration & yes & Absolute probabilities inherit the prior of the sample the map was fitted on; validation-fitted Platt scaling corrects the score scale only partially. \\
+Class weighting & targets training & Rebalancing targets the 3.01\% training base rate, roughly twice the rate the model is scored against. \\
+Precision at fixed capacity & yes & Precision scales roughly with the base rate at a fixed review budget, so capacity results are period-specific. \\
+\bottomrule
+\end{tabular}
+\end{table}

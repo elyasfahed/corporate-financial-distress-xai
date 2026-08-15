@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Pairwise model comparisons under the primary specification. PR-AUC differences: firm-block bootstrap (1{,}000 resamples), two-sided p-values from the null-recentred resampling distribution, percentile 95\% CIs. ROC-AUC differences: DeLong test. Six pairwise tests per metric; both the raw two-sided p-value and the Holm--Bonferroni family-wise-corrected p-value (\texttt{\_holm}) are reported, corrected separately within each metric family. Signs follow the first-named model.}
+\label{tab:v2_significance_tests}
+\small
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+comparison & pr\_auc\_delta & pr\_delta\_ci\_lower & pr\_delta\_ci\_upper & pr\_p\_value & pr\_sig & pr\_p\_holm & pr\_sig\_holm & delong\_z & roc\_p\_value & roc\_sig & roc\_p\_holm & roc\_sig\_holm \\
+\midrule
+Logistic Regression (ridge) vs Random Forest & 0.0143 & -0.0098 & 0.0415 & 0.3147 &  & 0.6294 &  & -1.9450 & 0.0517 & † & 0.1034 &  \\
+Logistic Regression (ridge) vs XGBoost & 0.0022 & -0.0232 & 0.0291 & 0.8591 &  & 0.8591 &  & -3.2300 & 0.0012 & ** & 0.0037 & ** \\
+Logistic Regression (ridge) vs Neural Network & 0.0414 & 0.0127 & 0.0760 & 0.0100 & ** & 0.0500 & * & 1.8090 & 0.0704 & † & 0.1034 &  \\
+Random Forest vs XGBoost & -0.0121 & -0.0244 & -0.0019 & 0.0410 & * & 0.1479 &  & -3.3800 & 0.0007 & *** & 0.0029 & ** \\
+Random Forest vs Neural Network & 0.0270 & 0.0023 & 0.0519 & 0.0370 & * & 0.1479 &  & 3.6480 & 0.0003 & *** & 0.0013 & ** \\
+XGBoost vs Neural Network & 0.0392 & 0.0150 & 0.0673 & 0.0030 & ** & 0.0180 & * & 4.9660 & 0.0000 & *** & 0.0000 & *** \\
+\bottomrule
+\end{tabular}
+\end{table}

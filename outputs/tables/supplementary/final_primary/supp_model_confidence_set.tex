@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\caption{Simultaneous bootstrap (range-based) model set on test PR-AUC at the 95\% level (post-hoc supplementary). Models flagged \texttt{True} are not separated from the best performer by sequential elimination on the bootstrap range statistic. \textbf{This is not a Hansen--Lunde--Nason model confidence set and carries no formal MCS coverage guarantee}: that construction is defined on observation-level loss differentials, whereas PR-AUC is a rank-based functional of the whole score vector and admits no additive per-observation decomposition. The statement is a descriptive simultaneous-bootstrap one about which models the data cannot separate on the primary metric.}
+\label{tab:supp_mcs}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrr}
+\toprule
+scheme & model & test\_pr\_auc & in\_model\_set & elimination\_p \\
+\midrule
+firm & Logistic regression (ridge) & 0.1751 & True & NaN \\
+firm & Random forest & 0.1608 & True & NaN \\
+firm & XGBoost & 0.1729 & True & NaN \\
+firm & Neural network (balanced) & 0.1338 & False & 0.0085 \\
+firm\_year & Logistic regression (ridge) & 0.1751 & True & NaN \\
+firm\_year & Random forest & 0.1608 & True & NaN \\
+firm\_year & XGBoost & 0.1729 & True & NaN \\
+firm\_year & Neural network (balanced) & 0.1338 & True & NaN \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,12 @@
+variable,description,matched_median,unmatched_median,std_diff_levels,std_diff_log,std_diff_rank,imbalanced
+at,Total assets,231.817,121.0905,-0.0781,0.119,0.1519,True
+lt,Total liabilities,107.265,61.2575,-0.0827,0.1086,0.1391,True
+sale,Sales,115.513,52.532,-0.0621,0.2113,0.2315,True
+ni,Net income,1.861,0.436,-0.036,0.0784,0.0792,False
+ib,Income before extraordinary items,1.838,0.409,-0.0337,0.0796,0.0817,False
+che,Cash and short-term investments,18.0,11.026,-0.0684,0.0586,0.1181,True
+act,Current assets,63.847,36.9055,-0.0934,0.1018,0.1349,True
+lct,Current liabilities,27.342,20.59,-0.0985,0.0539,0.0958,False
+_roa,Return on assets (ib/at),0.0104,0.0054,-0.0097,,0.0764,False
+_lev,Leverage (lt/at),0.5852,0.5348,0.0056,,0.152,True
+_loss,Loss indicator (ib < 0),0.0,0.0,-0.1231,,-0.1231,True

@@ -1,0 +1,11 @@
+rank,model,feature,theoretical_sign,theoretical_direction,reference,observed_sign,corr_feature_shap,max_corr_with_other_top,collinear_partner,is_collinear,verdict_raw,verdict_collinearity_adjusted,verdict
+1,XGBoost,RSIZE,-,Larger relative size → lower distress probability,Campbell et al. (2008),-,-0.891,0.993,LNMK,True,Consistent,Ambiguous-collinear,Consistent
+2,XGBoost,PRICE,-,Higher share price → lower distress probability (penny-stock signal),Shumway (2001),-,-0.956,0.743,LNMK,True,Consistent,Ambiguous-collinear,Consistent
+3,XGBoost,NITA,-,Higher profitability → lower distress probability,Altman (1968); Campbell et al. (2008),-,-0.747,0.888,OCF_TA,True,Consistent,Ambiguous-collinear,Consistent
+4,XGBoost,TLTA,+,Higher leverage → higher distress probability,Ohlson (1980); Leland (1994),+,0.901,0.574,,False,Consistent,Consistent,Consistent
+5,XGBoost,OCF_TA,-,Higher operating cash flow → lower distress probability,Shumway (2001),-,-0.741,0.888,NITA,True,Consistent,Ambiguous-collinear,Consistent
+6,XGBoost,EXRET,-,Higher excess return → lower distress probability,Campbell et al. (2008),-,-0.551,0.347,,False,Consistent,Consistent,Consistent
+7,XGBoost,SIGMA,+,Higher volatility → higher distress probability (distance-to-default),Merton (1974); Shumway (2001),+,0.819,0.454,,False,Consistent,Consistent,Consistent
+8,XGBoost,LNMK,-,Larger market cap → lower distress probability,Campbell et al. (2008),-,-0.802,0.993,RSIZE,True,Consistent,Ambiguous-collinear,Consistent
+9,XGBoost,CLCA,+,Higher current liabilities / current assets → higher distress probability,Ohlson (1980),+,0.763,0.756,WCTA,True,Consistent,Ambiguous-collinear,Consistent
+10,XGBoost,WCTA,-,Higher working capital cushion → lower distress probability,Altman (1968),-,-0.884,0.756,CLCA,True,Consistent,Ambiguous-collinear,Consistent

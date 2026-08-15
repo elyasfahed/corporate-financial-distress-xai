@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Calibration of the four models under the common validation-fitted Platt map (post-hoc supplementary). The Brier skill score is relative to a constant forecast at the test prevalence; a perfectly calibrated model has intercept 0 and slope 1. Confidence intervals are firm-block bootstrap (1000 resamples, seed 42).}
+\label{tab:supp_calibration}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+model & observed\_event\_rate & mean\_predicted\_probability & obs\_minus\_pred & brier & brier\_prevalence\_only & brier\_skill\_score & bss\_ci\_lower\_firm\_block & bss\_ci\_upper\_firm\_block & calibration\_intercept & calibration\_slope \\
+\midrule
+Logistic regression (ridge) & 0.0158 & 0.0304 & -0.0146 & 0.0150 & 0.0156 & 0.0377 & 0.0093 & 0.0627 & -0.7280 & 1.2112 \\
+Random forest & 0.0158 & 0.0259 & -0.0100 & 0.0148 & 0.0156 & 0.0488 & 0.0141 & 0.0774 & -0.5691 & 1.0090 \\
+XGBoost & 0.0158 & 0.0270 & -0.0112 & 0.0147 & 0.0156 & 0.0562 & 0.0274 & 0.0807 & -0.6056 & 1.1187 \\
+Neural network (balanced) & 0.0158 & 0.0323 & -0.0165 & 0.0154 & 0.0156 & 0.0103 & -0.0200 & 0.0371 & -0.7946 & 1.1573 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Consolidated robustness battery under the primary specification. Each check varies exactly one design dimension; all others are held at the primary configuration. RC3 uses the corrected SMOTENC treatment in which all three binary indicators (OENEG, INTWO, MB\_MISSING) are declared categorical.}
+\label{tab:v2_robustness_consolidated}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+check & model & pr\_auc & roc\_auc & baseline\_pr\_auc & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+Primary specification & logistic\_regression & 0.1751 & 0.9203 & 0.0158 & 0.1461 & 0.2114 \\
+Primary specification & random\_forest & 0.1608 & 0.9272 & 0.0158 & 0.1346 & 0.1908 \\
+Primary specification & xgboost & 0.1729 & 0.9303 & 0.0158 & 0.1450 & 0.2061 \\
+RC1 bankruptcy-reason proxy & logistic\_regression & 0.0291 & 0.9269 & 0.0027 & 0.0208 & 0.0479 \\
+RC1 bankruptcy-reason proxy & random\_forest & 0.0513 & 0.9338 & 0.0027 & 0.0324 & 0.0963 \\
+RC1 bankruptcy-reason proxy & xgboost & 0.0507 & 0.9337 & 0.0027 & 0.0338 & 0.0865 \\
+RC2 6-month horizon & logistic\_regression & 0.1009 & 0.9243 & 0.0071 & 0.0750 & 0.1396 \\
+RC2 6-month horizon & random\_forest & 0.0982 & 0.9366 & 0.0071 & 0.0721 & 0.1350 \\
+RC2 6-month horizon & xgboost & 0.0987 & 0.9354 & 0.0071 & 0.0743 & 0.1338 \\
+RC3 SMOTENC & logistic\_regression & 0.1739 & 0.9189 & 0.0158 & 0.1450 & 0.2103 \\
+RC3 SMOTENC & random\_forest & 0.1235 & 0.9140 & 0.0158 & 0.1035 & 0.1476 \\
+RC3 SMOTENC & xgboost & 0.1317 & 0.9207 & 0.0158 & 0.1134 & 0.1560 \\
+RC4 accounting-only & logistic\_regression & 0.1255 & 0.8803 & 0.0158 & 0.1037 & 0.1560 \\
+RC4 accounting-only & random\_forest & 0.1334 & 0.8996 & 0.0158 & 0.1110 & 0.1607 \\
+RC4 accounting-only & xgboost & 0.1326 & 0.8964 & 0.0158 & 0.1114 & 0.1597 \\
+RC5 incl. utilities & logistic\_regression & 0.1785 & 0.9226 & 0.0153 & 0.1497 & 0.2150 \\
+RC5 incl. utilities & random\_forest & 0.1571 & 0.9289 & 0.0153 & 0.1331 & 0.1891 \\
+RC5 incl. utilities & xgboost & 0.1729 & 0.9322 & 0.0153 & 0.1444 & 0.2060 \\
+\bottomrule
+\end{tabular}
+\end{table}

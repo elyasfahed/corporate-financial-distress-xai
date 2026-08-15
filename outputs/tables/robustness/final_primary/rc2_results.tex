@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{RC2 under the primary specification: 6-month (182-day) distress horizon instead of the primary 12 months; corrected delisting label, all other design dimensions unchanged; LR/RF/XGBoost re-tuned per the robustness-check convention.}
+\label{tab:v2_rc2}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+logistic\_regression & 0.0071 & 0.1009 & 0.9243 & 0.0766 & 0.5444 & 0.1342 & 0.7531 & 0.1430 & 0.9205 & 0.0750 & 0.1396 \\
+random\_forest & 0.0071 & 0.0982 & 0.9366 & 0.0916 & 0.4167 & 0.1502 & 0.7741 & 0.0418 & 0.6863 & 0.0721 & 0.1350 \\
+xgboost & 0.0071 & 0.0987 & 0.9354 & 0.0767 & 0.5833 & 0.1356 & 0.7383 & 0.0931 & 0.8082 & 0.0743 & 0.1338 \\
+\bottomrule
+\end{tabular}
+\end{table}

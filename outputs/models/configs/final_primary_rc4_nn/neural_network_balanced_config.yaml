@@ -1,0 +1,11 @@
+best_cv_pr_auc: 0.1873986116439898
+best_params:
+  activation: relu
+  alpha: 0.09650930475336642
+  architecture: '64'
+  learning_rate_init: 0.00011255630031416606
+check: rc4
+imbalance_treatment: random_oversampling_to_parity
+model: neural_network_balanced
+optuna_trials_target: 100
+spec: final_primary_rc4_nn

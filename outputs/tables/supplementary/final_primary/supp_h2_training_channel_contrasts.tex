@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Paired contrasts between arms of the corrected training-side experiment (post-hoc supplementary). All arms score identical evaluation rows, so each difference is paired; confidence intervals and $p$-values come from the same firm-block bootstrap, recentred under the null, that is used for the headline model comparisons. Reading the four contrasts: the first is the total training-side effect; the second carries future information only through firms that are never evaluated; the fourth isolates the increment from letting evaluated firms contribute their own later rows. \textbf{The third is the decisive one}---it holds the number of added training rows fixed and varies only whether they postdate the evaluation block, so it separates future information from the effect of simply having more training data.}
+\label{tab:supp_h2_training_channel_contrasts}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Contrast & Model & PR-AUC diff. & 95\% CI & p-value & ROC-AUC diff. \\
+\midrule
+All future minus baseline & LR & 0.0027 & [-0.0043, +0.0080] & 0.3586 & 0.0035 \\
+All future minus baseline & RF & 0.0066 & [-0.0072, +0.0158] & 0.2078 & 0.0037 \\
+All future minus baseline & XGB & 0.0097 & [-0.0107, +0.0315] & 0.3477 & 0.0027 \\
+Unevaluated-firm future minus baseline & LR & 0.0027 & [-0.0026, +0.0069] & 0.1908 & 0.0029 \\
+Unevaluated-firm future minus baseline & RF & 0.0069 & [-0.0009, +0.0144] & 0.0739 & 0.0023 \\
+Unevaluated-firm future minus baseline & XGB & 0.0045 & [-0.0114, +0.0226] & 0.5894 & 0.0005 \\
+Future minus recent past (matched) & LR & -0.0004 & [-0.0019, +0.0008] & 0.5385 & 0.0005 \\
+Future minus recent past (matched) & RF & 0.0012 & [-0.0060, +0.0064] & 0.6673 & 0.0008 \\
+Future minus recent past (matched) & XGB & 0.0077 & [-0.0070, +0.0231] & 0.3277 & 0.0053 \\
+Own-firm future (matched) & LR & -0.0020 & [-0.0047, +0.0011] & 0.1508 & -0.0017 \\
+Own-firm future (matched) & RF & -0.0060 & [-0.0157, +0.0010] & 0.1169 & 0.0002 \\
+Own-firm future (matched) & XGB & 0.0050 & [-0.0148, +0.0221] & 0.5654 & 0.0039 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

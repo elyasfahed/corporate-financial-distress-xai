@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Pairwise PR-AUC differences vs the logistic benchmark under firm-block vs temporal-robust two-way inference. Few year clusters (9) make the temporal CIs coarse — disclosed upper bound.}
+\label{tab:v2_temporal_sig}
+\small
+\begin{tabular}{lrrr}
+\toprule
+comparison & delta\_pr\_auc & p\_firm\_block & p\_twoway\_normal \\
+\midrule
+logistic\_regression - random\_forest & 0.0143 & 0.3147 & 0.3539 \\
+logistic\_regression - xgboost & 0.0022 & 0.8591 & 0.8898 \\
+logistic\_regression - neural\_network\_balanced & 0.0414 & 0.0100 & 0.0844 \\
+\bottomrule
+\end{tabular}
+\end{table}

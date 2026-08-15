@@ -1,0 +1,4 @@
+model,pr_auc_chrono,pr_auc_firm_random,pr_auc_obs_random,pr_auc_leaky_train,delta_pr_firm_rand,delta_pr_obs_rand,delta_pr_leaky_train,lift_chrono,lift_firm_random,lift_obs_random,lift_leaky_train,roc_auc_chrono,roc_auc_firm_random,roc_auc_obs_random,roc_auc_leaky_train,delta_roc_firm_rand,delta_roc_obs_rand,delta_roc_leaky_train
+logistic_regression,0.1746,0.2174,0.2273,0.1714,0.0428,0.0527,-0.0032,11.05,8.93,8.97,10.85,0.92,0.9141,0.9188,0.9203,-0.0059,-0.0012,0.0003
+random_forest,0.1647,0.2412,0.2466,0.1686,0.0765,0.0819,0.0039,10.42,9.91,9.73,10.67,0.9284,0.927,0.9267,0.93,-0.0014,-0.0017,0.0016
+xgboost,0.1597,0.2436,0.251,0.1583,0.0839,0.0913,-0.0014,10.11,10.01,9.9,10.02,0.9235,0.9238,0.9236,0.9241,0.0003,0.0001,0.0006

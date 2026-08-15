@@ -1,0 +1,4 @@
+comparison,delta_pr_auc,p_firm_block,p_twoway_normal
+logistic_regression - random_forest,0.0143,0.3147,0.3539
+logistic_regression - xgboost,0.0022,0.8591,0.8898
+logistic_regression - neural_network_balanced,0.0414,0.01,0.0844

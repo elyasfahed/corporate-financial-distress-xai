@@ -1,0 +1,203 @@
+approved_at_utc: '2026-07-20T23:52:03.943092+00:00'
+approved_by: thesis_author
+primary_definition: CRSP performance delistings
+primary_event_column: is_distress_performance_core
+primary_cleaning: >-
+  Cleaned primary label = the performance-delisting family below MINUS the
+  clearly voluntary / administrative GDR exits (reason CORQ, reconstructed
+  legacy code 570; reason MVOT, code 520). The broad performance family that
+  retains these is kept only as a documented sensitivity
+  (is_distress_performance). MTMK (Market Makers, code 550) is a listing-standard
+  failure and is retained in the primary label, confirmed against CRSP's CIZ
+  flag dictionary (MetaFlagInfo).
+voluntary_admin_excluded_reasons:
+- CORQ
+- MVOT
+voluntary_admin_excluded_legacy_codes:
+- 520
+- 570
+performance_family_legacy_codes:
+- 400
+- 401
+- 402
+- 403
+- 404
+- 405
+- 406
+- 407
+- 408
+- 409
+- 410
+- 411
+- 412
+- 413
+- 414
+- 415
+- 416
+- 417
+- 418
+- 419
+- 420
+- 421
+- 422
+- 423
+- 424
+- 425
+- 426
+- 427
+- 428
+- 429
+- 430
+- 431
+- 432
+- 433
+- 434
+- 435
+- 436
+- 437
+- 438
+- 439
+- 440
+- 441
+- 442
+- 443
+- 444
+- 445
+- 446
+- 447
+- 448
+- 449
+- 450
+- 451
+- 452
+- 453
+- 454
+- 455
+- 456
+- 457
+- 458
+- 459
+- 460
+- 461
+- 462
+- 463
+- 464
+- 465
+- 466
+- 467
+- 468
+- 469
+- 470
+- 471
+- 472
+- 473
+- 474
+- 475
+- 476
+- 477
+- 478
+- 479
+- 480
+- 481
+- 482
+- 483
+- 484
+- 485
+- 486
+- 487
+- 488
+- 489
+- 490
+- 491
+- 492
+- 493
+- 494
+- 495
+- 496
+- 497
+- 498
+- 499
+- 500
+- 520
+- 521
+- 522
+- 523
+- 524
+- 525
+- 526
+- 527
+- 528
+- 529
+- 530
+- 531
+- 532
+- 533
+- 534
+- 535
+- 536
+- 537
+- 538
+- 539
+- 540
+- 541
+- 542
+- 543
+- 544
+- 545
+- 546
+- 547
+- 548
+- 549
+- 550
+- 551
+- 552
+- 553
+- 554
+- 555
+- 556
+- 557
+- 558
+- 559
+- 560
+- 561
+- 562
+- 563
+- 564
+- 565
+- 566
+- 567
+- 568
+- 569
+- 570
+- 571
+- 572
+- 573
+- 574
+- 575
+- 576
+- 577
+- 578
+- 579
+- 580
+- 581
+- 582
+- 583
+- 584
+primary_rule_short: performance delistings (reconstructed legacy 400-499, 500,
+  520-584) EXCLUDING the voluntary/administrative reasons MVOT (520) and CORQ (570)
+narrow_sensitivity_gdr_reasons:
+- BKPY
+- EQRQ
+- FING
+- INSC
+- LP
+bankruptcy_proxy_reason: BKPY
+broad_sensitivity_actions:
+- GLI
+- GDR
+note: Author-approved final-primary rebuild. The primary outcome is the cleaned
+  performance-delisting label (performance family minus the voluntary/administrative
+  reasons CORQ and MVOT; see primary_cleaning and primary_event_column above),
+  following the literature-aligned CRSP performance-delisting convention. The broad
+  performance family and the July 2026 five-reason label are retained only as
+  sensitivities.

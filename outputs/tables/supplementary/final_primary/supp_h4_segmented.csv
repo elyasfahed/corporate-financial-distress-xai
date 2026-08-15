@@ -1,0 +1,4 @@
+feature,breakpoint_estimated,breakpoint_ci_lower,breakpoint_ci_upper,slope_below,slope_above,slope_change,slope_change_ci_lower,slope_change_ci_upper
+TLTA,0.203,0.1936,0.2131,-0.7733,1.1478,1.921,1.7331,2.1328
+NITA,-0.1708,-0.1779,-0.136,-0.3099,-2.7183,-2.4084,-2.6483,-2.3179
+SIGMA,0.073,0.0717,0.0742,-4.4274,1.2761,5.7036,5.2759,6.1228

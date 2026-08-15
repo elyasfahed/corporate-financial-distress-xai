@@ -1,0 +1,3 @@
+scheme,statistic,observed,best_ml_model,p_value_one_sided,verdict
+firm,"max over {RF, XGB, NN} of (PR-AUC minus logistic)",-0.0022,XGBoost,0.7295,no evidence best ML exceeds LR; does not establish LR superiority
+firm_year,"max over {RF, XGB, NN} of (PR-AUC minus logistic)",-0.0022,XGBoost,0.704,no evidence best ML exceeds LR; does not establish LR superiority

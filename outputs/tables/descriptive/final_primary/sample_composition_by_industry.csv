@@ -1,0 +1,11 @@
+sic_div,n_total,n_distressed,distress_rate_pct
+A: Agriculture (0–999),528,9.0,1.705
+B: Mining (1000–1499),5341,151.0,2.827
+C: Construction (1500–1999),1577,49.0,3.107
+D: Manufacturing (2000–3999),58247,1241.0,2.131
+"E: Transp/Comm (4000–4999, util. excluded)",6335,172.0,2.715
+F: Wholesale (5000–5199),4465,125.0,2.8
+G: Retail (5200–5999),8702,245.0,2.815
+H: Services I (7000–7999),18578,492.0,2.648
+I: Services II (8000–8999),5800,163.0,2.81
+J: Other (9000–9999),1264,113.0,8.94

@@ -1,0 +1,4 @@
+split,fiscal_years,observations,events,prevalence,no_skill_pr_auc,ratio_to_training_prevalence
+train,1990-2008,74172,2234,0.03012,0.03012,1.0
+val,2010-2013,11153,146,0.01309,0.01309,0.435
+test,2015-2023,25512,404,0.01584,0.01584,0.526

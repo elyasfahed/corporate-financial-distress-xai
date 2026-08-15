@@ -1,0 +1,6 @@
+step,firm_years,share
+Compustat firm-years entering the filing-date merge,417671,1.0
+Matched to an actual 10-K filing date,226989,0.5434636352535848
+"Unmatched — dropped, never imputed",190682,0.45653636474641524
+Additionally dropped: filing lag > 180d,5236,0.012536182785014999
+Retained after both filters,221753,0.5309274524685698

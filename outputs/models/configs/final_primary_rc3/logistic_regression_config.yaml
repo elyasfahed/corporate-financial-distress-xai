@@ -1,0 +1,8 @@
+best_cv_pr_auc: 0.2317464763456493
+best_params:
+  C: 0.011681533412351048
+class_weighting: disabled
+imbalance_treatment: smotenc_in_fold
+model: logistic_regression
+optuna_trials_target: 100
+spec: final_primary_rc3

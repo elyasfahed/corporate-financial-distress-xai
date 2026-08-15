@@ -1,0 +1,15 @@
+best_cv_pr_auc: 0.1147310544192475
+best_params:
+  colsample_bytree: 0.6545762818406508
+  learning_rate: 0.014738779207113813
+  max_depth: 4
+  min_child_weight: 15
+  n_estimators: 200
+  reg_alpha: 0.08135258869365747
+  reg_lambda: 1.563631019044139e-06
+  subsample: 0.5215125436838873
+model: xgboost
+optuna_trials_complete: 100
+optuna_trials_target: 100
+optuna_trials_total: 100
+threshold: 0.911629855632782

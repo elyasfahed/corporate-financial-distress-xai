@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Effect of the winsorisation convention on test performance (post-hoc supplementary). Each regime rebuilds all three splits from the raw checkpoints through the pipeline's own winsorise, coverage-filter and impute chain, then refits the four models on the frozen hyperparameters and evaluates once; no model is re-tuned and the frozen artifacts are never overwritten. The control reproduces the stored splits to machine precision and the published PR-AUCs exactly, which is asserted before this table is written.}
+\label{tab:supp_winsor_sensitivity}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrr}
+\toprule
+convention & model & pr\_auc & roc\_auc & pr\_auc\_delta \\
+\midrule
+frozen pipeline (control) & Logistic regression (ridge) & 0.1751 & 0.9203 & 0.0000 \\
+frozen pipeline (control) & Random forest & 0.1608 & 0.9272 & 0.0000 \\
+frozen pipeline (control) & XGBoost & 0.1729 & 0.9303 & 0.0000 \\
+frozen pipeline (control) & Neural network (balanced) & 0.1338 & 0.9140 & 0.0000 \\
+PRICE winsorised at the training 1st/99th percentile & Logistic regression (ridge) & 0.1743 & 0.9204 & -0.0008 \\
+PRICE winsorised at the training 1st/99th percentile & Random forest & 0.1590 & 0.9273 & -0.0018 \\
+PRICE winsorised at the training 1st/99th percentile & XGBoost & 0.1706 & 0.9299 & -0.0023 \\
+PRICE winsorised at the training 1st/99th percentile & Neural network (balanced) & 0.1122 & 0.9111 & -0.0216 \\
+per-fiscal-year cross-sectional 1st/99th winsorisation & Logistic regression (ridge) & 0.1611 & 0.9179 & -0.0140 \\
+per-fiscal-year cross-sectional 1st/99th winsorisation & Random forest & 0.1591 & 0.9249 & -0.0017 \\
+per-fiscal-year cross-sectional 1st/99th winsorisation & XGBoost & 0.1683 & 0.9291 & -0.0047 \\
+per-fiscal-year cross-sectional 1st/99th winsorisation & Neural network (balanced) & 0.1277 & 0.9068 & -0.0060 \\
+per-fiscal-year winsorisation, PRICE included & Logistic regression (ridge) & 0.1617 & 0.9181 & -0.0135 \\
+per-fiscal-year winsorisation, PRICE included & Random forest & 0.1561 & 0.9252 & -0.0047 \\
+per-fiscal-year winsorisation, PRICE included & XGBoost & 0.1685 & 0.9287 & -0.0044 \\
+per-fiscal-year winsorisation, PRICE included & Neural network (balanced) & 0.1345 & 0.9057 & 0.0007 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering
+\caption{Out-of-sample performance of two classical benchmarks — the Ohlson (1980) O-score and the Altman (1968) Z-score — on the held-out test sample (2015--2023). Both apply their original published coefficients without re-estimation; the threshold is selected on the validation set to maximise F1. The Altman Z is a score, mapped to a probability by a validation-fitted logistic (monotone, so PR-AUC/ROC-AUC are unaffected). PR-AUC 95\% CIs: block bootstrap by firm (1{,}000 resamples).}
+\label{tab:classical_benchmarks}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+ohlson\_1980 & 0.0158 & 0.0654 & 0.8357 & 0.0629 & 0.6213 & 0.1142 & 0.5777 & 0.2950 & 0.9417 & 0.0562 & 0.0777 \\
+altman\_1968 & 0.0158 & 0.0950 & 0.8369 & 0.0977 & 0.3564 & 0.1534 & 0.5785 & 0.0155 & 0.0185 & 0.0776 & 0.1211 \\
+\bottomrule
+\end{tabular}
+\end{table}

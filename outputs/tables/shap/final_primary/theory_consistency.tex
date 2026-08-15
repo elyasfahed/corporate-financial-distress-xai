@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\caption{Pre-specified theory-consistency validation (H$_3$) under the primary specification: theoretical sign prediction vs observed mean SHAP direction for the ten highest-importance features of XGBoost (the co-leading ML model reported for explanation; full test sample). The headline verdict is the pre-specified raw sign test; features collinear ($|r|>0.7$) with another top-10 feature are flagged (is\_collinear) and additionally shown under a conservative symmetric collinearity annotation that is never used to inflate the consistency count.}
+\label{tab:v2_theory_consistency}
+\small
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+rank & model & feature & theoretical\_sign & theoretical\_direction & reference & observed\_sign & corr\_feature\_shap & max\_corr\_with\_other\_top & collinear\_partner & is\_collinear & verdict\_raw & verdict\_collinearity\_adjusted & verdict \\
+\midrule
+1 & XGBoost & RSIZE & - & Larger relative size → lower distress probability & Campbell et al. (2008) & - & -0.8910 & 0.9930 & LNMK & True & Consistent & Ambiguous-collinear & Consistent \\
+2 & XGBoost & PRICE & - & Higher share price → lower distress probability (penny-stock signal) & Shumway (2001) & - & -0.9560 & 0.7430 & LNMK & True & Consistent & Ambiguous-collinear & Consistent \\
+3 & XGBoost & NITA & - & Higher profitability → lower distress probability & Altman (1968); Campbell et al. (2008) & - & -0.7470 & 0.8880 & OCF\_TA & True & Consistent & Ambiguous-collinear & Consistent \\
+4 & XGBoost & TLTA & + & Higher leverage → higher distress probability & Ohlson (1980); Leland (1994) & + & 0.9010 & 0.5740 &  & False & Consistent & Consistent & Consistent \\
+5 & XGBoost & OCF\_TA & - & Higher operating cash flow → lower distress probability & Shumway (2001) & - & -0.7410 & 0.8880 & NITA & True & Consistent & Ambiguous-collinear & Consistent \\
+6 & XGBoost & EXRET & - & Higher excess return → lower distress probability & Campbell et al. (2008) & - & -0.5510 & 0.3470 &  & False & Consistent & Consistent & Consistent \\
+7 & XGBoost & SIGMA & + & Higher volatility → higher distress probability (distance-to-default) & Merton (1974); Shumway (2001) & + & 0.8190 & 0.4540 &  & False & Consistent & Consistent & Consistent \\
+8 & XGBoost & LNMK & - & Larger market cap → lower distress probability & Campbell et al. (2008) & - & -0.8020 & 0.9930 & RSIZE & True & Consistent & Ambiguous-collinear & Consistent \\
+9 & XGBoost & CLCA & + & Higher current liabilities / current assets → higher distress probability & Ohlson (1980) & + & 0.7630 & 0.7560 & WCTA & True & Consistent & Ambiguous-collinear & Consistent \\
+10 & XGBoost & WCTA & - & Higher working capital cushion → lower distress probability & Altman (1968) & - & -0.8840 & 0.7560 & CLCA & True & Consistent & Ambiguous-collinear & Consistent \\
+\bottomrule
+\end{tabular}
+\end{table}

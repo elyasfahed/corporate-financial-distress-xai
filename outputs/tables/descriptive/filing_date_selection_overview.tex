@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Filing-date attrition: firm-years entering the 10-K filing-date merge, matched to an actual filing date, and dropped. Unmatched firm-years are dropped rather than imputed, faithful to the frozen design.}
+\label{tab:filing_date_selection_overview}
+\small
+\begin{tabular}{lrr}
+\toprule
+step & firm\_years & share \\
+\midrule
+Compustat firm-years entering the filing-date merge & 417671 & 1.0000 \\
+Matched to an actual 10-K filing date & 226989 & 0.5435 \\
+Unmatched — dropped, never imputed & 190682 & 0.4565 \\
+Additionally dropped: filing lag > 180d & 5236 & 0.0125 \\
+Retained after both filters & 221753 & 0.5309 \\
+\bottomrule
+\end{tabular}
+\end{table}

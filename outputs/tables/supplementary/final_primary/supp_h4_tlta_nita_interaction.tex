@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Mean XGBoost SHAP interaction value for TLTA $\times$ NITA by tertile cell (exploratory corroboration), on a random sample of 4000 test firm-years. Unlike the descriptive 3$\times$3 heatmap, which reports mean predicted probability and therefore confounds main effects with interaction, this isolates the model-internal interaction component.}
+\label{tab:supp_h4_interaction}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrr}
+\toprule
+TLTA\_tertile & NITA\_tertile & mean\_shap\_interaction & n \\
+\midrule
+high & high & 0.02150 & 441 \\
+high & low & -0.00182 & 382 \\
+high & mid & 0.00448 & 511 \\
+low & high & 0.08816 & 387 \\
+low & low & -0.09537 & 619 \\
+low & mid & -0.01645 & 327 \\
+mid & high & 0.03393 & 505 \\
+mid & low & -0.02437 & 332 \\
+mid & mid & 0.01078 & 496 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

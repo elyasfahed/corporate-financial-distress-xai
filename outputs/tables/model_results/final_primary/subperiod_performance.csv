@@ -1,0 +1,9 @@
+model,period,n,events,baseline_pr_auc,pr_auc,lift,roc_auc,pr_auc_full,lift_full,stable_raw_0.7x,stable_lift_0.7x
+logistic_regression,2015-2019,13545,179,0.0132,0.1161,8.78,0.9165,0.1751,11.06,False,True
+logistic_regression,2020-2023,11967,225,0.0188,0.224,11.92,0.9242,0.1751,11.06,True,True
+random_forest,2015-2019,13545,179,0.0132,0.1201,9.09,0.924,0.1608,10.15,True,True
+random_forest,2020-2023,11967,225,0.0188,0.2085,11.09,0.9295,0.1608,10.15,True,True
+xgboost,2015-2019,13545,179,0.0132,0.1262,9.55,0.9283,0.1729,10.92,True,True
+xgboost,2020-2023,11967,225,0.0188,0.2268,12.06,0.9314,0.1729,10.92,True,True
+neural_network_balanced,2015-2019,13545,179,0.0132,0.126,9.53,0.9229,0.1338,8.45,True,True
+neural_network_balanced,2020-2023,11967,225,0.0188,0.1416,7.53,0.9043,0.1338,8.45,True,True

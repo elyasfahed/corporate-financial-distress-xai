@@ -1,0 +1,66 @@
+\begin{table}[htbp]
+\centering
+\caption{Global SHAP feature importance (mean $|$SHAP$|$ over the full test sample) for the three primary models under the primary specification (18 predictors incl. MB\_MISSING). TreeExplainer for XGBoost/Random Forest; LinearExplainer on the underlying (pre-Platt) logistic regression.}
+\label{tab:v2_shap_importance}
+\small
+\begin{tabular}{lrrr}
+\toprule
+model & rank & feature & mean\_abs\_shap \\
+\midrule
+XGBoost & 1 & RSIZE & 0.7437 \\
+XGBoost & 2 & PRICE & 0.7062 \\
+XGBoost & 3 & NITA & 0.3945 \\
+XGBoost & 4 & TLTA & 0.3031 \\
+XGBoost & 5 & OCF\_TA & 0.2765 \\
+XGBoost & 6 & EXRET & 0.1797 \\
+XGBoost & 7 & SIGMA & 0.1586 \\
+XGBoost & 8 & LNMK & 0.1167 \\
+XGBoost & 9 & CLCA & 0.1028 \\
+XGBoost & 10 & WCTA & 0.0971 \\
+XGBoost & 11 & CASHTA & 0.0935 \\
+XGBoost & 12 & CHIN & 0.0933 \\
+XGBoost & 13 & NITA\_LAG & 0.0818 \\
+XGBoost & 14 & LNTA & 0.0734 \\
+XGBoost & 15 & MB & 0.0581 \\
+XGBoost & 16 & INTWO & 0.0288 \\
+XGBoost & 17 & MB\_MISSING & 0.0098 \\
+XGBoost & 18 & OENEG & 0.0023 \\
+Logistic Regression (ridge) & 1 & RSIZE & 1.9784 \\
+Logistic Regression (ridge) & 2 & LNTA & 0.5403 \\
+Logistic Regression (ridge) & 3 & LNMK & 0.4781 \\
+Logistic Regression (ridge) & 4 & PRICE & 0.2848 \\
+Logistic Regression (ridge) & 5 & OCF\_TA & 0.2822 \\
+Logistic Regression (ridge) & 6 & TLTA & 0.2800 \\
+Logistic Regression (ridge) & 7 & INTWO & 0.2038 \\
+Logistic Regression (ridge) & 8 & CHIN & 0.1670 \\
+Logistic Regression (ridge) & 9 & MB & 0.1616 \\
+Logistic Regression (ridge) & 10 & SIGMA & 0.1295 \\
+Logistic Regression (ridge) & 11 & WCTA & 0.0869 \\
+Logistic Regression (ridge) & 12 & EXRET & 0.0688 \\
+Logistic Regression (ridge) & 13 & CASHTA & 0.0682 \\
+Logistic Regression (ridge) & 14 & NITA & 0.0664 \\
+Logistic Regression (ridge) & 15 & CLCA & 0.0575 \\
+Logistic Regression (ridge) & 16 & NITA\_LAG & 0.0543 \\
+Logistic Regression (ridge) & 17 & MB\_MISSING & 0.0542 \\
+Logistic Regression (ridge) & 18 & OENEG & 0.0202 \\
+Random Forest & 1 & PRICE & 0.1171 \\
+Random Forest & 2 & RSIZE & 0.1023 \\
+Random Forest & 3 & NITA & 0.0795 \\
+Random Forest & 4 & TLTA & 0.0521 \\
+Random Forest & 5 & OCF\_TA & 0.0350 \\
+Random Forest & 6 & EXRET & 0.0292 \\
+Random Forest & 7 & LNMK & 0.0255 \\
+Random Forest & 8 & SIGMA & 0.0210 \\
+Random Forest & 9 & CLCA & 0.0185 \\
+Random Forest & 10 & WCTA & 0.0161 \\
+Random Forest & 11 & CASHTA & 0.0131 \\
+Random Forest & 12 & NITA\_LAG & 0.0113 \\
+Random Forest & 13 & CHIN & 0.0100 \\
+Random Forest & 14 & MB & 0.0083 \\
+Random Forest & 15 & LNTA & 0.0072 \\
+Random Forest & 16 & INTWO & 0.0051 \\
+Random Forest & 17 & MB\_MISSING & 0.0008 \\
+Random Forest & 18 & OENEG & 0.0005 \\
+\bottomrule
+\end{tabular}
+\end{table}

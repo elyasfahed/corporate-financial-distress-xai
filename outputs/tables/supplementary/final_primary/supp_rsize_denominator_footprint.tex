@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Market-index / RSIZE denominator eligibility: footprint (post-hoc supplementary). The reported run restricts the aggregate to the eligible universe at PERMNO level; the stricter alternative requires eligibility as of each month. Because RSIZE is a log ratio, the difference is a month-common additive shift, so the within-month cross-sectional ordering of RSIZE is unchanged by construction.}
+\label{tab:supp_rsize_footprint}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+index\_rows\_any\_time\_eligible & rows\_not\_eligible\_as\_of\_month & share\_affected\_pct & vwretd\_correlation & vwretd\_mean\_abs\_diff & total\_market\_cap\_log\_ratio\_mean & total\_market\_cap\_log\_ratio\_sd & rsize\_shift\_as\_pct\_of\_one\_sd & within\_month\_rsize\_ordering\_changed \\
+\midrule
+3975777 & 123149 & 3.1 & 0.999975 & 0.000179 & 0.00735 & 0.01013 & 1.32 & False \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

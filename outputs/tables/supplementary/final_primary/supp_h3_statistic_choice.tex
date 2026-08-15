@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{Why the H\textsubscript{3} directional statistic departs from the frozen wording. The frozen hypothesis refers to the sign of the mean SHAP attribution; the implementation uses the sign of the feature--SHAP Pearson correlation. Because the test sample is 98.4\% non-distress, the mean attribution is negative for every one of the ten leading features --- the average firm sits below the model's baseline risk on essentially every predictor --- so the literal rule would record ``Inconsistent'' for the three features whose pre-registered prediction is positive (\texttt{TLTA}, \texttt{SIGMA}, \texttt{CLCA}) regardless of what the model had learned. The substitution is therefore necessary for the test to carry content, not a relaxation of it. The two verdict columns apply the same theoretical sign prediction to the two candidate statistics; the explicit sign of each statistic is legible from the value beside it and is retained in \texttt{supp\_h3\_statistic\_choice\_full.csv}. Computed on the frozen final-primary XGBoost estimator and the frozen test split; no estimator is refitted.}
+\label{tab:supp_h3_statistic_choice}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Rank & Feature & Theory & Mean SHAP & Literal verdict & Feature-SHAP r & Implemented verdict \\
+\midrule
+1 & RSIZE & - & -0.5328 & Consistent & -0.8912 & Consistent \\
+2 & PRICE & - & -0.5267 & Consistent & -0.9557 & Consistent \\
+3 & NITA & - & -0.1837 & Consistent & -0.7471 & Consistent \\
+4 & TLTA & + & -0.1152 & Inconsistent & 0.9014 & Consistent \\
+5 & OCF\_TA & - & -0.1028 & Consistent & -0.7405 & Consistent \\
+6 & EXRET & - & -0.1001 & Consistent & -0.5514 & Consistent \\
+7 & SIGMA & + & -0.1131 & Inconsistent & 0.8188 & Consistent \\
+8 & LNMK & - & -0.1019 & Consistent & -0.8016 & Consistent \\
+9 & CLCA & + & -0.0602 & Inconsistent & 0.7627 & Consistent \\
+10 & WCTA & - & -0.0589 & Consistent & -0.8840 & Consistent \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

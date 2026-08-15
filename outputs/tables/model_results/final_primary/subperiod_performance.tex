@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Subperiod stability under the primary specification. PR-AUC is bounded below by prevalence, and the pre-COVID window (2015--2019) has materially lower prevalence than 2020--2023, so a raw-PR-AUC comparison across subperiods conflates model decay with the prevalence shift. The headline flag therefore normalises by the subperiod baseline (lift $=$ PR-AUC $/$ prevalence): a model is flagged unstable when its subperiod lift falls below 70\% of its full-test lift. The raw-PR-AUC flag (\texttt{stable\_raw\_0.7x}) and the prevalence-invariant ROC-AUC are shown alongside.}
+\label{tab:v2_subperiod}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & period & n & events & baseline\_pr\_auc & pr\_auc & lift & roc\_auc & pr\_auc\_full & lift\_full & stable\_raw\_0.7x & stable\_lift\_0.7x \\
+\midrule
+logistic\_regression & 2015-2019 & 13545 & 179 & 0.0132 & 0.1161 & 8.7800 & 0.9165 & 0.1751 & 11.0600 & False & True \\
+logistic\_regression & 2020-2023 & 11967 & 225 & 0.0188 & 0.2240 & 11.9200 & 0.9242 & 0.1751 & 11.0600 & True & True \\
+random\_forest & 2015-2019 & 13545 & 179 & 0.0132 & 0.1201 & 9.0900 & 0.9240 & 0.1608 & 10.1500 & True & True \\
+random\_forest & 2020-2023 & 11967 & 225 & 0.0188 & 0.2085 & 11.0900 & 0.9295 & 0.1608 & 10.1500 & True & True \\
+xgboost & 2015-2019 & 13545 & 179 & 0.0132 & 0.1262 & 9.5500 & 0.9283 & 0.1729 & 10.9200 & True & True \\
+xgboost & 2020-2023 & 11967 & 225 & 0.0188 & 0.2268 & 12.0600 & 0.9314 & 0.1729 & 10.9200 & True & True \\
+neural\_network\_balanced & 2015-2019 & 13545 & 179 & 0.0132 & 0.1260 & 9.5300 & 0.9229 & 0.1338 & 8.4500 & True & True \\
+neural\_network\_balanced & 2020-2023 & 11967 & 225 & 0.0188 & 0.1416 & 7.5300 & 0.9043 & 0.1338 & 8.4500 & True & True \\
+\bottomrule
+\end{tabular}
+\end{table}

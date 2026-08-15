@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Precision and capture at exactly the top $k$\% of the test sample (post-hoc supplementary). The capacity is fixed a priori, so nothing is optimised on test, but the cut point uses the test score distribution and is therefore an idealised upper benchmark rather than a prospectively attainable operating point.}
+\label{tab:supp_precision_at_k}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+model & review\_capacity & n\_reviewed\_test & precision\_at\_k & recall\_at\_k & lift\_over\_prevalence & number\_needed\_to\_review \\
+\midrule
+Logistic regression (ridge) & 1\% & 255 & 0.2549 & 0.1609 & 16.1000 & 3.9000 \\
+Logistic regression (ridge) & 5\% & 1276 & 0.1505 & 0.4752 & 9.5000 & 6.6000 \\
+Logistic regression (ridge) & 10\% & 2551 & 0.1152 & 0.7277 & 7.2800 & 8.7000 \\
+Random forest & 1\% & 255 & 0.2392 & 0.1510 & 15.1100 & 4.2000 \\
+Random forest & 5\% & 1276 & 0.1575 & 0.4975 & 9.9500 & 6.3000 \\
+Random forest & 10\% & 2551 & 0.1121 & 0.7079 & 7.0800 & 8.9000 \\
+XGBoost & 1\% & 255 & 0.2431 & 0.1535 & 15.3500 & 4.1000 \\
+XGBoost & 5\% & 1276 & 0.1630 & 0.5149 & 10.2900 & 6.1000 \\
+XGBoost & 10\% & 2551 & 0.1141 & 0.7203 & 7.2000 & 8.8000 \\
+Neural network (balanced) & 1\% & 255 & 0.1569 & 0.0990 & 9.9100 & 6.4000 \\
+Neural network (balanced) & 5\% & 1276 & 0.1317 & 0.4158 & 8.3100 & 7.6000 \\
+Neural network (balanced) & 10\% & 2551 & 0.1117 & 0.7054 & 7.0600 & 9.0000 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

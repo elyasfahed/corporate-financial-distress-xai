@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{The balanced neural network across the pre-specified robustness checks, on the reported run. The network is one of the four co-primary models, but the battery in Section~\ref{sec:robustness_results} re-tunes only the benchmark and the two tree ensembles. Here the network reuses the hyperparameters selected for the primary specification and is refit on each check's data --- the supplementary convention of this chapter, not the per-check re-tune the other three models receive, a per-check search for this model being a one-to-three day computation. Each check's label, horizon, predictor set and sample are constructed with the same calls the other models use, so the rows are comparable across models within a check; the prevalence baseline is reported per check because it varies. RC\textsubscript{3} replaces oversampling-to-parity with SMOTENC, constructed exactly as for the other models.}
+\label{tab:rc_nn_final_primary}
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+check & n\_test & test\_events & prevalence\_baseline\_pr\_auc & pr\_auc & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper & roc\_auc & f1 & n\_features \\
+\midrule
+Primary specification & 25512 & 404 & 0.0158 & 0.1338 & 0.1131 & 0.1603 & 0.9140 & 0.1841 & 18 \\
+RC1 bankruptcy-reason proxy & 25512 & 69 & 0.0027 & 0.0317 & 0.0194 & 0.0610 & 0.8500 & 0.0508 & 18 \\
+RC2 six-month horizon & 25512 & 180 & 0.0071 & 0.0613 & 0.0497 & 0.0822 & 0.9069 & 0.1150 & 18 \\
+RC3 SMOTENC & 25512 & 404 & 0.0158 & 0.1116 & 0.0955 & 0.1363 & 0.8984 & 0.1824 & 18 \\
+RC4 accounting-only & 25512 & 404 & 0.0158 & 0.1156 & 0.0978 & 0.1386 & 0.8932 & 0.1897 & 11 \\
+RC5 utilities included & 26417 & 405 & 0.0153 & 0.1259 & 0.1073 & 0.1535 & 0.9131 & 0.1863 & 18 \\
+\bottomrule
+\end{tabular}
+\end{table}

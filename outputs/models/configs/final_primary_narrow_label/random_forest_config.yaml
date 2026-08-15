@@ -1,0 +1,11 @@
+best_cv_pr_auc: 0.22759813716747895
+best_params:
+  max_depth: 12
+  max_features: sqrt
+  min_samples_leaf: 20
+  n_estimators: 200
+model: random_forest
+optuna_trials_complete: 100
+optuna_trials_target: 100
+optuna_trials_total: 100
+threshold: 0.7235397880561457

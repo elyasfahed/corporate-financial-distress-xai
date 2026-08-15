@@ -1,0 +1,19 @@
+check,model,pr_auc,roc_auc,baseline_pr_auc,pr_auc_ci_lower,pr_auc_ci_upper
+Primary specification,logistic_regression,0.1751,0.9203,0.0158,0.1461,0.2114
+Primary specification,random_forest,0.1608,0.9272,0.0158,0.1346,0.1908
+Primary specification,xgboost,0.1729,0.9303,0.0158,0.145,0.2061
+RC1 bankruptcy-reason proxy,logistic_regression,0.0291,0.9269,0.0027,0.0208,0.0479
+RC1 bankruptcy-reason proxy,random_forest,0.0513,0.9338,0.0027,0.0324,0.0963
+RC1 bankruptcy-reason proxy,xgboost,0.0507,0.9337,0.0027,0.0338,0.0865
+RC2 6-month horizon,logistic_regression,0.1009,0.9243,0.0071,0.075,0.1396
+RC2 6-month horizon,random_forest,0.0982,0.9366,0.0071,0.0721,0.135
+RC2 6-month horizon,xgboost,0.0987,0.9354,0.0071,0.0743,0.1338
+RC3 SMOTENC,logistic_regression,0.1739,0.9189,0.0158,0.145,0.2103
+RC3 SMOTENC,random_forest,0.1235,0.914,0.0158,0.1035,0.1476
+RC3 SMOTENC,xgboost,0.1317,0.9207,0.0158,0.1134,0.156
+RC4 accounting-only,logistic_regression,0.1255,0.8803,0.0158,0.1037,0.156
+RC4 accounting-only,random_forest,0.1334,0.8996,0.0158,0.111,0.1607
+RC4 accounting-only,xgboost,0.1326,0.8964,0.0158,0.1114,0.1597
+RC5 incl. utilities,logistic_regression,0.1785,0.9226,0.0153,0.1497,0.215
+RC5 incl. utilities,random_forest,0.1571,0.9289,0.0153,0.1331,0.1891
+RC5 incl. utilities,xgboost,0.1729,0.9322,0.0153,0.1444,0.206

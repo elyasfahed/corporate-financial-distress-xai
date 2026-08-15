@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{SHAP--LIME agreement for the three local-explanation firms (XGBoost, the co-leading ML model used for the SHAP/LIME analysis). LIME uses 5{,}000 perturbation samples with the binary indicators (OENEG, INTWO, MB\_MISSING) treated as categorical. Kendall's $\tau$ compares absolute-importance ranks over LIME's top-10 features; sign agreement is the share of those features with equal attribution direction.}
+\label{tab:v2_lime_shap_agreement}
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+Case & Model & LIME features & Kendall $\tau$ & Sign agreement & Top LIME feature & Top SHAP feature \\
+\midrule
+True positive & XGBoost & 10 & 0.3780 & 1.0000 & RSIZE & PRICE \\
+False negative & XGBoost & 10 & 0.0220 & 0.9000 & NITA & RSIZE \\
+True negative & XGBoost & 10 & 0.5110 & 1.0000 & RSIZE & RSIZE \\
+\bottomrule
+\end{tabular}
+\end{table}

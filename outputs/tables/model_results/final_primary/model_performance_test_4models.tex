@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Out-of-sample performance of the four co-primary models under the primary specification (FY1990--2023; corrected fiscal-year dating and delisting mapping; date-ranged NYSE/AMEX/NASDAQ universe; 18 predictors incl. MB\_MISSING; market-feature imputation; fold-safe purged tuning CV). Test period 2015--2023, 25,512 firm-years, 404 distress events (prevalence-baseline average precision = 0.0158). Bootstrap average-precision CIs use block resampling by firm (1{,}000 resamples). Brier scores are reported separately (calibration is not cross-model comparable in this table).}
+\label{tab:model_performance_test_v2_4models}
+\small
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper & roc\_auc & precision & recall & f1 & ks\_stat & threshold \\
+\midrule
+Logistic Regression (ridge) & 0.0158 & 0.1751 & 0.1461 & 0.2114 & 0.9203 & 0.1201 & 0.6931 & 0.2047 & 0.7187 & 0.1382 \\
+Random Forest & 0.0158 & 0.1608 & 0.1346 & 0.1908 & 0.9272 & 0.1574 & 0.4975 & 0.2391 & 0.7339 & 0.7940 \\
+XGBoost & 0.0158 & 0.1729 & 0.1450 & 0.2061 & 0.9303 & 0.1579 & 0.5396 & 0.2443 & 0.7369 & 0.8508 \\
+Neural Network & 0.0158 & 0.1338 & 0.1131 & 0.1603 & 0.9140 & 0.1053 & 0.7327 & 0.1841 & 0.7061 & 0.8690 \\
+\bottomrule
+\end{tabular}
+\end{table}

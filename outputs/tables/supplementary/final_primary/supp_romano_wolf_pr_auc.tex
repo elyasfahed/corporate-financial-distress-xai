@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Romano--Wolf stepdown inference on pairwise test PR-AUC differences (post-hoc supplementary). The conventional ordered stepdown is used: hypotheses are ranked by descending absolute studentised statistic and removed one at a time, each judged against the bootstrap distribution of the maximum studentised statistic over itself and every smaller-statistic hypothesis, with adjusted $p$-values made monotone along that ordering. The procedure controls the family-wise error rate while exploiting the correlation between comparisons that Holm must ignore. Scheme \texttt{firm} resamples firms; \texttt{firm\_year} resamples firms and fiscal years independently. 2000 resamples, seed 42. No model is refitted.}
+\label{tab:supp_romano_wolf}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+scheme & comparison & pr\_auc\_delta & std\_error & t\_statistic & p\_romano\_wolf & reject\_at\_5pct \\
+\midrule
+firm & Logistic regression (ridge) vs Random forest & 0.0143 & 0.0132 & 1.0849 & 0.3595 & False \\
+firm & Logistic regression (ridge) vs XGBoost & 0.0022 & 0.0134 & 0.1643 & 0.8650 & False \\
+firm & Logistic regression (ridge) vs Neural network (balanced) & 0.0414 & 0.0158 & 2.6185 & 0.0350 & True \\
+firm & Random forest vs XGBoost & -0.0121 & 0.0058 & 2.1034 & 0.1000 & False \\
+firm & Random forest vs Neural network (balanced) & 0.0270 & 0.0125 & 2.1596 & 0.1000 & False \\
+firm & XGBoost vs Neural network (balanced) & 0.0392 & 0.0131 & 2.9956 & 0.0155 & True \\
+firm\_year & Logistic regression (ridge) vs Random forest & 0.0143 & 0.0227 & 0.6309 & 0.6050 & False \\
+firm\_year & Logistic regression (ridge) vs XGBoost & 0.0022 & 0.0237 & 0.0931 & 0.9245 & False \\
+firm\_year & Logistic regression (ridge) vs Neural network (balanced) & 0.0414 & 0.0325 & 1.2750 & 0.4510 & False \\
+firm\_year & Random forest vs XGBoost & -0.0121 & 0.0091 & 1.3322 & 0.4510 & False \\
+firm\_year & Random forest vs Neural network (balanced) & 0.0270 & 0.0238 & 1.1364 & 0.4765 & False \\
+firm\_year & XGBoost vs Neural network (balanced) & 0.0392 & 0.0260 & 1.5073 & 0.3665 & False \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

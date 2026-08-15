@@ -1,0 +1,55 @@
+model,rank,feature,mean_abs_shap
+XGBoost,1,RSIZE,0.74369
+XGBoost,2,PRICE,0.70617
+XGBoost,3,NITA,0.39452
+XGBoost,4,TLTA,0.30311
+XGBoost,5,OCF_TA,0.27649
+XGBoost,6,EXRET,0.17975
+XGBoost,7,SIGMA,0.15856
+XGBoost,8,LNMK,0.1167
+XGBoost,9,CLCA,0.10276
+XGBoost,10,WCTA,0.09706
+XGBoost,11,CASHTA,0.09354
+XGBoost,12,CHIN,0.09331
+XGBoost,13,NITA_LAG,0.08175
+XGBoost,14,LNTA,0.0734
+XGBoost,15,MB,0.05806
+XGBoost,16,INTWO,0.02879
+XGBoost,17,MB_MISSING,0.00981
+XGBoost,18,OENEG,0.0023
+Logistic Regression (ridge),1,RSIZE,1.9784
+Logistic Regression (ridge),2,LNTA,0.54025
+Logistic Regression (ridge),3,LNMK,0.47809
+Logistic Regression (ridge),4,PRICE,0.28484
+Logistic Regression (ridge),5,OCF_TA,0.2822
+Logistic Regression (ridge),6,TLTA,0.28003
+Logistic Regression (ridge),7,INTWO,0.20376
+Logistic Regression (ridge),8,CHIN,0.16702
+Logistic Regression (ridge),9,MB,0.16164
+Logistic Regression (ridge),10,SIGMA,0.12945
+Logistic Regression (ridge),11,WCTA,0.08694
+Logistic Regression (ridge),12,EXRET,0.0688
+Logistic Regression (ridge),13,CASHTA,0.06818
+Logistic Regression (ridge),14,NITA,0.06639
+Logistic Regression (ridge),15,CLCA,0.05749
+Logistic Regression (ridge),16,NITA_LAG,0.05434
+Logistic Regression (ridge),17,MB_MISSING,0.05421
+Logistic Regression (ridge),18,OENEG,0.02021
+Random Forest,1,PRICE,0.11705
+Random Forest,2,RSIZE,0.10228
+Random Forest,3,NITA,0.07954
+Random Forest,4,TLTA,0.05212
+Random Forest,5,OCF_TA,0.035
+Random Forest,6,EXRET,0.02916
+Random Forest,7,LNMK,0.02552
+Random Forest,8,SIGMA,0.02096
+Random Forest,9,CLCA,0.01854
+Random Forest,10,WCTA,0.01606
+Random Forest,11,CASHTA,0.01312
+Random Forest,12,NITA_LAG,0.01131
+Random Forest,13,CHIN,0.01005
+Random Forest,14,MB,0.0083
+Random Forest,15,LNTA,0.00724
+Random Forest,16,INTWO,0.00513
+Random Forest,17,MB_MISSING,0.00084
+Random Forest,18,OENEG,0.00054

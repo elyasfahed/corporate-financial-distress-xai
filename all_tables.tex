@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{etoolbox}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\DeclareUnicodeCharacter{00A7}{\S}
+\DeclareUnicodeCharacter{2013}{--}
+\DeclareUnicodeCharacter{2014}{--}
+\DeclareUnicodeCharacter{2020}{\dagger}
+\DeclareUnicodeCharacter{2192}{$\to$}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+
+% Included table fragments contain raw variable names with underscores.
+\catcode`\_=12
+
+% Scale each tabular only when needed, preventing overfull table boxes.
+\BeforeBeginEnvironment{tabular}{\begin{adjustbox}{max width=\linewidth}}
+\AfterEndEnvironment{tabular}{\end{adjustbox}}
+
+\newcommand{\tablefile}[2]{%
+  \clearpage
+  \subsection*{#1}
+  \begingroup
+  \input{#2}
+  \endgroup
+}
+
+\title{All Thesis Tables}
+\author{Elyas Fahad Elyas}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Descriptive Tables}
+\tablefile{Sample Attrition}{outputs/tables/descriptive/sample_attrition.tex}
+\tablefile{Annual Sample Composition}{outputs/tables/descriptive/sample_composition_annual.tex}
+\tablefile{Sample Composition by SIC}{outputs/tables/descriptive/sample_composition_by_sic.tex}
+\tablefile{Predictor Summary Statistics}{outputs/tables/descriptive/predictor_summary_stats.tex}
+\tablefile{Label Sensitivity by Year}{outputs/tables/descriptive/label_sensitivity_annual.tex}
+\tablefile{High Correlation Pairs}{outputs/tables/descriptive/high_correlation_pairs.tex}
+\tablefile{Correlation Matrix}{outputs/tables/descriptive/correlation_matrix.tex}
+
+\section{Model Results}
+\tablefile{Classical Benchmarks}{outputs/tables/model_results/classical_benchmarks.tex}
+\tablefile{Test-Set Model Performance}{outputs/tables/model_results/model_performance_test.tex}
+\tablefile{Logistic Regression Calibration}{outputs/tables/model_results/lr_calibration_comparison.tex}
+\tablefile{Significance Tests}{outputs/tables/model_results/significance_tests.tex}
+\tablefile{Subperiod Performance}{outputs/tables/model_results/subperiod_performance.tex}
+
+\section{Robustness Tables}
+\tablefile{Consolidated Robustness Results}{outputs/tables/robustness/robustness_consolidated.tex}
+\tablefile{H2 Leakage Sensitivity}{outputs/tables/robustness/h2_leakage_all_results.tex}
+\tablefile{H2 Design Optimism}{outputs/tables/robustness/h2_design_optimism.tex}
+
+\section{SHAP Tables}
+\tablefile{Kendall Tau, Logistic Regression}{outputs/tables/shap/kendall_tau_logistic_regression.tex}
+\tablefile{Kendall Tau, XGBoost}{outputs/tables/shap/kendall_tau_xgboost.tex}
+\tablefile{SHAP Ranking, Logistic Regression}{outputs/tables/shap/shap_ranking_logistic_regression.tex}
+\tablefile{SHAP Ranking, XGBoost}{outputs/tables/shap/shap_ranking_xgboost.tex}
+\tablefile{SHAP Stability, XGBoost}{outputs/tables/shap/shap_stability_xgboost.tex}
+\tablefile{Theory Consistency}{outputs/tables/shap/theory_consistency_table.tex}
+\tablefile{Dependence Support: EXRET}{outputs/tables/shap/dependence_support_exret_xgboost.tex}
+\tablefile{Dependence Support: LNTA}{outputs/tables/shap/dependence_support_lnta_xgboost.tex}
+\tablefile{Dependence Support: NITA}{outputs/tables/shap/dependence_support_nita_xgboost.tex}
+\tablefile{Dependence Support: SIGMA}{outputs/tables/shap/dependence_support_sigma_xgboost.tex}
+\tablefile{Dependence Support: TLTA}{outputs/tables/shap/dependence_support_tlta_xgboost.tex}
+
+\end{document}

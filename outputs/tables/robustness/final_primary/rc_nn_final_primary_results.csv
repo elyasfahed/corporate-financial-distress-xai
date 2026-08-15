@@ -1,0 +1,7 @@
+check,n_test,test_events,prevalence_baseline_pr_auc,pr_auc,pr_auc_ci_lower,pr_auc_ci_upper,roc_auc,f1,n_features
+Primary specification,25512,404,0.0158,0.1338,0.1131,0.1603,0.914,0.1841,18
+RC1 bankruptcy-reason proxy,25512,69,0.0027,0.0317,0.0194,0.061,0.85,0.0508,18
+RC2 six-month horizon,25512,180,0.0071,0.0613,0.0497,0.0822,0.9069,0.115,18
+RC3 SMOTENC,25512,404,0.0158,0.1116,0.0955,0.1363,0.8984,0.1824,18
+RC4 accounting-only,25512,404,0.0158,0.1156,0.0978,0.1386,0.8932,0.1897,11
+RC5 utilities included,26417,405,0.0153,0.1259,0.1073,0.1535,0.9131,0.1863,18

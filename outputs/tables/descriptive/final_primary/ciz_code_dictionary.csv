@@ -1,0 +1,39 @@
+Action,CRSP action description,Reason,CRSP reason description,Legacy code,Events,Label
+MER,Merger,UNAV,Unavailable,--,14780,--
+GLI,Liquidation,UNAV,Unavailable,450,2667,P+N
+GDR,Dropped,FING,Financial Guidelines,584,1646,P+N
+GDR,Dropped,INSC,Insufficient Capital,560,1457,P+N
+GDR,Dropped,UNAV,Unavailable,500,1205,P
+GDR,Dropped,LP,Low Price,552,1205,P+N
+GEX,Exchange,UNAV,Unavailable,--,1112,--
+GDR,Dropped,DELQ,Delinquent,580,1074,P
+GDR,Dropped,BKPY,Bankruptcy,574,950,P+N+B
+GDR,Dropped,CORQ,Company Request,570,768,excl. (vol.)
+GDR,Dropped,INSF,Insufficient Float,561,728,P
+GDR,Dropped,MTMK,Market Makers,550,483,P
+GDR,Dropped,MVOT,Moved to OTC,520,397,excl. (vol.)
+GDR,Dropped,SHLD,Shareholders,551,259,P
+GDR,Dropped,PUBI,Public Interest,585,207,--
+GDR,Dropped,EQRQ,Equity Requirements,582,194,P+N
+GLI,Liquidation,UNAV,Unavailable,470,143,P+N
+GDR,Dropped,FARG,Failure to Register,581,128,P
+GDR,Dropped,DERE,Deregistration,573,108,P
+GLI,Liquidation,UNAV,Unavailable,460,60,P+N
+GDR,Dropped,FDCV,Fund Conversion,588,53,--
+GDR,Dropped,SERQ,SEC Required,591,40,--
+GDR,Dropped,MVB,Moved to Boston,510,34,--
+GDR,Dropped,VIO,Violation,587,19,--
+GDR,Dropped,MVPAC,Moved to Pacific,516,18,--
+GDR,Dropped,MVMF,Moved to Mutual Fund,505,18,--
+GDR,Dropped,OFFRE,Offer Rescinded,575,17,P
+GDR,Dropped,UNL,Unlisted,589,16,--
+GDR,Dropped,DEEX,Denied Exception,583,11,P
+GLI,Liquidation,UNAV,Unavailable,400,8,P+N
+GLI,Liquidation,UNAV,Unavailable,490,6,P+N
+GDR,Dropped,MVTO,Moved to Toronto,519,5,--
+GLI,Liquidation,UNAV,Unavailable,480,4,P+N
+GDR,Dropped,MVNM,Moved to NYSE MKT,502,4,--
+GDR,Dropped,MVPH,Moved to Philadelphia,517,3,--
+LOS,Lost Source,UNAV,Unavailable,--,3,--
+GDR,Dropped,MVCHI,Moved to Chicago,513,2,--
+GDR,Dropped,MVMO,Moved to Montreal,514,1,--

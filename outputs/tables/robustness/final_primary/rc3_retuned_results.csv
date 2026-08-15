@@ -1,0 +1,4 @@
+model,prevalence_baseline_pr_auc,pr_auc,roc_auc,precision,recall,f1,ks_stat,brier_score,threshold,pr_auc_ci_lower,pr_auc_ci_upper
+logistic_regression,0.0158,0.1762,0.9194,0.1246,0.6832,0.2108,0.7145,0.179,0.8956,0.1464,0.2133
+random_forest,0.0158,0.1293,0.9209,0.1231,0.5767,0.2029,0.7318,0.1019,0.7592,0.1096,0.1526
+xgboost,0.0158,0.1356,0.9212,0.1623,0.2921,0.2087,0.7226,0.1154,0.8631,0.1145,0.1617

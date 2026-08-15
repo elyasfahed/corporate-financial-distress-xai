@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\caption{Sample construction and attrition. Starting from the raw Compustat universe (1990--2023), firm-years are sequentially dropped according to the exclusion criteria defined in \S4.1. The final merged analysis panel covers \num{117183} firm-years across \num{11857} unique firms; the modelling sample used for estimation and evaluation (\num{110837} firm-years) is a further subset after the $\geq$8-of-11 accounting-coverage filter and the exclusion of the 2009 and 2014 purged boundary years. The ``U1'' step applies the date-ranged NYSE/AMEX/NASDAQ common-share universe filter.}
+\label{tab:sample_attrition}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Step & Firm-years remaining & Unique firms & Dropped (firm-years) \\
+\midrule
+01  Raw Compustat & 417,671 & 39,011 & --- \\
+02  Excl. financials+utilities & 273,933 & 24,693 & (143,738) \\
+03  Excl. at $\leq$ 0 or missing & 263,579 & 24,336 & (10,354) \\
+04  Restrict to sample period & 251,588 & 23,922 & (11,991) \\
+05  Deduplicated gvkey-fyear & 251,588 & 23,922 & --- \\
+F1: Drop missing/fallback filing dates & 157,628 & 17,287 & (93,960) \\
+06  After CCM left-join (pre-date-filter) & 189,474 & 17,287 & --- \\
+07  CCM date-range filter applied & 125,312 & 14,042 & (64,162) \\
+08  Deduplicated gvkey-fyear post-CCM & 125,312 & 14,042 & --- \\
+09  Excl. missing PERMNO & 125,312 & 14,042 & --- \\
+U1: Universe filter (US common shares) & 118,625 & 13,182 & (6,687) \\
+10  Excl. missing market cap & 118,586 & 13,182 & (39) \\
+11  $\geq$2 consec. years filter & 117,183 & 11,857 & (1,403) \\
+FINAL analysis sample & 117,183 & 11,857 & --- \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

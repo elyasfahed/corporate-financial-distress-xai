@@ -1,0 +1,3 @@
+ml_model,adv_chronological,lift_adv_chronological,adv_firm_random,delta_adv_firm_random,lift_adv_firm_random,delta_lift_adv_firm_random,sd_adv_firm_random,adv_obs_random,delta_adv_obs_random,lift_adv_obs_random,delta_lift_adv_obs_random,sd_adv_obs_random,adv_chronological_leaky_train,delta_adv_chronological_leaky_train,lift_adv_chronological_leaky_train,delta_lift_adv_chronological_leaky_train,sd_adv_chronological_leaky_train
+random_forest,-0.0099,-0.63,0.0238,0.0337,0.98,1.6,0.0091,0.0193,0.0292,0.75,1.38,0.0068,-0.0028,0.0071,-0.18,0.45,0.012
+xgboost,-0.0149,-0.94,0.0263,0.0412,1.08,2.03,0.012,0.0237,0.0386,0.94,1.88,0.0049,-0.0131,0.0018,-0.83,0.11,0.0125

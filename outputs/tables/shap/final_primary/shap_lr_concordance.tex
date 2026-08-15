@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\centering
+\caption{Kendall's $\tau$ concordance between mean-$|$SHAP$|$ feature rankings and the ridge logistic regression's standardised coefficient magnitudes (18 predictors, primary specification). High concordance indicates the models exploit the same economic signals.}
+\label{tab:v2_shap_lr_concordance}
+\small
+\begin{tabular}{lrrr}
+\toprule
+shap\_model & vs & kendall\_tau & p\_value \\
+\midrule
+XGBoost & LR standardised |coefficient| & 0.3590 & 0.0395 \\
+Logistic Regression & LR standardised |coefficient| & 0.8690 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,2 @@
+index_rows_any_time_eligible,rows_not_eligible_as_of_month,share_affected_pct,vwretd_correlation,vwretd_mean_abs_diff,total_market_cap_log_ratio_mean,total_market_cap_log_ratio_sd,rsize_shift_as_pct_of_one_sd,within_month_rsize_ordering_changed
+3975777,123149,3.1,0.999975,0.000179,0.00735,0.01013,1.32,False

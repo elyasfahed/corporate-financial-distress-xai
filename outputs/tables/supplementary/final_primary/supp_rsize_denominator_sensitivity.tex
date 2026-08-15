@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Effect of the RSIZE denominator convention on test performance (post-hoc supplementary). The frozen estimators are re-scored on RSIZE shifted by the measured month-specific denominator difference; no model is refitted. This holds the fitted parameters fixed and therefore bounds the convention's effect on the reported metrics rather than simulating a full rebuild.}
+\label{tab:supp_rsize_sensitivity}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrr}
+\toprule
+model & pr\_auc\_frozen\_denominator & pr\_auc\_date\_ranged\_denominator & pr\_auc\_delta & roc\_auc\_frozen & roc\_auc\_date\_ranged \\
+\midrule
+Logistic regression (ridge) & 0.1751 & 0.1751 & -9e-05 & 0.9203 & 0.9203 \\
+Random forest & 0.1608 & 0.1602 & -0.00063 & 0.9272 & 0.9272 \\
+XGBoost & 0.1729 & 0.1732 & 0.00023 & 0.9303 & 0.9304 \\
+Neural network (balanced) & 0.1338 & 0.1341 & 0.00036 & 0.914 & 0.9141 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

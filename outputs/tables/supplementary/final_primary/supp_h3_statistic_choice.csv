@@ -1,0 +1,11 @@
+Rank,Feature,Theory,Mean SHAP,Literal verdict,Feature-SHAP r,Implemented verdict
+1,RSIZE,-,-0.53284,Consistent,-0.8912,Consistent
+2,PRICE,-,-0.52673,Consistent,-0.9557,Consistent
+3,NITA,-,-0.18367,Consistent,-0.7471,Consistent
+4,TLTA,+,-0.11523,Inconsistent,0.9014,Consistent
+5,OCF_TA,-,-0.10285,Consistent,-0.7405,Consistent
+6,EXRET,-,-0.10011,Consistent,-0.5514,Consistent
+7,SIGMA,+,-0.11307,Inconsistent,0.8188,Consistent
+8,LNMK,-,-0.1019,Consistent,-0.8016,Consistent
+9,CLCA,+,-0.06023,Inconsistent,0.7627,Consistent
+10,WCTA,-,-0.05886,Consistent,-0.884,Consistent

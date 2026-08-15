@@ -1,0 +1,2 @@
+check,model,prevalence_baseline_pr_auc,pr_auc,roc_auc,precision,recall,f1,ks_stat,brier_score,brier_calibrated,threshold,pr_auc_ci_lower,pr_auc_ci_upper
+Primary specification,neural_network_balanced,0.0158,0.1338,0.914,0.1053,0.7327,0.1841,0.7061,0.1703,0.0154,0.869,0.1131,0.1603

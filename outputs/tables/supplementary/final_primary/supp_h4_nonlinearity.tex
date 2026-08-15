@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Curvature diagnostics for H\textsubscript{4} (exploratory corroboration): is the relation between an XGBoost SHAP attribution and its own feature non-linear? Spline complexity and knot placement are fixed in advance (natural cubic spline, knots at the 0.05, 0.275, 0.5, 0.725, 0.95 quantiles) and are identical across features, replications and folds. \emph{Effect size and test are reported separately and must not be conflated.} \texttt{gain\_in\_sample} is the extra variance explained by the spline over a straight line; it is the improvement of a richer nested model on the same data and is therefore \textbf{non-negative by construction}, so it carries no evidence against linearity on its own. \texttt{gain\_out\_of\_fold} repeats the comparison under 5-fold firm-grouped out-of-fold prediction, where flexibility that only interpolates is penalised and the gain may be negative. \texttt{p\_wild\_cluster} is the inferential quantity: a firm-cluster wild bootstrap (999 replications, Rademacher weights drawn per firm, seed 42) conducted \emph{under the fitted linear null}, so the reference distribution is the distribution of the gain when the conditional mean really is linear; \texttt{null\_gain\_p95} is that distribution's 95th percentile. These diagnostics were designed after the results were observed and do not alter the pre-registered H\textsubscript{4} wording.}
+\label{tab:supp_h4_nonlinearity}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+feature & r2\_linear & r2\_spline & gain\_in\_sample & gain\_out\_of\_fold & null\_gain\_p95 & p\_wild\_cluster \\
+\midrule
+TLTA & 0.8125 & 0.8603 & 0.0479 & 0.0477 & 0.0003 & 0.0010 \\
+NITA & 0.5581 & 0.9206 & 0.3625 & 0.3631 & 0.0006 & 0.0010 \\
+SIGMA & 0.6705 & 0.8159 & 0.1454 & 0.1452 & 0.0005 & 0.0010 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

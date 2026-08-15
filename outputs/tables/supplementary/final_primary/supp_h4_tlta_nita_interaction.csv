@@ -1,0 +1,10 @@
+TLTA_tertile,NITA_tertile,mean_shap_interaction,n
+high,high,0.0215,441
+high,low,-0.00182,382
+high,mid,0.00448,511
+low,high,0.08816,387
+low,low,-0.09537,619
+low,mid,-0.01645,327
+mid,high,0.03393,505
+mid,low,-0.02437,332
+mid,mid,0.01078,496

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Out-of-sample discrimination of the three Blueprint-v4 models under the primary specification (test 2015--2023). Calibration is reported separately in the validation-Platt-scaled calibration comparison, where scores are cross-model comparable; raw Brier is omitted here because the uncalibrated tree scores are not probabilities and their raw Brier is not comparable to the logistic regression's.}
+\label{tab:model_performance_test_v2_3models}
+\small
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+logistic\_regression & 0.0158 & 0.1751 & 0.9203 & 0.1201 & 0.6931 & 0.2047 & 0.7187 & 0.1382 & 0.1461 & 0.2114 \\
+random\_forest & 0.0158 & 0.1608 & 0.9272 & 0.1574 & 0.4975 & 0.2391 & 0.7339 & 0.7940 & 0.1346 & 0.1908 \\
+xgboost & 0.0158 & 0.1729 & 0.9303 & 0.1579 & 0.5396 & 0.2443 & 0.7369 & 0.8508 & 0.1450 & 0.2061 \\
+\bottomrule
+\end{tabular}
+\end{table}

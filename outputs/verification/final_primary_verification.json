@@ -1,0 +1,1358 @@
+{
+  "verified_at_utc": "2026-08-14T15:54:40+00:00",
+  "spec": "final_primary",
+  "result": "PASS",
+  "python": "3.11.9",
+  "checks": [
+    {
+      "name": "active artifact namespace is final_primary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "final primary feature set is the disclosed 18-variable set",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "train model sample exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\train.parquet"
+    },
+    {
+      "name": "train is non-empty",
+      "passed": true,
+      "detail": "n=74,172"
+    },
+    {
+      "name": "train has events",
+      "passed": true,
+      "detail": "events=2,234"
+    },
+    {
+      "name": "train outcome is binary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "train year bounds",
+      "passed": true,
+      "detail": "(1990, 2008)"
+    },
+    {
+      "name": "train firm-years are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "train has all 18 predictors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "train predictors are finite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "train raw checkpoint exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\train_raw.parquet"
+    },
+    {
+      "name": "train positive labels obey [F,F+365]",
+      "passed": true,
+      "detail": "checked=2,244"
+    },
+    {
+      "name": "val model sample exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\val.parquet"
+    },
+    {
+      "name": "val is non-empty",
+      "passed": true,
+      "detail": "n=11,153"
+    },
+    {
+      "name": "val has events",
+      "passed": true,
+      "detail": "events=146"
+    },
+    {
+      "name": "val outcome is binary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "val year bounds",
+      "passed": true,
+      "detail": "(2010, 2013)"
+    },
+    {
+      "name": "val firm-years are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "val has all 18 predictors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "val predictors are finite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "val raw checkpoint exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\val_raw.parquet"
+    },
+    {
+      "name": "val positive labels obey [F,F+365]",
+      "passed": true,
+      "detail": "checked=146"
+    },
+    {
+      "name": "test model sample exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\test.parquet"
+    },
+    {
+      "name": "test is non-empty",
+      "passed": true,
+      "detail": "n=25,512"
+    },
+    {
+      "name": "test has events",
+      "passed": true,
+      "detail": "events=404"
+    },
+    {
+      "name": "test outcome is binary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "test year bounds",
+      "passed": true,
+      "detail": "(2015, 2023)"
+    },
+    {
+      "name": "test firm-years are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "test has all 18 predictors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "test predictors are finite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "test raw checkpoint exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\samples\\test_raw.parquet"
+    },
+    {
+      "name": "test positive labels obey [F,F+365]",
+      "passed": true,
+      "detail": "checked=405"
+    },
+    {
+      "name": "chronological samples have no firm-year overlap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "author outcome-definition approval exists",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\outcome_definition_approval.yaml"
+    },
+    {
+      "name": "primary outcome name is exact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "primary event column is the cleaned performance-core label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "performance-delisting legacy-code family is exact",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "voluntary/administrative excluded codes are exact ({520, 570})",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "short primary rule states the voluntary-exit exclusion",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "RC1 is identified as a bankruptcy-reason proxy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "delisting extract exists",
+      "passed": true,
+      "detail": "data\\raw_final_primary\\crsp_delisting_raw.parquet"
+    },
+    {
+      "name": "delisting extract carries the core label + reconstructed code",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "core label == performance family minus voluntary codes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no core-positive event carries an excluded voluntary code",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "merged audit panel exists",
+      "passed": true,
+      "detail": "data\\processed_final_primary\\merged\\panel_raw.parquet"
+    },
+    {
+      "name": "CUSIP audit flags are present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical CUSIP validation has coverage",
+      "passed": true,
+      "detail": "available=49,241"
+    },
+    {
+      "name": "CUSIP match/mismatch accounting is complete",
+      "passed": true,
+      "detail": "matched=46,542, mismatched=2,699"
+    },
+    {
+      "name": "point-in-time CUSIP validation rate is at least 90%",
+      "passed": true,
+      "detail": "match_rate=94.52%"
+    },
+    {
+      "name": "primary run manifest exists",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\run_manifest.json"
+    },
+    {
+      "name": "manifest specification matches",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "producing src/scripts tree was clean at provenance capture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "recorded code fingerprint matches current code",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "pre-refresh manifest is preserved",
+      "passed": true,
+      "detail": "run_manifest_pre_2026_07_22_refresh.json"
+    },
+    {
+      "name": "pre-refresh manifest hash matches refresh disclosure",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "post-hoc provenance refresh reason is disclosed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "saved model: logistic_regression",
+      "passed": true,
+      "detail": "outputs\\models\\saved\\final_primary\\logistic_regression.joblib"
+    },
+    {
+      "name": "model config: logistic_regression",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\logistic_regression_config.yaml"
+    },
+    {
+      "name": "logistic_regression Optuna target is 100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "logistic_regression config records 100 completed trials",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "logistic_regression threshold is recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "persistent Optuna study: logistic_regression",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\optuna_logistic_regression.db"
+    },
+    {
+      "name": "logistic_regression database has 100 COMPLETE trials",
+      "passed": true,
+      "detail": "complete=100"
+    },
+    {
+      "name": "saved model: random_forest",
+      "passed": true,
+      "detail": "outputs\\models\\saved\\final_primary\\random_forest.joblib"
+    },
+    {
+      "name": "model config: random_forest",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\random_forest_config.yaml"
+    },
+    {
+      "name": "random_forest Optuna target is 100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_forest config records 100 completed trials",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "random_forest threshold is recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "persistent Optuna study: random_forest",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\optuna_random_forest.db"
+    },
+    {
+      "name": "random_forest database has 100 COMPLETE trials",
+      "passed": true,
+      "detail": "complete=100"
+    },
+    {
+      "name": "saved model: xgboost",
+      "passed": true,
+      "detail": "outputs\\models\\saved\\final_primary\\xgboost.joblib"
+    },
+    {
+      "name": "model config: xgboost",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\xgboost_config.yaml"
+    },
+    {
+      "name": "xgboost Optuna target is 100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "xgboost config records 100 completed trials",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "xgboost threshold is recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "persistent Optuna study: xgboost",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\optuna_xgboost.db"
+    },
+    {
+      "name": "xgboost database has 100 COMPLETE trials",
+      "passed": true,
+      "detail": "complete=100"
+    },
+    {
+      "name": "saved model: neural_network_balanced",
+      "passed": true,
+      "detail": "outputs\\models\\saved\\final_primary\\neural_network_balanced.joblib"
+    },
+    {
+      "name": "model config: neural_network_balanced",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\neural_network_balanced_config.yaml"
+    },
+    {
+      "name": "neural_network_balanced Optuna target is 100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "neural_network_balanced config records 100 completed trials",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "neural_network_balanced threshold is recorded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "persistent Optuna study: neural_network_balanced",
+      "passed": true,
+      "detail": "outputs\\models\\configs\\final_primary\\optuna_neural_network_balanced.db"
+    },
+    {
+      "name": "neural_network_balanced database has 100 COMPLETE trials",
+      "passed": true,
+      "detail": "complete=100"
+    },
+    {
+      "name": "manifest data hash: train",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest data hash: val",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest data hash: test",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest data hash: train_raw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest data hash: val_raw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest data hash: test_raw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest model hash: logistic_regression.joblib",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest model hash: neural_network_balanced.joblib",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest model hash: random_forest.joblib",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manifest model hash: xgboost.joblib",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "four-model headline table exists",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\model_performance_test_4models.csv"
+    },
+    {
+      "name": "headline contains exactly the four primary models",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "independent logistic_regression pr_auc",
+      "passed": true,
+      "detail": "table=0.1751, recomputed=0.1751"
+    },
+    {
+      "name": "independent logistic_regression roc_auc",
+      "passed": true,
+      "detail": "table=0.9203, recomputed=0.9203"
+    },
+    {
+      "name": "independent logistic_regression precision",
+      "passed": true,
+      "detail": "table=0.1201, recomputed=0.1201"
+    },
+    {
+      "name": "independent logistic_regression recall",
+      "passed": true,
+      "detail": "table=0.6931, recomputed=0.6931"
+    },
+    {
+      "name": "independent logistic_regression f1",
+      "passed": true,
+      "detail": "table=0.2047, recomputed=0.2047"
+    },
+    {
+      "name": "independent random_forest pr_auc",
+      "passed": true,
+      "detail": "table=0.1608, recomputed=0.1608"
+    },
+    {
+      "name": "independent random_forest roc_auc",
+      "passed": true,
+      "detail": "table=0.9272, recomputed=0.9272"
+    },
+    {
+      "name": "independent random_forest precision",
+      "passed": true,
+      "detail": "table=0.1574, recomputed=0.1574"
+    },
+    {
+      "name": "independent random_forest recall",
+      "passed": true,
+      "detail": "table=0.4975, recomputed=0.4975"
+    },
+    {
+      "name": "independent random_forest f1",
+      "passed": true,
+      "detail": "table=0.2391, recomputed=0.2391"
+    },
+    {
+      "name": "independent xgboost pr_auc",
+      "passed": true,
+      "detail": "table=0.1729, recomputed=0.1729"
+    },
+    {
+      "name": "independent xgboost roc_auc",
+      "passed": true,
+      "detail": "table=0.9303, recomputed=0.9303"
+    },
+    {
+      "name": "independent xgboost precision",
+      "passed": true,
+      "detail": "table=0.1579, recomputed=0.1579"
+    },
+    {
+      "name": "independent xgboost recall",
+      "passed": true,
+      "detail": "table=0.5396, recomputed=0.5396"
+    },
+    {
+      "name": "independent xgboost f1",
+      "passed": true,
+      "detail": "table=0.2443, recomputed=0.2443"
+    },
+    {
+      "name": "independent neural_network_balanced pr_auc",
+      "passed": true,
+      "detail": "table=0.1338, recomputed=0.1338"
+    },
+    {
+      "name": "independent neural_network_balanced roc_auc",
+      "passed": true,
+      "detail": "table=0.9140, recomputed=0.9140"
+    },
+    {
+      "name": "independent neural_network_balanced precision",
+      "passed": true,
+      "detail": "table=0.1053, recomputed=0.1053"
+    },
+    {
+      "name": "independent neural_network_balanced recall",
+      "passed": true,
+      "detail": "table=0.7327, recomputed=0.7327"
+    },
+    {
+      "name": "independent neural_network_balanced f1",
+      "passed": true,
+      "detail": "table=0.1841, recomputed=0.1841"
+    },
+    {
+      "name": "headline prevalence baseline matches the test sample",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: calibration_comparison_4models.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\calibration_comparison_4models.csv"
+    },
+    {
+      "name": "calibration_comparison_4models.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: model_performance_test_3models.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\model_performance_test_3models.csv"
+    },
+    {
+      "name": "model_performance_test_3models.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: model_performance_test_4models.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\model_performance_test_4models.csv"
+    },
+    {
+      "name": "model_performance_test_4models.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: significance_tests.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\significance_tests.csv"
+    },
+    {
+      "name": "significance_tests.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: subperiod_performance.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\model_results\\final_primary\\subperiod_performance.csv"
+    },
+    {
+      "name": "subperiod_performance.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: h2_design_optimism.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\h2_design_optimism.csv"
+    },
+    {
+      "name": "h2_design_optimism.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: h2_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\h2_results.csv"
+    },
+    {
+      "name": "h2_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: narrow_label_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\narrow_label_results.csv"
+    },
+    {
+      "name": "narrow_label_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: neural_network_balanced_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\neural_network_balanced_results.csv"
+    },
+    {
+      "name": "neural_network_balanced_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: rc1_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\rc1_results.csv"
+    },
+    {
+      "name": "rc1_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: rc2_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\rc2_results.csv"
+    },
+    {
+      "name": "rc2_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: rc3_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\rc3_results.csv"
+    },
+    {
+      "name": "rc3_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: rc4_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\rc4_results.csv"
+    },
+    {
+      "name": "rc4_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: rc5_results.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\rc5_results.csv"
+    },
+    {
+      "name": "rc5_results.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: robustness_consolidated.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\robustness_consolidated.csv"
+    },
+    {
+      "name": "robustness_consolidated.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: temporal_bootstrap_ci.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\temporal_bootstrap_ci.csv"
+    },
+    {
+      "name": "temporal_bootstrap_ci.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: temporal_bootstrap_significance.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\robustness\\final_primary\\temporal_bootstrap_significance.csv"
+    },
+    {
+      "name": "temporal_bootstrap_significance.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: lime_shap_agreement.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\shap\\final_primary\\lime_shap_agreement.csv"
+    },
+    {
+      "name": "lime_shap_agreement.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: shap_importance.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\shap\\final_primary\\shap_importance.csv"
+    },
+    {
+      "name": "shap_importance.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: shap_lr_concordance.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\shap\\final_primary\\shap_lr_concordance.csv"
+    },
+    {
+      "name": "shap_lr_concordance.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: shap_stability.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\shap\\final_primary\\shap_stability.csv"
+    },
+    {
+      "name": "shap_stability.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: theory_consistency.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\shap\\final_primary\\theory_consistency.csv"
+    },
+    {
+      "name": "theory_consistency.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: correlation_high_pairs.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\descriptive\\final_primary\\correlation_high_pairs.csv"
+    },
+    {
+      "name": "correlation_high_pairs.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: correlation_matrix.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\descriptive\\final_primary\\correlation_matrix.csv"
+    },
+    {
+      "name": "correlation_matrix.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: predictor_summary_stats.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\descriptive\\final_primary\\predictor_summary_stats.csv"
+    },
+    {
+      "name": "predictor_summary_stats.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reporting table: sample_composition_by_year.csv",
+      "passed": true,
+      "detail": "outputs\\tables\\descriptive\\final_primary\\sample_composition_by_year.csv"
+    },
+    {
+      "name": "sample_composition_by_year.csv is non-empty",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "publication figure: distress_rate_timeseries.png",
+      "passed": true,
+      "detail": "outputs\\figures\\descriptive\\final_primary\\distress_rate_timeseries.png"
+    },
+    {
+      "name": "publication figure: distress_rate_timeseries.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\descriptive\\final_primary\\distress_rate_timeseries.pdf"
+    },
+    {
+      "name": "publication figure: calibration_4models.png",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\calibration_4models.png"
+    },
+    {
+      "name": "publication figure: calibration_4models.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\calibration_4models.pdf"
+    },
+    {
+      "name": "publication figure: pr_curves_4models.png",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\pr_curves_4models.png"
+    },
+    {
+      "name": "publication figure: pr_curves_4models.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\pr_curves_4models.pdf"
+    },
+    {
+      "name": "publication figure: roc_curves_4models.png",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\roc_curves_4models.png"
+    },
+    {
+      "name": "publication figure: roc_curves_4models.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\model\\final_primary\\roc_curves_4models.pdf"
+    },
+    {
+      "name": "publication figure: lev_roa_heatmap.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lev_roa_heatmap.png"
+    },
+    {
+      "name": "publication figure: lev_roa_heatmap.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lev_roa_heatmap.pdf"
+    },
+    {
+      "name": "publication figure: lime_fn.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_fn.png"
+    },
+    {
+      "name": "publication figure: lime_fn.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_fn.pdf"
+    },
+    {
+      "name": "publication figure: lime_tn.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_tn.png"
+    },
+    {
+      "name": "publication figure: lime_tn.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_tn.pdf"
+    },
+    {
+      "name": "publication figure: lime_tp.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_tp.png"
+    },
+    {
+      "name": "publication figure: lime_tp.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\lime_tp.pdf"
+    },
+    {
+      "name": "publication figure: shap_bar_logistic_regression.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_logistic_regression.png"
+    },
+    {
+      "name": "publication figure: shap_bar_logistic_regression.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_logistic_regression.pdf"
+    },
+    {
+      "name": "publication figure: shap_bar_random_forest.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_random_forest.png"
+    },
+    {
+      "name": "publication figure: shap_bar_random_forest.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_random_forest.pdf"
+    },
+    {
+      "name": "publication figure: shap_bar_xgboost.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_xgboost.png"
+    },
+    {
+      "name": "publication figure: shap_bar_xgboost.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_bar_xgboost.pdf"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_logistic_regression.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_logistic_regression.png"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_logistic_regression.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_logistic_regression.pdf"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_random_forest.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_random_forest.png"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_random_forest.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_random_forest.pdf"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_xgboost.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_xgboost.png"
+    },
+    {
+      "name": "publication figure: shap_beeswarm_xgboost.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_beeswarm_xgboost.pdf"
+    },
+    {
+      "name": "publication figure: shap_waterfall_fn.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_fn.png"
+    },
+    {
+      "name": "publication figure: shap_waterfall_fn.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_fn.pdf"
+    },
+    {
+      "name": "publication figure: shap_waterfall_tn.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_tn.png"
+    },
+    {
+      "name": "publication figure: shap_waterfall_tn.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_tn.pdf"
+    },
+    {
+      "name": "publication figure: shap_waterfall_tp.png",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_tp.png"
+    },
+    {
+      "name": "publication figure: shap_waterfall_tp.pdf",
+      "passed": true,
+      "detail": "outputs\\figures\\shap\\final_primary\\shap_waterfall_tp.pdf"
+    },
+    {
+      "name": "five nonlinear SHAP dependence figures exist",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "artifacts": {
+    "data\\processed_final_primary\\samples\\train.parquet": {
+      "sha256": "56bebf51f04fa87a8fc9d831c4a14a868c9aa9c070b90e4353d1334dd6e3bff0",
+      "bytes": 23172713
+    },
+    "data\\processed_final_primary\\samples\\train_raw.parquet": {
+      "sha256": "e98aeb561c2117ab18757896c69e21563eaf1b99ca67308f355f6b15eeaee905",
+      "bytes": 23378919
+    },
+    "data\\processed_final_primary\\samples\\val.parquet": {
+      "sha256": "705a36cb7302782e67a0285eb36bc85ce97411fb4b2f0e2ae3a9708db63c1ca1",
+      "bytes": 4142984
+    },
+    "data\\processed_final_primary\\samples\\val_raw.parquet": {
+      "sha256": "8f3ac4ba4f0f8553695a594caee14e47d801f12838c37a5e8e6fca840062b4fd",
+      "bytes": 4165807
+    },
+    "data\\processed_final_primary\\samples\\test.parquet": {
+      "sha256": "197f693d37ebf94f3fbf502c39504d2b33cae437b4b6a5ca5d423880a6309e35",
+      "bytes": 8974665
+    },
+    "data\\processed_final_primary\\samples\\test_raw.parquet": {
+      "sha256": "d49477652b063b4ba6b4ae636114ca9388179375a68bd5028747110565beec76",
+      "bytes": 9075023
+    },
+    "outputs\\models\\configs\\final_primary\\outcome_definition_approval.yaml": {
+      "sha256": "caf751dca00b7deda441498ef4c874cd304cd05e3f529edad515139b4f278b42",
+      "bytes": 2786
+    },
+    "data\\raw_final_primary\\crsp_delisting_raw.parquet": {
+      "sha256": "5f66fd98d8b2898e12436e5972b8612a3aebe9c33998ca433b4b8663b33016d1",
+      "bytes": 720678
+    },
+    "data\\processed_final_primary\\merged\\panel_raw.parquet": {
+      "sha256": "4dc963a9637bd34c65d01497056f58bf842b12d98ef6f15f38a4ab5e9eebdf4a",
+      "bytes": 20833456
+    },
+    "outputs\\models\\configs\\final_primary\\run_manifest.json": {
+      "sha256": "351e1fe3fcf51c3079ce7bbd51c1edd01ea396d54bb8a9b05ca25585234ce7b2",
+      "bytes": 63253
+    },
+    "outputs\\models\\saved\\final_primary\\logistic_regression.joblib": {
+      "sha256": "024ac804f1067b518c6c199c2d2043c10156124677d642258b6978acb0acc9fb",
+      "bytes": 2330
+    },
+    "outputs\\models\\configs\\final_primary\\logistic_regression_config.yaml": {
+      "sha256": "5c968db8c948db85e7495ccb02e4996cf10be95bab4de48cb9f2cec2661cc488",
+      "bytes": 236
+    },
+    "outputs\\models\\configs\\final_primary\\optuna_logistic_regression.db": {
+      "sha256": "3dd086b6bbddee39f64fe698bdffe54794de1ff14d8e555c5ef23908d39b84d9",
+      "bytes": 139264
+    },
+    "outputs\\models\\saved\\final_primary\\random_forest.joblib": {
+      "sha256": "2bc6f8fdbe836c43429654efdc6f85927f91bcc30a2db648a8043d7c476b2474",
+      "bytes": 21085113
+    },
+    "outputs\\models\\configs\\final_primary\\random_forest_config.yaml": {
+      "sha256": "38968a1cdd3edb5146ef82d315fd7959a840437ad5a885ddfecbedb7e181e58d",
+      "bytes": 268
+    },
+    "outputs\\models\\configs\\final_primary\\optuna_random_forest.db": {
+      "sha256": "33fe28b565ebb6955f17ce4ba5bf2d4cf19154bedee12b8f74b5d24d55de535b",
+      "bytes": 184320
+    },
+    "outputs\\models\\saved\\final_primary\\xgboost.joblib": {
+      "sha256": "e16ce34b7294b121620fdb3a6b4b298b2fefa4017e71b40e9adf921c246a5968",
+      "bytes": 1355498
+    },
+    "outputs\\models\\configs\\final_primary\\xgboost_config.yaml": {
+      "sha256": "c3b31f12ad695731293d699c62263dc6dbe5dbc8091acf933ad56f6e63c59905",
+      "bytes": 419
+    },
+    "outputs\\models\\configs\\final_primary\\optuna_xgboost.db": {
+      "sha256": "ad7b2747fd3187f61757db8f5d9dbbe9574ab6366c2ea23c60d701be114b054a",
+      "bytes": 245760
+    },
+    "outputs\\models\\saved\\final_primary\\neural_network_balanced.joblib": {
+      "sha256": "7cfa29df9bde84c885198ba9574952457f263f0db0b11456599fa54dca550461",
+      "bytes": 1182893
+    },
+    "outputs\\models\\configs\\final_primary\\neural_network_balanced_config.yaml": {
+      "sha256": "6386a57cd5a4a742658c0ac6a7f836b5a7143585e9f5b27eee992c720ca85fb9",
+      "bytes": 365
+    },
+    "outputs\\models\\configs\\final_primary\\optuna_neural_network_balanced.db": {
+      "sha256": "d3ef012eb47c126c721269eeebc0015757016ec650a1da3462226e216dc0dab6",
+      "bytes": 188416
+    },
+    "outputs\\tables\\model_results\\final_primary\\model_performance_test_4models.csv": {
+      "sha256": "82e19e695601ce48946e0b4754913e4f86872ede2ab7890cc2ed6876c2d8c83e",
+      "bytes": 464
+    },
+    "outputs\\tables\\model_results\\final_primary\\calibration_comparison_4models.csv": {
+      "sha256": "1e0a535648818135298d672dfd8c7296cc7459e0550ff5658cae168256e28e94",
+      "bytes": 254
+    },
+    "outputs\\tables\\model_results\\final_primary\\model_performance_test_3models.csv": {
+      "sha256": "b1b6ce2c15c4b68da22df21603fba78d3b34cb54e6ba0bb079219c050f8cffea",
+      "bytes": 372
+    },
+    "outputs\\tables\\model_results\\final_primary\\significance_tests.csv": {
+      "sha256": "29a54372d1374fa728f29d8d0b03ddea649e8a3023b02a236aeb2ebf4d8b1021",
+      "bytes": 750
+    },
+    "outputs\\tables\\model_results\\final_primary\\subperiod_performance.csv": {
+      "sha256": "7fd186fc64ba79348d4338cc80a3f029ec02ef4be6504937e357b5499a9ba83f",
+      "bytes": 805
+    },
+    "outputs\\tables\\robustness\\final_primary\\h2_design_optimism.csv": {
+      "sha256": "a73ad9579b4a163ddd14bec57c5f2f5f768ee688dd64bf70cb9a15a6c4ed7223",
+      "bytes": 737
+    },
+    "outputs\\tables\\robustness\\final_primary\\h2_results.csv": {
+      "sha256": "fe38c3f7df4c4c0f4efe275165f2f85602bd1a24696e4bb82ad4461505b8edb0",
+      "bytes": 4689
+    },
+    "outputs\\tables\\robustness\\final_primary\\narrow_label_results.csv": {
+      "sha256": "144fe5d8dca5ddc41dc5e263fe907ba6cc292ba5655459fff34f59fadb0620a4",
+      "bytes": 400
+    },
+    "outputs\\tables\\robustness\\final_primary\\neural_network_balanced_results.csv": {
+      "sha256": "53678e1c88b1a37a3162b2a37586e07265ded6c548f5850e0dff8824467868b7",
+      "bytes": 283
+    },
+    "outputs\\tables\\robustness\\final_primary\\rc1_results.csv": {
+      "sha256": "c8a32696ca4da7d627c957289691a0a4a811e09d6d040a2714cb613a1630bba3",
+      "bytes": 404
+    },
+    "outputs\\tables\\robustness\\final_primary\\rc2_results.csv": {
+      "sha256": "301adf84c286516bc411fba6ae712a0ce0c31089b003304fed53ecabf84ddc5e",
+      "bytes": 404
+    },
+    "outputs\\tables\\robustness\\final_primary\\rc3_results.csv": {
+      "sha256": "fbe7bd93625d7dadf1ab0c22b0dfadec5e2d1f8ebfecb657bf411ca13e76d42c",
+      "bytes": 403
+    },
+    "outputs\\tables\\robustness\\final_primary\\rc4_results.csv": {
+      "sha256": "4e19cb08015490e2817e1c03f88816f05b1f268ed88651a6eea0c22ca76ad4b3",
+      "bytes": 400
+    },
+    "outputs\\tables\\robustness\\final_primary\\rc5_results.csv": {
+      "sha256": "958cf62e7a054c23d9358242ce35e21bd0bb8ccba37fb11ddcf820f0828f747c",
+      "bytes": 401
+    },
+    "outputs\\tables\\robustness\\final_primary\\robustness_consolidated.csv": {
+      "sha256": "a695f0048a5a3a46107505dace14f701a2bbfeadf5136e6b2c899e288fbe367a",
+      "bytes": 1332
+    },
+    "outputs\\tables\\robustness\\final_primary\\temporal_bootstrap_ci.csv": {
+      "sha256": "27a4a0e436d915af140be8f8516e27787ca85498fb5c91f2c44366fdd85a8d34",
+      "bytes": 442
+    },
+    "outputs\\tables\\robustness\\final_primary\\temporal_bootstrap_significance.csv": {
+      "sha256": "0547596b581741fddfc592f5e2c3d9975083285be4e35049021536bef4b1d4ef",
+      "bytes": 230
+    },
+    "outputs\\tables\\shap\\final_primary\\lime_shap_agreement.csv": {
+      "sha256": "1c86d27c05f40ef56a6f5b6736ab6189c7aa536fc257729009175d2b8db05d06",
+      "bytes": 242
+    },
+    "outputs\\tables\\shap\\final_primary\\shap_importance.csv": {
+      "sha256": "99ca5ef21e792e21c14271ac08b1ea0a8c88a07df8beb0f9fcc6ec807a68bb35",
+      "bytes": 1870
+    },
+    "outputs\\tables\\shap\\final_primary\\shap_lr_concordance.csv": {
+      "sha256": "1254dc2063ee12cdad95de451822667a7e592fbb46c5ec58a832dfb0b25310b8",
+      "bytes": 148
+    },
+    "outputs\\tables\\shap\\final_primary\\shap_stability.csv": {
+      "sha256": "72e63fe177eaee9fc9b2a7997e7fc476c47d334727bbf2ee83001134ed36c2a3",
+      "bytes": 352
+    },
+    "outputs\\tables\\shap\\final_primary\\theory_consistency.csv": {
+      "sha256": "e434bc9b559954c5677536cfdcd6945097f61e70277b681e1cc16814c49bb352",
+      "bytes": 1843
+    },
+    "outputs\\tables\\descriptive\\final_primary\\correlation_high_pairs.csv": {
+      "sha256": "41588d694edcaf24936dedf4aa51272c9d2341f87285c03384bc2e02fb28e7a3",
+      "bytes": 173
+    },
+    "outputs\\tables\\descriptive\\final_primary\\correlation_matrix.csv": {
+      "sha256": "c7165944f323c7c109bb63f10c321421e4a73f338edd3dd0e2a76f1d012b4989",
+      "bytes": 2248
+    },
+    "outputs\\tables\\descriptive\\final_primary\\predictor_summary_stats.csv": {
+      "sha256": "c028b8408bd4d7e6441915b0137f15d2996c24800c4a713467b6e850275c2dec",
+      "bytes": 1634
+    },
+    "outputs\\tables\\descriptive\\final_primary\\sample_composition_by_year.csv": {
+      "sha256": "42b2b4b75b3962713e1611b6ffc2a41e069fcb8be37f741a5a381be030de09ed",
+      "bytes": 751
+    },
+    "outputs\\figures\\descriptive\\final_primary\\distress_rate_timeseries.png": {
+      "sha256": "c2ebce32e9089a5ea707c2fbe80863ceedecc88e92d426a59e056e29f93f8c4d",
+      "bytes": 125734
+    },
+    "outputs\\figures\\descriptive\\final_primary\\distress_rate_timeseries.pdf": {
+      "sha256": "3d9efe115c2bd460e9740a2672e593cf92027a80d5be4f2d7217f840d51a510b",
+      "bytes": 18554
+    },
+    "outputs\\figures\\model\\final_primary\\calibration_4models.png": {
+      "sha256": "843a1faa6dd67bcb88aafc1af361a93be57073e34f7df987b4457c9e0d6f9df4",
+      "bytes": 240340
+    },
+    "outputs\\figures\\model\\final_primary\\calibration_4models.pdf": {
+      "sha256": "f3be29b14a8ca168ccd4e6dd41e19623366f2db789f4f58be2951c671f2269bb",
+      "bytes": 25526
+    },
+    "outputs\\figures\\model\\final_primary\\pr_curves_4models.png": {
+      "sha256": "a2e8b85c2072e2c91e4e2d5a086f7cdabc6174b8d8a6ab5b6c4030d7c3e20a18",
+      "bytes": 199135
+    },
+    "outputs\\figures\\model\\final_primary\\pr_curves_4models.pdf": {
+      "sha256": "36e7989d61570e34126dd08ed2dfab538a8821266d1aec448240b7fa5a498c3e",
+      "bytes": 42646
+    },
+    "outputs\\figures\\model\\final_primary\\roc_curves_4models.png": {
+      "sha256": "39e0a25bd82278bdbc6ee59084a68c1d278e286724a66c904cce8f305b29f1dd",
+      "bytes": 176247
+    },
+    "outputs\\figures\\model\\final_primary\\roc_curves_4models.pdf": {
+      "sha256": "faeafe3e19d5dbf415d726b992355c85ada93eb4a0d61f258d21817de98a6423",
+      "bytes": 32080
+    },
+    "outputs\\figures\\shap\\final_primary\\lev_roa_heatmap.png": {
+      "sha256": "e2faa156d09cb506e95a6a9f9c44ee882b28f9025f8390cccbe58ef7b082af18",
+      "bytes": 114787
+    },
+    "outputs\\figures\\shap\\final_primary\\lev_roa_heatmap.pdf": {
+      "sha256": "afbc550f6b949f4ea9930ef685a5ef69de1e891d261958e37d84e237c310a850",
+      "bytes": 25216
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_fn.png": {
+      "sha256": "557756ccccb66bdf5390678a105f15175f2e78982d20e2eb0c3846bff0f90180",
+      "bytes": 197140
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_fn.pdf": {
+      "sha256": "9f08285a2406e197c6fd2cd56088db8cf07f71f16e0341105a340cda148573ed",
+      "bytes": 21184
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_tn.png": {
+      "sha256": "eb1106516388a201297e7fcbbde451c4f7898612d4603094e35cb16fd17a1fea",
+      "bytes": 197512
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_tn.pdf": {
+      "sha256": "8b75cfdfc95fa49ebd4a230d8fbd908cd0274bdf13fffb379ea3a854ab26ccfb",
+      "bytes": 21526
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_tp.png": {
+      "sha256": "0388f326299d95d23fa1159de6bf90d3127f598d2a3bbc097c10c3cd62c7b77d",
+      "bytes": 173615
+    },
+    "outputs\\figures\\shap\\final_primary\\lime_tp.pdf": {
+      "sha256": "af28a21f38c4f2d5b95b5f0dd96abb9a6f6151dbea6f8947e347fa167202a3b3",
+      "bytes": 21086
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_logistic_regression.png": {
+      "sha256": "d99d26ec21755a08ad9c45f0e92c666e9df20586a8f71b8ccf4adc4b16f645e4",
+      "bytes": 93134
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_logistic_regression.pdf": {
+      "sha256": "ba7321564ded6bc6d8c08f3467339b4e520d3bb099eea3369a93d3d238d439fb",
+      "bytes": 20514
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_random_forest.png": {
+      "sha256": "1263dba7b4989af9eb53fc5a269581a87ea206a8cd3628af51027b1cff4806c0",
+      "bytes": 85589
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_random_forest.pdf": {
+      "sha256": "f6fea0d378040798d6bd778683e4f29645ca8742631fe1dfebf4173965eab36b",
+      "bytes": 20393
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_xgboost.png": {
+      "sha256": "f3275003a831d131763a5e354b68d3582375b832859551db4e068973d07e7adf",
+      "bytes": 86147
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_bar_xgboost.pdf": {
+      "sha256": "cadf59bb2aa460aa6a77429e29a16ffb372beefab83b8874c2333663c3add88a",
+      "bytes": 20468
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_logistic_regression.png": {
+      "sha256": "fc0cd87f3af5116333c27461a9904912114a399c665da62f824f18c9b94c1495",
+      "bytes": 224660
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_logistic_regression.pdf": {
+      "sha256": "c3bdc6dd6084e181d84a8f609c731749c1e4460b4d5d595358b0fa284fbd47eb",
+      "bytes": 124451
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_random_forest.png": {
+      "sha256": "e4163a46049f5afef324d3f2f2af31a15413e27b1adb963e54a5921f3849716e",
+      "bytes": 368526
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_random_forest.pdf": {
+      "sha256": "98564c638849b557a9ea549930a52e5272f9469be3abef874185fb00c8d4b212",
+      "bytes": 249594
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_xgboost.png": {
+      "sha256": "83d2ff0bcc9cff04245170dcd01fc6dec43e4f9b118ea36d8c66f823b3e1db1c",
+      "bytes": 404370
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_beeswarm_xgboost.pdf": {
+      "sha256": "6b43266b57e3d6624ac09ddcca238f01c72fbc1274029e6918c6711966756a47",
+      "bytes": 283118
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_fn.png": {
+      "sha256": "a088202963082beb537bab1ab81e7601c248f3c5266612c86fc8656286e4e4da",
+      "bytes": 213686
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_fn.pdf": {
+      "sha256": "2e7c9c47abd38823486794b8ec403065c05aa6b1a780eb39b86f83a8faad990e",
+      "bytes": 26946
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_tn.png": {
+      "sha256": "b3113a7081f0f39aec60c3593f634aea0faf59fb424a069d6212a696a4323713",
+      "bytes": 212814
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_tn.pdf": {
+      "sha256": "704aae1b426dc15f664663532970e9c7cc1f462301b8d056ca823cdf9b6b2d3b",
+      "bytes": 26707
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_tp.png": {
+      "sha256": "fc531b64818e9009bf33352d8929e705c19e52087d22544edb17758619b6fde9",
+      "bytes": 205509
+    },
+    "outputs\\figures\\shap\\final_primary\\shap_waterfall_tp.pdf": {
+      "sha256": "c7d31ebc6f8227923c5f57116e9f343a72c32d240e75ea7c07f850d88c20fb0e",
+      "bytes": 26443
+    }
+  }
+}

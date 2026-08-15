@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Calibration comparison for all four primary models. A single two-parameter Platt (sigmoid) mapping is fitted exclusively on each model's native validation predictions and applied once to the test predictions. The persisted headline logistic regression is unwrapped for this like-for-like comparison. ECE uses 10 equal-count test bins; discrimination metrics continue to use the original ranking scores.}
+\label{tab:final_calibration_comparison}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+model & brier\_raw & brier\_platt & mean\_probability\_platt & ece\_platt\_10bin \\
+\midrule
+Logistic Regression & 0.1840 & 0.0150 & 0.0304 & 0.0146 \\
+Random Forest & 0.0817 & 0.0148 & 0.0259 & 0.0103 \\
+XGBoost & 0.1138 & 0.0147 & 0.0270 & 0.0112 \\
+Neural Network & 0.1703 & 0.0154 & 0.0323 & 0.0165 \\
+\bottomrule
+\end{tabular}
+\end{table}

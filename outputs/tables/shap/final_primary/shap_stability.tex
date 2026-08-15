@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\caption{SHAP importance-rank stability under firm-block bootstrap of the test sample (500 resamples of the precomputed XGBoost SHAP matrix): 95\% rank intervals for the ten highest-importance features.}
+\label{tab:v2_shap_stability}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+model & feature & rank\_full\_test & rank\_ci\_2.5 & rank\_ci\_97.5 & rank\_sd \\
+\midrule
+XGBoost & RSIZE & 1 & 1.0000 & 1.0000 & 0.0000 \\
+XGBoost & PRICE & 2 & 2.0000 & 2.0000 & 0.0000 \\
+XGBoost & NITA & 3 & 3.0000 & 3.0000 & 0.0000 \\
+XGBoost & TLTA & 4 & 4.0000 & 4.0000 & 0.0000 \\
+XGBoost & OCF\_TA & 5 & 5.0000 & 5.0000 & 0.0000 \\
+XGBoost & EXRET & 6 & 6.0000 & 6.0000 & 0.0000 \\
+XGBoost & SIGMA & 7 & 7.0000 & 7.0000 & 0.0000 \\
+XGBoost & LNMK & 8 & 8.0000 & 8.0000 & 0.0000 \\
+XGBoost & CLCA & 9 & 9.0000 & 9.0000 & 0.0000 \\
+XGBoost & WCTA & 10 & 10.0000 & 10.0000 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,5 @@
+model,observed_event_rate,mean_predicted_probability,obs_minus_pred,brier,brier_prevalence_only,brier_skill_score,bss_ci_lower_firm_block,bss_ci_upper_firm_block,calibration_intercept,calibration_slope
+Logistic regression (ridge),0.01584,0.0304,-0.01456,0.014997,0.015585,0.0377,0.0093,0.0627,-0.728,1.2112
+Random forest,0.01584,0.02587,-0.01003,0.014825,0.015585,0.0488,0.0141,0.0774,-0.5691,1.009
+XGBoost,0.01584,0.02703,-0.01119,0.014709,0.015585,0.0562,0.0274,0.0807,-0.6056,1.1187
+Neural network (balanced),0.01584,0.03232,-0.01648,0.015424,0.015585,0.0103,-0.02,0.0371,-0.7946,1.1573

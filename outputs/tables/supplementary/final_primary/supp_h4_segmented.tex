@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Segmented (two-slope) shape summaries for H\textsubscript{4} (exploratory corroboration). A single breakpoint is located by grid search over interior quantiles of the feature. \textbf{The breakpoint is estimated from the data, not pre-specified}, and is reported with a bootstrap interval precisely so it is not read as a theory-confirmed threshold. Unlike the curvature gain the slope change is a \emph{signed} quantity, so its interval is not mechanically one-sided; it is nonetheless a descriptive shape summary rather than a test, because the breakpoint is unidentified under the no-change null (the Davies problem) and the grid search selects it on the same data. A two-segment slope change is also a different object from the point at which the attribution changes \emph{sign}. Intervals are firm-block bootstrap (400 resamples, seed 42).}
+\label{tab:supp_h4_segmented}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+feature & breakpoint\_estimated & breakpoint\_ci\_lower & breakpoint\_ci\_upper & slope\_below & slope\_above & slope\_change & slope\_change\_ci\_lower & slope\_change\_ci\_upper \\
+\midrule
+TLTA & 0.2030 & 0.1936 & 0.2131 & -0.7733 & 1.1478 & 1.9210 & 1.7331 & 2.1328 \\
+NITA & -0.1708 & -0.1779 & -0.1360 & -0.3099 & -2.7183 & -2.4084 & -2.6483 & -2.3179 \\
+SIGMA & 0.0730 & 0.0717 & 0.0742 & -4.4274 & 1.2761 & 5.7036 & 5.2759 & 6.1228 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

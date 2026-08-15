@@ -1,0 +1,9 @@
+scheme,model,test_pr_auc,in_model_set,elimination_p
+firm,Logistic regression (ridge),0.1751462067041587,True,
+firm,Random forest,0.16080913847430378,True,
+firm,XGBoost,0.17294286506578635,True,
+firm,Neural network (balanced),0.13377014555971387,False,0.0085
+firm_year,Logistic regression (ridge),0.1751462067041587,True,
+firm_year,Random forest,0.16080913847430378,True,
+firm_year,XGBoost,0.17294286506578635,True,
+firm_year,Neural network (balanced),0.13377014555971387,True,

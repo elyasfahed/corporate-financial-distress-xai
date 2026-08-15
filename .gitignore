@@ -1,0 +1,71 @@
+# Licensed and local data
+/data/
+.env
+.env.*
+!.env.example
+.pgpass
+wrds_*.cfg
+*.credential
+*.pem
+*.key
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large research artifacts
+/outputs/models/saved/
+/outputs/logs/
+/outputs/**/*.joblib
+/outputs/**/*.parquet
+/outputs/**/*.db
+/outputs/**/*.pkl
+/outputs/**/*.npy
+/outputs/**/*.npz
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Local working directories
+/scratch/
+/tmp/
+/backups/

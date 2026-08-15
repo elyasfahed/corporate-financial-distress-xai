@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Training-side contamination under a corrected design (post-hoc supplementary). Every arm is scored on the same evaluation block --- fiscal years 2015--2019, 13,583 firm-years and 179 distress events --- and differs only in what is added to the FY$\leq$2009 training block. The future block (FY2020--2023) lies entirely after the evaluation block, so training on it is genuine future-information contamination. The two size-matched arms add the same 2,674 rows, drawn from the future block and from the recent past (FY2010--2014) respectively, which separates the effect of future information from the effect of simply having more training data. Hyperparameters are held at the same defaults across all arms, as in the main split-design experiment; preprocessing is fitted within each arm's own training sample. The predecessor design this replaces admitted no future observations at all and its mechanism claim has been withdrawn. Arms: \emph{baseline} adds nothing; \emph{all future} adds the whole FY2020--2023 block; \emph{unevaluated firms} adds only its rows belonging to firms absent from the evaluation block; the two \emph{matched} arms add 2,674 rows drawn from the future block and from FY2010--2014 respectively. The matched arms are replicated over five draws and report the across-draw standard deviation; the other three are deterministic given the year partition and the fixed estimator seed. LR, RF and XGB denote ridge logistic regression, the random forest and XGBoost.}
+\label{tab:supp_h2_training_channel}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Arm & Model & Train rows & Train events & PR-AUC & SD & ROC-AUC & Diff. vs baseline \\
+\midrule
+Baseline & LR & 77,583 & 2307 & 0.1142 & 0.0000 & 0.9163 & 0.0000 \\
+Baseline & RF & 77,583 & 2307 & 0.1186 & 0.0000 & 0.9271 & 0.0000 \\
+Baseline & XGB & 77,583 & 2307 & 0.1254 & 0.0000 & 0.9242 & 0.0000 \\
++ all future & LR & 89,576 & 2533 & 0.1169 & 0.0000 & 0.9199 & 0.0027 \\
++ all future & RF & 89,576 & 2533 & 0.1252 & 0.0000 & 0.9308 & 0.0066 \\
++ all future & XGB & 89,576 & 2533 & 0.1351 & 0.0000 & 0.9268 & 0.0097 \\
++ future, unevaluated firms & LR & 80,257 & 2399 & 0.1168 & 0.0000 & 0.9192 & 0.0026 \\
++ future, unevaluated firms & RF & 80,257 & 2399 & 0.1255 & 0.0000 & 0.9294 & 0.0069 \\
++ future, unevaluated firms & XGB & 80,257 & 2399 & 0.1299 & 0.0000 & 0.9247 & 0.0045 \\
++ future (matched) & LR & 80,257 & 2356 & 0.1146 & 0.0005 & 0.9174 & 0.0004 \\
++ future (matched) & RF & 80,257 & 2356 & 0.1212 & 0.0025 & 0.9288 & 0.0026 \\
++ future (matched) & XGB & 80,257 & 2356 & 0.1262 & 0.0056 & 0.9245 & 0.0008 \\
++ recent past (matched) & LR & 80,257 & 2342 & 0.1148 & 0.0005 & 0.9168 & 0.0006 \\
++ recent past (matched) & RF & 80,257 & 2342 & 0.1204 & 0.0038 & 0.9282 & 0.0018 \\
++ recent past (matched) & XGB & 80,257 & 2342 & 0.1304 & 0.0076 & 0.9239 & 0.0050 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

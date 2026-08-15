@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Predictor pairs with $|r|>0.70$ in the primary modelling sample (18 predictors, FY1990--2023). Highly collinear pairs receive arbitrary SHAP attribution splits and are interpreted as blocks.}
+\label{tab:high_corr}
+\small
+\begin{tabular}{lrr}
+\toprule
+feature\_a & feature\_b & r \\
+\midrule
+NITA & OCF\_TA & 0.8440 \\
+WCTA & CLCA & -0.7770 \\
+OENEG & MB\_MISSING & 0.8980 \\
+LNTA & LNMK & 0.8800 \\
+LNTA & RSIZE & 0.8520 \\
+LNMK & RSIZE & 0.9690 \\
+LNMK & PRICE & 0.7270 \\
+RSIZE & PRICE & 0.7280 \\
+\bottomrule
+\end{tabular}
+\end{table}

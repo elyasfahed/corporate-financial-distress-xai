@@ -1,0 +1,4 @@
+variant,firm_years_dropped_total,test_n,test_events,test_n_dropped,test_events_dropped,test_prevalence
+P_primary_retain_flagged (reported),0,25512,404,0,0,0.01584
+U_drop_unresolved,631,25110,398,402,6,0.01585
+A_drop_all_flagged,2699,23918,353,1594,51,0.01476

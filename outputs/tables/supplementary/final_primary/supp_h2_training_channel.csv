@@ -1,0 +1,16 @@
+Arm,Model,Train rows,Train events,PR-AUC,SD,ROC-AUC,Diff. vs baseline
+Baseline,LR,"77,583",2307,0.1142,0.0,0.9163,0.0
+Baseline,RF,"77,583",2307,0.1186,0.0,0.9271,0.0
+Baseline,XGB,"77,583",2307,0.1254,0.0,0.9242,0.0
++ all future,LR,"89,576",2533,0.1169,0.0,0.9199,0.0027
++ all future,RF,"89,576",2533,0.1252,0.0,0.9308,0.0066
++ all future,XGB,"89,576",2533,0.1351,0.0,0.9268,0.0097
+"+ future, unevaluated firms",LR,"80,257",2399,0.1168,0.0,0.9192,0.0026
+"+ future, unevaluated firms",RF,"80,257",2399,0.1255,0.0,0.9294,0.0069
+"+ future, unevaluated firms",XGB,"80,257",2399,0.1299,0.0,0.9247,0.0045
++ future (matched),LR,"80,257",2356,0.1146,0.0005,0.9174,0.0004
++ future (matched),RF,"80,257",2356,0.1212,0.0025,0.9288,0.0026
++ future (matched),XGB,"80,257",2356,0.1262,0.0056,0.9245,0.0008
++ recent past (matched),LR,"80,257",2342,0.1148,0.0005,0.9168,0.0006
++ recent past (matched),RF,"80,257",2342,0.1204,0.0038,0.9282,0.0018
++ recent past (matched),XGB,"80,257",2342,0.1304,0.0076,0.9239,0.005

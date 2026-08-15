@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{RC5 under the primary specification: regulated utilities (SIC 4900--4999) included in the sample (financials still excluded); dedicated dataset rebuilt under the full corrected policy (date-ranged universe, FY2023 cutoff, 18 predictors, market imputation); LR/RF/XGBoost re-tuned.}
+\label{tab:v2_rc5}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+logistic\_regression & 0.0153 & 0.1785 & 0.9226 & 0.1263 & 0.6815 & 0.2130 & 0.7256 & 0.1687 & 0.8838 & 0.1497 & 0.2150 \\
+random\_forest & 0.0153 & 0.1571 & 0.9289 & 0.1562 & 0.5506 & 0.2433 & 0.7407 & 0.0580 & 0.6570 & 0.1331 & 0.1891 \\
+xgboost & 0.0153 & 0.1729 & 0.9322 & 0.1570 & 0.5506 & 0.2444 & 0.7408 & 0.1296 & 0.8873 & 0.1444 & 0.2060 \\
+\bottomrule
+\end{tabular}
+\end{table}

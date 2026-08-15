@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+\centering
+\caption{Expected misclassification cost per firm-year over a range of false-negative-to-false-positive cost ratios (post-hoc supplementary). The cost-minimising threshold is selected on the validation split at each ratio and applied unchanged to test. The ratios are \emph{scenarios} chosen to span plausible asymmetries, not estimated economic quantities; no exposure at default or loss given default is available, so no regulatory capital interpretation is claimed.}
+\label{tab:supp_expected_cost}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+cost\_ratio\_FN\_to\_FP & model & threshold\_from\_validation & test\_false\_negatives & test\_false\_positives & expected\_cost\_per\_firm\_year & cost\_review\_none & cost\_review\_all & savings\_vs\_best\_trivial\_pct \\
+\midrule
+5:1 & Logistic regression (ridge) & 0.1382 & 123 & 2052 & 0.1045 & 0.0792 & 0.9842 & -32.0000 \\
+5:1 & Random forest & 0.7827 & 194 & 1148 & 0.0830 & 0.0792 & 0.9842 & -4.9000 \\
+5:1 & XGBoost & 0.8506 & 185 & 1166 & 0.0820 & 0.0792 & 0.9842 & -3.5000 \\
+5:1 & Neural network (balanced) & 0.9425 & 205 & 1387 & 0.0945 & 0.0792 & 0.9842 & -19.4000 \\
+10:1 & Logistic regression (ridge) & 0.1359 & 117 & 2110 & 0.1286 & 0.1584 & 0.9842 & 18.8000 \\
+10:1 & Random forest & 0.6362 & 123 & 2097 & 0.1304 & 0.1584 & 0.9842 & 17.6000 \\
+10:1 & XGBoost & 0.7248 & 101 & 2453 & 0.1357 & 0.1584 & 0.9842 & 14.3000 \\
+10:1 & Neural network (balanced) & 0.8403 & 94 & 2831 & 0.1478 & 0.1584 & 0.9842 & 6.7000 \\
+20:1 & Logistic regression (ridge) & 0.0674 & 54 & 3737 & 0.1888 & 0.3167 & 0.9842 & 40.4000 \\
+20:1 & Random forest & 0.4325 & 76 & 3385 & 0.1923 & 0.3167 & 0.9842 & 39.3000 \\
+20:1 & XGBoost & 0.5566 & 59 & 3729 & 0.1924 & 0.3167 & 0.9842 & 39.2000 \\
+20:1 & Neural network (balanced) & 0.6684 & 52 & 4396 & 0.2131 & 0.3167 & 0.9842 & 32.7000 \\
+50:1 & Logistic regression (ridge) & 0.0226 & 28 & 5824 & 0.2832 & 0.7918 & 0.9842 & 64.2000 \\
+50:1 & Random forest & 0.1543 & 11 & 6943 & 0.2937 & 0.7918 & 0.9842 & 62.9000 \\
+50:1 & XGBoost & 0.3168 & 18 & 5794 & 0.2624 & 0.7918 & 0.9842 & 66.9000 \\
+50:1 & Neural network (balanced) & 0.3647 & 19 & 7052 & 0.3137 & 0.7918 & 0.9842 & 60.4000 \\
+100:1 & Logistic regression (ridge) & 0.0051 & 12 & 9564 & 0.4219 & 1.5836 & 0.9842 & 57.1000 \\
+100:1 & Random forest & 0.1034 & 6 & 8481 & 0.3559 & 1.5836 & 0.9842 & 63.8000 \\
+100:1 & XGBoost & 0.1313 & 3 & 9334 & 0.3776 & 1.5836 & 0.9842 & 61.6000 \\
+100:1 & Neural network (balanced) & 0.1764 & 13 & 9523 & 0.4242 & 1.5836 & 0.9842 & 56.9000 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

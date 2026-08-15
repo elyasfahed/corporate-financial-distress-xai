@@ -1,0 +1,13 @@
+variant,model,test_n,test_events,test_prevalence,pr_auc,pr_auc_ci_lower,pr_auc_ci_upper,roc_auc,rank_pr_auc
+P_primary_retain_flagged (reported),Logistic regression (ridge),25512,404,0.01584,0.1751,0.1461,0.2114,0.9203,1
+P_primary_retain_flagged (reported),Random forest,25512,404,0.01584,0.1608,0.1346,0.1908,0.9272,3
+P_primary_retain_flagged (reported),XGBoost,25512,404,0.01584,0.1729,0.145,0.2061,0.9303,2
+P_primary_retain_flagged (reported),Neural network (balanced),25512,404,0.01584,0.1338,0.1131,0.1603,0.914,4
+U_drop_unresolved,Logistic regression (ridge),25110,398,0.01585,0.1739,0.1474,0.211,0.9197,1
+U_drop_unresolved,Random forest,25110,398,0.01585,0.1554,0.1313,0.1865,0.9268,3
+U_drop_unresolved,XGBoost,25110,398,0.01585,0.165,0.139,0.1994,0.9287,2
+U_drop_unresolved,Neural network (balanced),25110,398,0.01585,0.113,0.0966,0.1348,0.9077,4
+A_drop_all_flagged,Logistic regression (ridge),23918,353,0.01476,0.1719,0.1422,0.2101,0.9302,1
+A_drop_all_flagged,Random forest,23918,353,0.01476,0.145,0.1241,0.174,0.9299,3
+A_drop_all_flagged,XGBoost,23918,353,0.01476,0.1566,0.1317,0.1908,0.9332,2
+A_drop_all_flagged,Neural network (balanced),23918,353,0.01476,0.1271,0.1089,0.1547,0.9253,4

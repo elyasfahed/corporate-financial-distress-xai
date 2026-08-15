@@ -1,0 +1,4 @@
+case,model,n_lime_features,kendall_tau_abs_rank,sign_agreement,top_lime_feature,top_shap_feature
+True positive,XGBoost,10,0.378,1.0,RSIZE,PRICE
+False negative,XGBoost,10,0.022,0.9,NITA,RSIZE
+True negative,XGBoost,10,0.511,1.0,RSIZE,RSIZE

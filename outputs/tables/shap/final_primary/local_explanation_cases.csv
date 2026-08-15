@@ -1,0 +1,4 @@
+case,model,gvkey,fyear,predicted_probability,validation_threshold,distress
+True positive,XGBoost,186061,2019,0.9444,0.8508,1
+False negative,XGBoost,26382,2018,0.0939,0.8508,1
+True negative,XGBoost,12445,2019,0.0205,0.8508,0

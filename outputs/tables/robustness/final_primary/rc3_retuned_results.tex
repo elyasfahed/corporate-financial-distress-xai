@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{RC\textsubscript{3} with an independent hyperparameter search. SMOTE replaces class weighting, as in the held-fixed version of this check, but the three models are re-tuned from scratch over 100 Optuna trials rather than inheriting the primary configurations, matching the per-check convention of RC\textsubscript{1}, RC\textsubscript{2}, RC\textsubscript{4} and RC\textsubscript{5}. SMOTENC treats the three binary indicators as categorical; continuous features are standardised on training statistics before resampling; class weighting is disabled so the imbalance correction is not applied twice. Within the search, standardisation and resampling are fitted on each fold's training rows only and the validation rows are never resampled, so no synthetic minority point is built from an observation used to score the fold.}
+\label{tab:rc3_retuned}
+\small
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+model & prevalence\_baseline\_pr\_auc & pr\_auc & roc\_auc & precision & recall & f1 & ks\_stat & brier\_score & threshold & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper \\
+\midrule
+logistic\_regression & 0.0158 & 0.1762 & 0.9194 & 0.1246 & 0.6832 & 0.2108 & 0.7145 & 0.1790 & 0.8956 & 0.1464 & 0.2133 \\
+random\_forest & 0.0158 & 0.1293 & 0.9209 & 0.1231 & 0.5767 & 0.2029 & 0.7318 & 0.1019 & 0.7592 & 0.1096 & 0.1526 \\
+xgboost & 0.0158 & 0.1356 & 0.9212 & 0.1623 & 0.2921 & 0.2087 & 0.7226 & 0.1154 & 0.8631 & 0.1145 & 0.1617 \\
+\bottomrule
+\end{tabular}
+\end{table}

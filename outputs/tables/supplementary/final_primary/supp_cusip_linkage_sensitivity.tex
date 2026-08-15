@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{CCM/CUSIP linkage sensitivity (post-hoc supplementary). Variant U excludes only the firm-years whose CUSIP mismatch the disposition rules leave unresolved; variant A excludes every flagged mismatch and is a deliberately conservative bound rather than a preferred specification, since it discards outcome-relevant data on weak evidence. Each variant filters all three splits consistently, reuses the frozen hyperparameters without re-tuning, refits on the filtered training split, selects its threshold on the filtered validation split, and is evaluated once. The primary sample and the saved models are untouched.}
+\label{tab:supp_cusip_sensitivity}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+variant & model & test\_n & test\_events & test\_prevalence & pr\_auc & pr\_auc\_ci\_lower & pr\_auc\_ci\_upper & roc\_auc & rank\_pr\_auc \\
+\midrule
+P\_primary\_retain\_flagged (reported) & Logistic regression (ridge) & 25512 & 404 & 0.0158 & 0.1751 & 0.1461 & 0.2114 & 0.9203 & 1 \\
+P\_primary\_retain\_flagged (reported) & Random forest & 25512 & 404 & 0.0158 & 0.1608 & 0.1346 & 0.1908 & 0.9272 & 3 \\
+P\_primary\_retain\_flagged (reported) & XGBoost & 25512 & 404 & 0.0158 & 0.1729 & 0.1450 & 0.2061 & 0.9303 & 2 \\
+P\_primary\_retain\_flagged (reported) & Neural network (balanced) & 25512 & 404 & 0.0158 & 0.1338 & 0.1131 & 0.1603 & 0.9140 & 4 \\
+U\_drop\_unresolved & Logistic regression (ridge) & 25110 & 398 & 0.0158 & 0.1739 & 0.1474 & 0.2110 & 0.9197 & 1 \\
+U\_drop\_unresolved & Random forest & 25110 & 398 & 0.0158 & 0.1554 & 0.1313 & 0.1865 & 0.9268 & 3 \\
+U\_drop\_unresolved & XGBoost & 25110 & 398 & 0.0158 & 0.1650 & 0.1390 & 0.1994 & 0.9287 & 2 \\
+U\_drop\_unresolved & Neural network (balanced) & 25110 & 398 & 0.0158 & 0.1130 & 0.0966 & 0.1348 & 0.9077 & 4 \\
+A\_drop\_all\_flagged & Logistic regression (ridge) & 23918 & 353 & 0.0148 & 0.1719 & 0.1422 & 0.2101 & 0.9302 & 1 \\
+A\_drop\_all\_flagged & Random forest & 23918 & 353 & 0.0148 & 0.1450 & 0.1241 & 0.1740 & 0.9299 & 3 \\
+A\_drop\_all\_flagged & XGBoost & 23918 & 353 & 0.0148 & 0.1566 & 0.1317 & 0.1908 & 0.9332 & 2 \\
+A\_drop\_all\_flagged & Neural network (balanced) & 23918 & 353 & 0.0148 & 0.1271 & 0.1089 & 0.1547 & 0.9253 & 4 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

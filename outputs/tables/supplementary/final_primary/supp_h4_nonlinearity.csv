@@ -1,0 +1,4 @@
+feature,r2_linear,r2_spline,gain_in_sample,gain_out_of_fold,null_gain_p95,p_wild_cluster
+TLTA,0.8125,0.8603,0.0479,0.0477,0.0003,0.001
+NITA,0.5581,0.9206,0.3625,0.3631,0.0006,0.001
+SIGMA,0.6705,0.8159,0.1454,0.1452,0.0005,0.001

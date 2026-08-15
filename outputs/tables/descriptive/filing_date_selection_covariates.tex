@@ -1,0 +1,45 @@
+\begin{table}[htbp]
+\centering
+\caption{Matched versus unmatched firm-years on observables available before the merge. Standardised differences are reported instead of t-statistics because at this sample size negligible differences attain significance. Three scales are shown: raw levels, $\log(1+x)$, and scale-free pooled percentile ranks. The levels statistic is deflated toward zero on these variables because pooled skewness runs 17--35, so the flag ($|d|>0.10$) is based on the rank version, which is invariant to monotone transformation. The last three rows are scale-free measures of financial weakness, which dollar levels cannot capture. Panel A reports group medians and Panel B the standardised differences; the two panels cover the same variables in the same order, and the split is a layout device so that every column remains legible.}
+\label{tab:filing_date_selection_covariates}
+\small
+\begin{tabular}{@{}l p{5.6cm} r r@{}}
+\multicolumn{4}{@{}l}{\textbf{Panel A: group medians}}\\[2pt]
+\toprule
+Variable & Description & Matched & Unmatched \\
+\midrule
+at & Total assets & 231.8170 & 121.0905 \\
+lt & Total liabilities & 107.2650 & 61.2575 \\
+sale & Sales & 115.5130 & 52.5320 \\
+ni & Net income & 1.8610 & 0.4360 \\
+ib & Income before extraordinary items & 1.8380 & 0.4090 \\
+che & Cash and short-term investments & 18.0000 & 11.0260 \\
+act & Current assets & 63.8470 & 36.9055 \\
+lct & Current liabilities & 27.3420 & 20.5900 \\
+\_roa & Return on assets (ib/at) & 0.0104 & 0.0054 \\
+\_lev & Leverage (lt/at) & 0.5852 & 0.5348 \\
+\_loss & Loss indicator (ib $<$ 0) & 0.0000 & 0.0000 \\
+\bottomrule
+\end{tabular}
+
+\vspace{1.1em}
+
+\begin{tabular}{@{}l r r r c@{}}
+\multicolumn{5}{@{}l}{\textbf{Panel B: standardised differences (matched $-$ unmatched)}}\\[2pt]
+\toprule
+Variable & Levels & $\log(1+x)$ & Rank & Flagged \\
+\midrule
+at & -0.0781 & 0.1190 & 0.1519 & Yes \\
+lt & -0.0827 & 0.1086 & 0.1391 & Yes \\
+sale & -0.0621 & 0.2113 & 0.2315 & Yes \\
+ni & -0.0360 & 0.0784 & 0.0792 & No \\
+ib & -0.0337 & 0.0796 & 0.0817 & No \\
+che & -0.0684 & 0.0586 & 0.1181 & Yes \\
+act & -0.0934 & 0.1018 & 0.1349 & Yes \\
+lct & -0.0985 & 0.0539 & 0.0958 & No \\
+\_roa & -0.0097 & --- & 0.0764 & No \\
+\_lev & 0.0056 & --- & 0.1520 & Yes \\
+\_loss & -0.1231 & --- & -0.1231 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}

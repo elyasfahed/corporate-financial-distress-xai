@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Max-statistic test of H\textsubscript{1} (post-hoc supplementary). H\textsubscript{1} asks whether the \emph{best} machine-learning model beats the logistic benchmark, which is a maximum over three correlated comparisons rather than any single pairwise test. The null distribution is the recentred bootstrap distribution of that maximum. The test is one-sided against H\textsubscript{0}: $\max_m [\mathrm{AP}(m) - \mathrm{AP}(\mathrm{LR})] \le 0$, so it can only fail to reject; a large $p$-value records the \emph{absence} of the predicted machine-learning advantage and does not establish that the benchmark is superior.}
+\label{tab:supp_h1_max}
+\small
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{lrrrrr}
+\toprule
+scheme & statistic & observed & best\_ml\_model & p\_value\_one\_sided & verdict \\
+\midrule
+firm & max over \{RF, XGB, NN\} of (PR-AUC minus logistic) & -0.0022 & XGBoost & 0.7295 & no evidence best ML exceeds LR; does not establish LR superiority \\
+firm\_year & max over \{RF, XGB, NN\} of (PR-AUC minus logistic) & -0.0022 & XGBoost & 0.7040 & no evidence best ML exceeds LR; does not establish LR superiority \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

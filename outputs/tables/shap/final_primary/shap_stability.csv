@@ -1,0 +1,11 @@
+model,feature,rank_full_test,rank_ci_2.5,rank_ci_97.5,rank_sd
+XGBoost,RSIZE,1,1.0,1.0,0.0
+XGBoost,PRICE,2,2.0,2.0,0.0
+XGBoost,NITA,3,3.0,3.0,0.0
+XGBoost,TLTA,4,4.0,4.0,0.0
+XGBoost,OCF_TA,5,5.0,5.0,0.0
+XGBoost,EXRET,6,6.0,6.0,0.0
+XGBoost,SIGMA,7,7.0,7.0,0.0
+XGBoost,LNMK,8,8.0,8.0,0.0
+XGBoost,CLCA,9,9.0,9.0,0.0
+XGBoost,WCTA,10,10.0,10.0,0.0
