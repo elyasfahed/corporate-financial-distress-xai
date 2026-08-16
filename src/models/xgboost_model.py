@@ -10,7 +10,7 @@ SHAP TreeExplainer is an exact, polynomial-time algorithm for tree models,
 avoiding the approximation error of KernelExplainer. This makes XGBoost
 the natural choice when SHAP explanations are a core deliverable.
 
-Blueprint v4 reference: §9.1, §10 (Model Portfolio; XAI Strategy)
+Design-specification reference: §9.1, §10 (Model Portfolio; XAI Strategy)
 """
 
 from __future__ import annotations

@@ -7,7 +7,7 @@ ranges and link-quality codes.
 
 This is more reliable than a purely CUSIP-based match, which can fail
 for firms that have changed their CUSIP without a corresponding CCM update
-(Blueprint v4 §6.2).
+(Pre-Specified Empirical Design §6.2).
 
 Link-quality filters applied:
   - linktype IN ('LC', 'LU')  : researched (LC) or unresearched (LU) links
@@ -16,7 +16,7 @@ Link-quality filters applied:
 The extracted link table is used in merge_crsp_compustat.py together with
 the CRSP security names file for the two-layer CCM + CUSIP cross-validation.
 
-Blueprint v4 reference: §6.2
+Design-specification reference: §6.2
 
 Fallback note
 -------------
@@ -42,7 +42,7 @@ import pandas as pd
 from src.config import DATA_RAW_CRSP
 from src.data.wrds_connection import get_connection
 
-# CCM link-quality filters (Blueprint v4 §6.2)
+# CCM link-quality filters (Pre-Specified Empirical Design §6.2)
 VALID_LINKTYPES = ("LC", "LU")
 VALID_LINKPRIMS = ("P", "C")
 

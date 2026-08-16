@@ -1,7 +1,7 @@
 """
 Winsorisation of continuous predictors.
 =========================================
-Implements the leakage-free winsorisation protocol (Blueprint v4 §6.3):
+Implements the leakage-free winsorisation protocol (Pre-Specified Empirical Design §6.3):
 
   1. Compute upper and lower thresholds at the 1st and 99th percentiles
      using ONLY the training sample observations.
@@ -12,7 +12,7 @@ Implements the leakage-free winsorisation protocol (Blueprint v4 §6.3):
 This prevents any information from the validation or test periods from
 influencing the feature distribution used in model training.
 
-Blueprint v4 reference: §6.3
+Design-specification reference: §6.3
 """
 
 from __future__ import annotations

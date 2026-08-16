@@ -26,7 +26,7 @@ scikit-learn>=1.4
 xgboost>=2.0
 
 # ── Hyperparameter tuning ───────────────────────────────────
-optuna>=3.5            # Bayesian optimisation (Blueprint v4 §9.3)
+optuna>=3.5            # Bayesian optimisation (Pre-Specified Empirical Design §9.3)
 
 # ── Explainability ──────────────────────────────────────────
 shap>=0.44             # SHAP TreeExplainer for XGBoost/RF
@@ -48,5 +48,5 @@ pyyaml>=6.0            # Config files
 
 # ── Utilities ───────────────────────────────────────────────
 tqdm>=4.66             # Progress bars
-python-docx>=1.1       # Read .docx blueprint file
+python-docx>=1.1       # Read Word-format design documentation
 pytest>=8.0            # Regression tests for statistical routines

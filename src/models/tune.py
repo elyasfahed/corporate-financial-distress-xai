@@ -2,9 +2,9 @@
 Bayesian hyperparameter optimisation using Optuna.
 ====================================================
 Implements rolling-origin cross-validation WITHIN the training sample
-for unbiased hyperparameter selection (Blueprint v4 §9.3).
+for unbiased hyperparameter selection (Pre-Specified Empirical Design §9.3).
 
-Protocol (Blueprint v4 §9.3 — frozen):
+Protocol (Pre-Specified Empirical Design §9.3 — frozen):
   - Method    : Bayesian optimisation (Optuna TPE sampler)
   - Trials    : 100 per model
   - CV scheme : Rolling-origin CV within the retained training years
@@ -16,7 +16,7 @@ Rolling-origin CV:
   validation. This preserves the chronological structure and prevents
   any future information from entering the cross-validation folds.
 
-Blueprint v4 reference: §9.3
+Design-specification reference: §9.3
 """
 
 from __future__ import annotations
@@ -261,7 +261,8 @@ def tune_model(
     features : list[str]
         Feature columns.
     n_trials : int
-        Number of Optuna trials (default 100 per Blueprint v4 §9.3).
+        Number of Optuna trials (default 100 per §9.3 of the
+        Pre-Specified Empirical Design).
     fold_safe, purge_horizon_days, sic_col, peer_rule
         Fold-safe CV options, passed through to objective(). Defaults
         reproduce the frozen behaviour; the v2 profile sets

@@ -5,7 +5,7 @@ Adds the co-primary neural network to the formal pairwise comparison so
 that all four headline models receive identical inference: the DeLong
 (1988) test for AUC-ROC and the null-recentred paired firm-block
 bootstrap for PR-AUC. The frozen ``significance.py`` only compares the
-three Blueprint-v4 models (LR / RF / XGB); this module closes that gap
+three pre-specified models (LR / RF / XGB); this module closes that gap
 for the post-freeze co-primary NN.
 
 READ-ONLY w.r.t. the frozen pipeline. It loads the EXISTING saved models,

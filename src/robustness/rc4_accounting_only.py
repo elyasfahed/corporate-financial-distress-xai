@@ -11,7 +11,7 @@ model performs significantly worse, this confirms that market signals
 provide incremental information beyond balance sheet and income statement
 data (Campbell, Hilscher & Szilagyi 2008 finding).
 
-Blueprint v4 reference: §11, RC4
+Design-specification reference: §11, RC4
 """
 
 from __future__ import annotations

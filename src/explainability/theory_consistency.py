@@ -1,5 +1,5 @@
 """
-Theory-consistency validation table — Blueprint v4 §10.5.
+Theory-consistency validation table — Pre-Specified Empirical Design §10.5.
 ==========================================================
 For each of the top 10 SHAP features, this module:
   (a) States the theoretical sign prediction (pre-specified, from the literature)
@@ -9,12 +9,12 @@ For each of the top 10 SHAP features, this module:
 CRITICAL: This table must be COMPLETED BEFORE the SHAP results are
 discussed in the thesis. It must NOT be constructed retrospectively to
 match observed findings. Pre-specification is what makes H₃ and H₄
-falsifiable (Blueprint v4 §3.3, §10.5).
+falsifiable (Pre-Specified Empirical Design §3.3, §10.5).
 
 The pre-specified theoretical predictions below are locked and must not
 be changed after data work begins.
 
-Blueprint v4 reference: §10.5
+Design-specification reference: §10.5
 """
 
 from __future__ import annotations
@@ -237,7 +237,7 @@ def _topk_collinearity(
     *within the same top-K set* and report the absolute correlation.
 
     This is the diagnostic that turns a naïve sign-test verdict into a
-    collinearity-aware one (Blueprint v4 §10.5 — "correlated features
+    collinearity-aware one (Pre-Specified Empirical Design §10.5 — "correlated features
     receive arbitrary SHAP splits — interpret pairs conservatively").
 
     Parameters
@@ -338,7 +338,7 @@ def build_theory_consistency_table(
     """
     Build the pre-specified theory-consistency validation table.
 
-    This is the operational test of H₃ and H₄ (Blueprint v4 §10.5).
+    This is the operational test of H₃ and H₄ (Pre-Specified Empirical Design §10.5).
     It must be produced BEFORE the SHAP results section is written.
 
     Parameters

@@ -10,13 +10,13 @@ Pulls three files:
 
 2. crsp.msedelist — Monthly Delisting File
    Provides DLSTCD codes and event dates for constructing the distress label.
-   Primary definition: DLSTCD 400–499 (Blueprint v4 §5.1).
+   Primary definition: DLSTCD 400–499 (Pre-Specified Empirical Design §5.1).
 
 3. crsp.stocknames — Security Information History
    Provides historical NCUSIP codes for the CCM CUSIP cross-validation
-   step of the merge (Blueprint v4 §6.2).
+   step of the merge (Pre-Specified Empirical Design §6.2).
 
-Blueprint v4 reference: §4.2, §5.1, §6.2
+Design-specification reference: §4.2, §5.1, §6.2
 
 Saves
 -----
@@ -57,7 +57,7 @@ def extract_monthly_stock(db) -> pd.DataFrame:
 
     Restricted to SHRCD 10 and 11 (domestic ordinary common shares).
     This excludes ADRs, REITs, closed-end funds, preferred shares, and
-    foreign private issuers (Blueprint v4 §6.1).
+    foreign private issuers (Pre-Specified Empirical Design §6.1).
 
     Key variables computed here:
     - prc : price (absolute value — negative means bid/ask midpoint)
@@ -120,7 +120,7 @@ def extract_delisting(db) -> pd.DataFrame:
     Pull CRSP Monthly Delisting File.
 
     Used to construct the primary distress label D_{i,t}.
-    Distress events: DLSTCD codes 400–499 (Blueprint v4 §5.1).
+    Distress events: DLSTCD codes 400–499 (Pre-Specified Empirical Design §5.1).
     Subset 572, 574, 584 identifies formal Chapter 7/11 bankruptcy filings
     and is used in robustness check RC1.
 
@@ -184,7 +184,7 @@ def extract_security_names(db) -> pd.DataFrame:
     Pull CRSP Security Information History (stocknames).
 
     Provides historical NCUSIP codes used in the second layer of the
-    CCM merge cross-validation (Blueprint v4 §6.2):
+    CCM merge cross-validation (Pre-Specified Empirical Design §6.2):
       Match NCUSIP (CRSP) against first 8 chars of CUSIP (Compustat).
     Firm-years that pass CCM but fail CUSIP cross-validation are flagged
     for manual investigation before inclusion.

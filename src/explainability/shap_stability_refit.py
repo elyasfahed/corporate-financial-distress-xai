@@ -13,7 +13,7 @@ held fixed, the mean-|SHAP| ordering is a near-deterministic function of the
 model, so resampling test rows barely perturbs it.
 
 The economically interesting question is different: **would a differently-drawn
-training sample have produced a different explanation?** Blueprint v4 §10.5
+training sample have produced a different explanation?** Pre-Specified Empirical Design §10.5
 requires material ranking changes to be reported rather than suppressed, and a
 fixed-model bootstrap structurally cannot surface them.
 

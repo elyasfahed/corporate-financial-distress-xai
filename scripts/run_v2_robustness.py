@@ -512,7 +512,7 @@ def stage_consolidated(force: bool = False) -> None:
         cons, out,
         caption=(
             "Consolidated robustness results under the primary "
-            "specification (Blueprint v4 §11, RC1--RC5). Each check varies "
+            "specification (Pre-Specified Empirical Design §11, RC1--RC5). Each check varies "
             "exactly one design dimension; prevalence (and hence the "
             "PR-AUC baseline) differs across label/sample variants, so "
             "compare within checks. LR/RF/XGBoost re-tuned per check; the "

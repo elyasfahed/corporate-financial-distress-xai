@@ -1,7 +1,7 @@
 """
 Non-linear SHAP analysis — dependence plots and interaction effects.
 ====================================================================
-Implements Blueprint v4 §10.3.
+Implements §10.3 of the Pre-Specified Empirical Design.
 
 Outputs:
   1. SHAP dependence plots for the 5 highest-importance features.
@@ -20,9 +20,9 @@ Pre-specified theoretical predictions (must be documented before running):
   LNTA  : SHAP decreases with size (smaller firms more vulnerable; Shumway 2001)
 
 Patterns that CONTRADICT these predictions must be discussed critically,
-not explained away (Blueprint v4 §10.3).
+not explained away (Pre-Specified Empirical Design §10.3).
 
-Blueprint v4 reference: §10.3
+Design-specification reference: §10.3
 """
 
 from __future__ import annotations
@@ -60,7 +60,7 @@ DEPENDENCE_SUPPORT_BINS: dict[str, list[float]] = {
 # These will be confirmed empirically; pre-specified priors below
 DEPENDENCE_FEATURES = ["TLTA", "NITA", "SIGMA", "EXRET", "LNTA"]
 
-# Pre-specified theoretical direction predictions (Blueprint v4 §10.3)
+# Pre-specified theoretical direction predictions (Pre-Specified Empirical Design §10.3)
 THEORETICAL_PREDICTIONS: dict[str, str] = {
     "TLTA":  "positive — SHAP increases with leverage (debt-overhang)",
     "NITA":  "negative — SHAP decreases with profitability",

@@ -32,7 +32,7 @@ Outputs
   - tables/shap/lime_shap_agreement.{csv,tex}       per-case SHAP-vs-LIME
                                                     rank/sign agreement
 
-Reference: extension to Blueprint v4 §10 (documented, not frozen);
+Reference: extension to the Pre-Specified Empirical Design §10 (documented, not frozen);
 Ribeiro, Singh & Guestrin (2016), "Why Should I Trust You?", KDD.
 """
 

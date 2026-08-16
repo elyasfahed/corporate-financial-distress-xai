@@ -1,7 +1,7 @@
 """
 Local SHAP analysis — firm-level waterfall explanations.
 =========================================================
-Implements Blueprint v4 §10.4.
+Implements §10.4 of the Pre-Specified Empirical Design.
 
 Produces SHAP waterfall plots for 3 substantively motivated firms:
   1. True positive from the held-out 2015-2024 test period
@@ -13,7 +13,7 @@ Case selection criterion: economic insight, NOT statistical averageness.
 The cases must be selected to illuminate the model's logic and illuminate
 tensions between prediction and economic theory.
 
-Blueprint v4 reference: §10.4
+Design-specification reference: §10.4
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ def select_cases(
     """
     Select three substantively motivated firm-year cases for local SHAP.
 
-    Selection criteria (Blueprint v4 §10.4):
+    Selection criteria (Pre-Specified Empirical Design §10.4):
       - True positive  : distress=1, y_prob >= threshold; choose the highest
                          predicted probability in the held-out test period
       - False negative : distress=1, y_prob < threshold
@@ -162,7 +162,8 @@ def plot_waterfall(
     plt.figure()
     # max_display=17 shows every predictor individually (no "N other features"
     # aggregate bar). Appropriate here because all 17 predictors are
-    # theoretically motivated (Blueprint v4 predictor table) and full
+    # theoretically motivated in the study's pre-specified predictor set, and
+    # full
     # Displaying each predictor separately makes all contributions transparent.
     shap.plots.waterfall(explanation, max_display=17, show=False)
     fig = plt.gcf()

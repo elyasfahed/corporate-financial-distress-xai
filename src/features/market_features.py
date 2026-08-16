@@ -4,7 +4,7 @@ Construct the 6 market-based predictors.
 All variables follow Campbell, Hilscher & Szilagyi (2008).
 Market data comes from the CRSP Monthly Stock File.
 
-Variable definitions (Blueprint v4 §7):
+Variable definitions (Pre-Specified Empirical Design §7):
   EXRET  = 12-month cumulative excess return over CRSP value-weighted index
   SIGMA  = Std dev of raw monthly returns over trailing 12 months
   LNMK   = log(market cap in constant 2012 USD)
@@ -18,7 +18,7 @@ Timing convention:
   These predictors reflect information available to investors at fiscal year-end,
   before the 10-K is filed on F_{i,t}.
 
-Blueprint v4 reference: §7 (Market-Based Predictors)
+Design-specification reference: §7 (Market-Based Predictors)
 """
 
 from __future__ import annotations

@@ -1,7 +1,8 @@
 """
-Descriptive statistics — 4 required outputs for Blueprint v4 §8.
+Descriptive statistics — 4 required outputs for Pre-Specified Empirical Design §8.
 =================================================================
-Produces all descriptive statistics and plots required by the blueprint:
+Produces all descriptive statistics and plots required by the pre-specified
+empirical design:
 
   1. Sample composition table
      - Annual counts: N, N_distressed, distress_rate_pct (1990–2024)
@@ -30,7 +31,7 @@ These outputs serve as data quality checks BEFORE any model is estimated:
   - High correlations (NITA/OCF_TA; TLTA/LNMK) are expected and must be
     acknowledged in the SHAP interpretation (conservatively interpret pairs)
 
-Blueprint v4 reference: §8.1–8.4
+Design-specification reference: §8.1–8.4
 
 Run
 ---
@@ -67,7 +68,7 @@ import seaborn as sns
 
 
 # ---------------------------------------------------------------------------
-# §4.1  Sample attrition table  (Blueprint v4 §4.1)
+# §4.1  Sample attrition table  (Pre-Specified Empirical Design §4.1)
 # ---------------------------------------------------------------------------
 
 def run_sample_attrition() -> None:
@@ -78,7 +79,7 @@ def run_sample_attrition() -> None:
     formats it as an academic-quality table with step labels, remaining
     firm-years, unique firms, and the count dropped at each step.
 
-    Required by Blueprint v4 §4.1 (Universe and exclusions).
+    Required by the Pre-Specified Empirical Design (§4.1, Universe and exclusions).
     """
     print("\n--- §4.1  Sample attrition table ---")
     OUT_TABLES_DESCRIPTIVE.mkdir(parents=True, exist_ok=True)
@@ -96,7 +97,7 @@ def run_sample_attrition() -> None:
     # >=6-of-11 raw-item pre-screen. Two binding steps are applied afterwards and
     # are NOT captured by that tracker:
     #   (a) the strict >=8-of-11 accounting *features* filter (post-winsorisation,
-    #       in build_features.py — the Blueprint v4 §6.4 design rule);
+    #       in build_features.py — the Pre-Specified Empirical Design §6.4 design rule);
     #   (b) the chronological train/val/test split, which drops firm-years that
     #       cannot form a valid split record.
     # Both are appended here, computed dynamically from the saved parquets so the
@@ -451,7 +452,7 @@ def run_all_descriptive(
     features : list[str]
     """
     print("\n" + "="*60)
-    print("  DESCRIPTIVE STATISTICS  (Blueprint v4 §8)")
+    print("  DESCRIPTIVE STATISTICS  (Pre-Specified Empirical Design §8)")
     print("="*60)
 
     run_sample_attrition()

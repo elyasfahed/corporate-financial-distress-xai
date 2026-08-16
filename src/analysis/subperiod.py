@@ -1,7 +1,7 @@
 """
 Sub-period performance stability analysis.
 ==========================================
-Implements Blueprint extension: test-period regime stability check.
+Implements a post-specification extension: a test-period regime-stability check.
 
 Splits the test set (2015–2024) into two sub-periods and evaluates
 all three models in each:
@@ -18,7 +18,7 @@ A 'material' drop is defined as:
   In practice: flag if sub-period PR-AUC is more than 30% below
   the full-period PR-AUC for the same model.
 
-Blueprint v4 extension — §6.1 (sub-period stability)
+Post-specification extension — sub-period stability (design §6.1)
 """
 
 from __future__ import annotations

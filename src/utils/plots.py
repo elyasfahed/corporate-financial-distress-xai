@@ -193,7 +193,7 @@ def plot_distress_rate_timeseries(
     """
     Time-series plot of annual distress rate 1990–2024.
 
-    Required by Blueprint v4 §8.4. Must show visible spikes in
+    Required by §8.4 of the Pre-Specified Empirical Design. Must show visible spikes in
     2001–02 (dot-com), 2008–09 (GFC), and 2020 (COVID).
     Vertical shaded bands mark the train / val / test periods.
 

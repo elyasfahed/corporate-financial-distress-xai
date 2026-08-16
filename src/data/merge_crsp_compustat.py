@@ -1,8 +1,8 @@
 """
 Merge Compustat Annual + Filing Dates + CRSP into a clean panel.
 =================================================================
-Implements the two-layer CCM + CUSIP merge (Blueprint v4 §6.2) and
-the leakage-free distress label construction (Blueprint v4 §5.2).
+Implements the two-layer CCM + CUSIP merge (Pre-Specified Empirical Design §6.2) and
+the leakage-free distress label construction (Pre-Specified Empirical Design §5.2).
 
 Pipeline
 --------
@@ -23,7 +23,7 @@ Timing convention (critical):
   D_{i,t} = 1  iff  any DLSTCD 400–499 in [F_{i,t}, F_{i,t} + 365]
   where F_{i,t} is the actual 10-K filing date, NOT fiscal year-end.
 
-Blueprint v4 reference: §5.2, §6.1–6.4
+Design-specification reference: §5.2, §6.1–6.4
 
 Saves
 -----
@@ -244,7 +244,7 @@ def attach_filing_dates(
     """
     Merge actual 10-K filing dates onto Compustat panel.
 
-    F1 fix — design fidelity (Blueprint v4 §5.2):
+    F1 fix — design fidelity (Pre-Specified Empirical Design §5.2):
       "Observations with missing filing dates are dropped (not imputed)."
     When `drop_missing_fdates=True` (the default), firm-years that lack an
     actual 10-K filing date are dropped at this step rather than receiving
@@ -342,7 +342,7 @@ def merge_ccm_primary(
 
     The CCM file is produced by load_local_rds.build_ccm_linktable() from
     the local linkhistory.rds (Compustat CIZ) and is pre-filtered to
-    linktype IN ('LC','LU') and linkprim IN ('P','C') per Blueprint v4
+    linktype IN ('LC','LU') and linkprim IN ('P','C') per the Pre-Specified Empirical Design
     §6.2 at extraction time.
 
     Parameters
@@ -406,7 +406,7 @@ def validate_cusip(
     secnames: pd.DataFrame,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
-    Cross-validate the CCM merge using CUSIP codes (Blueprint v4 §6.2).
+    Cross-validate the CCM merge using CUSIP codes (Pre-Specified Empirical Design §6.2).
 
     Match first 8 characters of Compustat CUSIP against NCUSIP from CRSP
     Security Names (date-range validated). Firm-years where the CCM link
@@ -521,7 +521,7 @@ def attach_market_cap(
 
     Uses the December observation of the calendar year of the fiscal
     year-end. Market cap is never imputed — obs with missing market cap
-    are dropped (Blueprint v4 §6.4).
+    are dropped (Pre-Specified Empirical Design §6.4).
 
     Parameters
     ----------
@@ -820,7 +820,7 @@ def apply_missingness_filter(
     """
     Lenient pre-screen for the ≥8-of-11 accounting items filter.
 
-    F4 fix (Blueprint v4 §6.4) — the design states the strict ≥8-of-11
+    F4 fix (Pre-Specified Empirical Design §6.4) — the design states the strict ≥8-of-11
     filter is applied to the constructed accounting *features* (NITA,
     TLTA, ...) **after winsorisation**. That filter now lives in
     `src/features/build_features.py` (post-winsor, pre-imputation).

@@ -22,7 +22,7 @@ underlying model weights are not changed.
 The calibrated model is evaluated on the test set and compared to the
 original LR on Brier score and calibration curve.
 
-Blueprint v4 extension — §6.1 (calibration robustness)
+Post-specification extension — calibration robustness (design §6.1)
 """
 
 from __future__ import annotations

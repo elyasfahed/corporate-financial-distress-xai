@@ -37,7 +37,7 @@ References
 Ohlson, J.A. (1980). "Financial Ratios and the Probabilistic Prediction of
 Bankruptcy." Journal of Accounting Research, 18(1), 109–131.
 
-Blueprint v4 reference: §6.3 (benchmark comparison)
+Design-specification reference: §6.3 (benchmark comparison)
 """
 
 from __future__ import annotations
