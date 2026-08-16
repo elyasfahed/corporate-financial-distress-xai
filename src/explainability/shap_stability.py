@@ -115,7 +115,7 @@ def run_shap_stability(
         rank_lo = float(np.percentile(ranks_i, 2.5))
         rank_hi = float(np.percentile(ranks_i, 97.5))
 
-        # Magnitude stability (E2 fix) — what an examiner actually wants
+        # Magnitude stability across bootstrap samples
         mag_mean = float(mags_i.mean())
         mag_std  = float(mags_i.std())
         mag_lo   = float(np.percentile(mags_i, 2.5))
