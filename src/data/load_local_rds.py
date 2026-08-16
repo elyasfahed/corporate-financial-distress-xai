@@ -1143,7 +1143,7 @@ def build_ccm_linktable() -> None:
 
     linkhistory.rds is the Compustat-CIZ-side CCM link history with the
     modern WRDS link-type vocabulary (LC, LU, LS, LX, LN, LD, NP, NR, NU)
-    and the linkprim codes P/C/N/J. We apply the Blueprint v4 §6.2
+    and the linkprim codes P/C/N/J. We apply the Pre-Specified Empirical Design §6.2
     link-quality filters (linktype IN {LC,LU} AND linkprim IN {P,C}) at
     extraction time so merge_crsp_compustat.py receives a clean,
     design-faithful CCM file.
@@ -1179,7 +1179,7 @@ def build_ccm_linktable() -> None:
 
     print(f"  Raw linkhistory rows   : {len(lh):,}")
 
-    # Blueprint v4 §6.2 link-quality filters
+    # Pre-Specified Empirical Design §6.2 link-quality filters
     keep_mask = lh["linktype"].isin(["LC", "LU"]) & lh["linkprim"].isin(["P", "C"])
     lh = lh[keep_mask].copy()
 

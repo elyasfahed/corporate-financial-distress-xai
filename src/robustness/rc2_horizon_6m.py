@@ -8,7 +8,7 @@ Tests sensitivity to the prediction horizon assumption.
 A shorter horizon may improve precision (fewer false positives) but reduce
 coverage (misses distress events that materialise 7–12 months out).
 
-Blueprint v4 reference: §11, RC2
+Design-specification reference: §11, RC2
 """
 
 from __future__ import annotations

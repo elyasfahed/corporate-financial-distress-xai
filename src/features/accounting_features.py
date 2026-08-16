@@ -5,7 +5,7 @@ All variables follow the definitions in Campbell, Hilscher & Szilagyi (2008)
 and Shumway (2001). Variable names, formulae, and theoretical rationale are
 documented below and in the thesis appendix variable construction table.
 
-Variable definitions (Blueprint v4 §7):
+Variable definitions (Pre-Specified Empirical Design §7):
   NITA     = ib / at           (Net income / Total assets — ROA)
   TLTA     = lt / at           (Total liabilities / Total assets — Leverage)
   WCTA     = (act - lct) / at  (Working capital / Total assets)
@@ -26,7 +26,7 @@ Notes
 - All variables are winsorised AFTER construction using training-set thresholds
   (see src/features/winsorize.py).
 
-Blueprint v4 reference: §7 (Accounting-Based Predictors)
+Design-specification reference: §7 (Accounting-Based Predictors)
 """
 
 from __future__ import annotations

@@ -1,7 +1,8 @@
 """
 Model training pipeline — orchestrates tuning, fitting, and evaluation.
 ========================================================================
-Implements the full Blueprint v4 §9 training protocol:
+Implements the full training protocol specified in the Pre-Specified Empirical
+Design (§9):
 
   1. Load train / val / test splits from data/processed/samples/
   2. For each of the 3 models (LogReg, RF, XGBoost):
@@ -16,7 +17,7 @@ Critical rule: The test set is evaluated EXACTLY ONCE after all models
 are trained and thresholds are locked. No design decisions may be
 revisited after test-set results are seen.
 
-Blueprint v4 reference: §9
+Design-specification reference: §9
 """
 
 from __future__ import annotations
@@ -460,7 +461,7 @@ def _append_evaluation_manifest(
     each time evaluate_on_test() is called.
 
     Provides an auditable record of every test-set evaluation, addressing
-    the Blueprint v4 §6.3 "test set evaluated exactly once" design rule
+    the Pre-Specified Empirical Design §6.3 "test set evaluated exactly once" design rule
     and editorial review comment #7 ("the code cannot enforce it").
 
     Each row records: ISO timestamp (UTC), run label (primary / RC1-RC6 /
@@ -517,7 +518,7 @@ def evaluate_on_test(
     Evaluate all trained models on the held-out test set.
 
     *** THIS FUNCTION MUST BE CALLED EXACTLY ONCE PER (config, label, horizon). ***
-    The test set is sacred (Blueprint v4 §6.3 design freeze rule). Robustness
+    The test set is sacred (Pre-Specified Empirical Design §6.3 design freeze rule). Robustness
     checks call this function under DIFFERENT specifications, so each call is
     a distinct evaluation, not a re-evaluation of the same model.
 

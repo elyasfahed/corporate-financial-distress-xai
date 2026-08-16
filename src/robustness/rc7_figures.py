@@ -6,8 +6,9 @@ neural-network extension (RC7) on the three frozen primary models
 (Logistic Regression, Random Forest, XGBoost).
 
 These are EXTENSION figures and are kept strictly separate from the primary
-``outputs/figures/model/`` figures (which show only the frozen 3-model
-portfolio, Blueprint v4). They are written to ``outputs/figures/robustness/``
+``outputs/figures/model/`` figures (which show only the frozen three-model
+portfolio specified in the Pre-Specified Empirical Design). They are written
+to ``outputs/figures/robustness/``
 and are explicitly titled as the RC7 model-class sensitivity comparison. The
 primary figures are never touched.
 
@@ -28,7 +29,8 @@ reduced-feature robustness run (e.g. RC4 11-feature or RC6 16-feature), it
 raises a clear instruction to re-run Stage 3 first, rather than silently
 plotting wrong curves.
 
-Reference: extension to Blueprint v4 §10 (documented, not frozen).
+Reference: extension to the Pre-Specified Empirical Design (§10; documented,
+not frozen).
 """
 
 from __future__ import annotations

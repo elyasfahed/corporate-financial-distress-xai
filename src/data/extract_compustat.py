@@ -17,7 +17,7 @@ Historically this module pulled two files:
    A predictor computed from FY-t data is only observable after F_{i,t}.
    Using fiscal year-end instead of filing date introduces look-ahead bias.
 
-Blueprint v4 reference: §4.2, §5.2
+Design-specification reference: §4.2, §5.2
 
 Saves
 -----
@@ -150,7 +150,7 @@ def extract_filing_dates(db) -> pd.DataFrame:
 
     The filing date F_{i,t} is used to anchor the distress label window
     [F_{i,t}, F_{i,t} + 365]. Using fiscal year-end instead of the actual
-    filing date introduces look-ahead bias (Blueprint v4 §5.2).
+    filing date introduces look-ahead bias (Pre-Specified Empirical Design §5.2).
 
     Where fdate is missing (typically pre-1995 observations), a fall-back
     lag of FALLBACK_FILING_LAG_DAYS days from fiscal year-end is applied.

@@ -10,7 +10,7 @@ Utilities have regulated capital structures and stable cash flows
 that may produce systematically different predictor distributions
 from industrial firms, potentially distorting model training.
 
-Blueprint v4 reference: §11, RC5
+Design-specification reference: §11, RC5
 """
 
 from __future__ import annotations

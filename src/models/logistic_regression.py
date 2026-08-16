@@ -9,7 +9,7 @@ Regularisation: L2 (ridge) penalty to handle multicollinearity in the
 predictor set (TLTA and LNMK are correlated; NITA and OCF_TA are
 correlated). The regularisation strength C is tuned via Optuna.
 
-Blueprint v4 reference: §9.1 (Model Portfolio)
+Design-specification reference: §9.1 (Model Portfolio)
 """
 
 from __future__ import annotations

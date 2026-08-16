@@ -8,9 +8,9 @@ Fixed  : All other design dimensions unchanged.
 This check tests sensitivity to the distress definition scope.
 The bankruptcy-only definition substantially reduces the distressed cohort
 and excludes firms that experienced severe financial failure without
-formally filing for bankruptcy (Blueprint v4 §5.4, §11).
+formally filing for bankruptcy (Pre-Specified Empirical Design §5.4, §11).
 
-Blueprint v4 reference: §11, RC1
+Design-specification reference: §11, RC1
 """
 
 from __future__ import annotations

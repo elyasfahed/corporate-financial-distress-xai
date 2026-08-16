@@ -197,7 +197,7 @@ def clean_3model_report() -> None:
     save_table(
         df, RUN_TABLES_MODEL / "model_performance_test_3models",
         caption=(
-            "Out-of-sample discrimination of the three Blueprint-v4 models "
+            "Out-of-sample discrimination of the three pre-specified models "
             "under the primary specification (test 2015--2023). Calibration "
             "is reported separately in the validation-Platt-scaled calibration "
             "comparison, where scores are cross-model comparable; raw Brier is "

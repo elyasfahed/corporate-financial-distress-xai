@@ -8,7 +8,7 @@ Fixed  : All other design dimensions unchanged.
 Tests sensitivity of results to the imbalance correction method.
 SMOTE is NOT the primary approach because it generates synthetic observations
 that may not correspond to real firm characteristics. Class weights are
-preferred as they do not alter the data distribution (Blueprint v4 §9.2).
+preferred as they do not alter the data distribution (Pre-Specified Empirical Design §9.2).
 
 Corrected mode (2026-07-12 audit remediation, Phase 5)
 ------------------------------------------------------
@@ -30,7 +30,7 @@ The frozen implementation has three defects, disclosed and fixed behind
 Reference: Chawla et al. (2002). "SMOTE: Synthetic Minority Over-sampling
 Technique." JAIR, 16, 321–357.
 
-Blueprint v4 reference: §11, RC3
+Design-specification reference: §11, RC3
 """
 
 from __future__ import annotations
