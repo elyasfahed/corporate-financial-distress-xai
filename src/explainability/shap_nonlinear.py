@@ -5,12 +5,12 @@ Implements §10.3 of the pre-specified study design.
 
 Outputs:
   1. SHAP dependence plots for the 5 highest-importance features.
-     Theoretical predictions are stated BEFORE results are examined.
+     Theoretical predictions are stated before the results are examined.
   2. Leverage × Profitability interaction heatmap:
      3×3 heatmap of mean predicted distress probability by TLTA × NITA
      tertiles, testing the super-additive joint effect.
 
-Pre-specified theoretical predictions (must be documented before running):
+Pre-specified theoretical predictions:
   TLTA  : SHAP increases with TLTA, potentially accelerating above 0.6
            (debt-overhang theory; Leland 1994; Garlappi et al. 2008)
   NITA  : SHAP decreases as NITA rises; steeper slope in negative NITA region
@@ -19,8 +19,8 @@ Pre-specified theoretical predictions (must be documented before running):
   EXRET : SHAP decreases with EXRET (market anticipates distress; CHS 2008)
   LNTA  : SHAP decreases with size (smaller firms more vulnerable; Shumway 2001)
 
-Patterns that CONTRADICT these predictions must be discussed critically,
-not explained away (design §10.3).
+Patterns that contradict these predictions are discussed as contrary evidence
+(design §10.3).
 
 Design reference: §10.3
 """

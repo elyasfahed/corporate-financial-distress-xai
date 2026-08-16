@@ -308,8 +308,8 @@ def build_compustat_annual(datadate_convention: str = "frozen",
         How the fiscal year-end date is reconstructed from (FYEAR, FYR);
         see ``compustat_datadate``. "frozen" (default) reproduces the
         original construction exactly; "standard" applies the correct
-        Compustat June-rule convention (fix-ready, Implementation Status
-        paragraph 17 -- adopt only together with a full rebuild).
+        Compustat June-rule convention. Use the alternative only as part of a
+        full rebuild.
     """
     print("\n" + "="*60)
     print("  COMPUSTAT — building compustat_annual_raw.parquet")
@@ -833,7 +833,7 @@ def synthesize_dlstcd(dl: pd.DataFrame, mapping: str = "frozen") -> pd.Series:
         DelActionType == 'GDR'        -> 450  (dropped by exchange)
         DelReasonType == 'BKPY'       -> 572  (bankruptcy; OVERWRITES 450)
 
-    This mapping has two defects (Implementation Status paragraph 17):
+    This mapping has two limitations:
     (a) bankruptcies end up at 572, OUTSIDE the primary 400--499 range, so
         the primary label excludes every bankruptcy delisting, and RC1
         (bankruptcy-only, codes 572/574/584) is DISJOINT from the primary
@@ -980,8 +980,8 @@ def build_crsp_delisting(mapping: str = "frozen", out_path=None) -> None:
     documented in ``synthesize_dlstcd``; the default mapping="frozen"
     reproduces the original file (bankruptcies at 572, liquidations at 500),
     mapping="corrected" places liquidations (400) and bankruptcies (470)
-    inside the primary 400--499 range (fix-ready, Implementation Status
-    paragraph 17 -- adopt only together with a full rebuild).
+    inside the primary 400--499 range. Use the corrected mapping only as part
+    of a full rebuild.
     """
     print("\n" + "="*60)
     print("  CRSP -- building crsp_delisting_raw.parquet")

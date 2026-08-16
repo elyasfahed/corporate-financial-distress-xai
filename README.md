@@ -21,6 +21,26 @@ final models were estimated: sample construction, predictors, model selection,
 evaluation, robustness checks and explainability analysis. Numbered references
 link implementation details to the relevant part of that design.
 
+## Held-out results
+
+The final test sample contains 25,512 firm-year observations from fiscal years
+2015–2023, including 404 distress events (1.58%). Performance on that sample is:
+
+| Model | PR-AUC | ROC-AUC |
+|---|---:|---:|
+| Logistic regression (ridge) | 0.1751 | 0.9203 |
+| XGBoost | 0.1729 | 0.9303 |
+| Random forest | 0.1608 | 0.9272 |
+| Neural network | 0.1338 | 0.9140 |
+
+Logistic regression has the highest point estimate on the primary metric,
+PR-AUC, but its differences from the two tree models are not statistically
+significant after Holm correction. The results therefore do not support a
+general machine-learning advantage over the regularised linear benchmark.
+XGBoost has the highest ROC-AUC and is used for the main SHAP and LIME analysis.
+The complete metrics are available in the
+[four-model results table](outputs/tables/model_results/final_primary/model_performance_test_4models.csv).
+
 ## Data availability
 
 The raw and processed CRSP, Compustat and WRDS datasets are not included because

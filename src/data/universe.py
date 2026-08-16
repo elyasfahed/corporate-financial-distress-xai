@@ -5,11 +5,11 @@ The pre-specified design restricts the universe to CRSP share codes 10/11
 (US-incorporated ordinary common shares). The local CIZ-format data
 drop has no numeric SHRCD; share type and incorporation are encoded in
 letter fields (ShareType, USIncFlg, SecurityType, SecuritySubType),
-which the frozen extraction nulled via numeric coercion — so the filter
-never bound (measured contamination ≈3.2% non-US
+which the original extraction nulled via numeric coercion. The filter therefore
+did not bind (measured contamination ≈3.2% non-US
 firm-years plus ADR/unit/SBI, REIT and CEF components).
 
-This module provides the fix-ready filter:
+This module provides two explicit eligibility modes:
 
     universe_eligibility(secinfo, policy="frozen")  -> all True
     universe_eligibility(secinfo, policy="v2")      -> CIZ equivalent of
@@ -26,21 +26,21 @@ demonstrated, not assumed).
 
 Eligibility can be evaluated in two ways:
 
-  PERMNO-level ("any-time"): a PERMNO is eligible if ANY of its
+  PERMNO-level ("any-time"): a PERMNO is eligible if any of its
     security-info rows passes. Used for the market-index / RSIZE
     denominator, where the contaminants (ETFs, CEFs, derivatives) are
     ineligible in every segment, so time-variation is immaterial.
   Date-ranged (as-of): a panel row is eligible only if a security-info
-    row that passes the letter-field mask is VALID ON the row's date
+    row that passes the letter-field mask is valid on the row's date
     (namedt <= date <= nameendt). Used for the panel itself, so a firm
     that moves off an eligible exchange or share class contributes only
     the firm-years during which it actually qualified. Pass
     date_col="datadate" to apply_universe_filter.
 
-NOTE: the official CIZ value dictionary
-(MetaFlagInfo) is not in the local data drop. The eligible values below
-are config constants (src/config.py: CIZ_UNIVERSE_ELIGIBLE) and MUST be
-pinned against CRSP's flag dictionary before the v2 rebuild is run.
+The official CIZ value dictionary (MetaFlagInfo) is not in the local data
+drop. The eligible values below are configuration constants
+(src/config.py: CIZ_UNIVERSE_ELIGIBLE) and should be checked against CRSP's
+flag dictionary before running the v2 rebuild.
 """
 
 from __future__ import annotations

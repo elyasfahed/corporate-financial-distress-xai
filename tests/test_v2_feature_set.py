@@ -10,7 +10,7 @@ MB_MISSING indicator (17 -> 18 features).
 
   1. The v2 feature set is exactly the frozen 17 plus MB_MISSING; the
      frozen constants are untouched.
-  2. The V2_PROFILE wires every 2026-07-12 blocker fix.
+  2. V2_PROFILE wires every adopted data-layer correction.
   3. The imputation machinery genuinely fills market features when they
      are included in the features list (train-median hierarchy).
 """

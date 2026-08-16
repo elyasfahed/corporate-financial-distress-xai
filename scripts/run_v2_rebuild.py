@@ -12,7 +12,7 @@ Stages (resumable — a stage is skipped if its outputs exist, unless
       DATA_ROOT/raw_v2/ (standard Jan–May FYE dating, corrected
       delisting mapping, letter-field security names).
   a2  Universe pinning gate: dump the CIZ letter-field value counts and
-      the eligibility match rates; ABORTS if the configured
+      the eligibility match rates; stops if the configured
       CIZ_UNIVERSE_ELIGIBLE values do not plausibly match the data.
       Review the report before running stage b.
   b   Merge: corrected panel into processed_v2/merged/ (date-ranged
@@ -32,12 +32,12 @@ Stages (resumable — a stage is skipped if its outputs exist, unless
       training frame). Run manifest hashes the V2 splits and is
       refreshed after LR Platt calibration.
 
-  NN (v2) is intentionally NOT part of this script — run it after the
-  three-model stage completes (adapt rc7b machinery; multi-hour Optuna).
+  The v2 neural network is run separately after the three-model stage
+  completes (using the RC7b machinery; multi-hour Optuna search).
 
-  IMPORTANT: run with the project .venv interpreter
-  (./.venv/Scripts/python.exe), NOT the system Python — the 2026-07-12
-  A stage-d run under Python 3.13 prompted this check; the pinned project
+  Run with the project .venv interpreter
+  (./.venv/Scripts/python.exe), not the system Python. A stage-d run under
+  Python 3.13 prompted this check; the pinned project
   environment is Python 3.11 (requirements-lock.txt).
 
 Usage:
@@ -262,7 +262,7 @@ def _splits_are_current() -> bool:
     Trust existing v2 splits only if they postdate the merged panel AND
     carry the v2 feature signature (MB_MISSING). Guards against stale
     artifacts resurrected by cloud-sync (observed 2026-07-13: Google
-    Drive restored the quarantined pre-blockerfix splits next to their
+    Drive restored an older set of quarantined splits next to their
     quarantine copy, and the plain exists() check skipped stage c).
     """
     test_p = DATA_SAMPLES_V2 / "test.parquet"
@@ -274,7 +274,7 @@ def _splits_are_current() -> bool:
     import pyarrow.parquet as pq
     cols = pq.read_schema(test_p).names
     if "MB_MISSING" not in cols:
-        print("  Existing v2 splits lack MB_MISSING (pre-blockerfix vintage) — rebuilding.")
+        print("  Existing v2 splits lack MB_MISSING and will be rebuilt.")
         return False
     return True
 

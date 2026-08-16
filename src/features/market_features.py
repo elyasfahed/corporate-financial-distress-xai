@@ -71,8 +71,8 @@ def _restrict_to_eligible(
     log-ratio averages 0.00735. Because RSIZE = log(me_firm) - log(total_me),
     the denominator error is a MONTH-COMMON ADDITIVE SHIFT: within-month
     cross-sectional ordering of RSIZE is exactly unchanged, and PR-AUC/ROC-AUC
-    are rank-based. The date-ranged path is therefore provided fix-ready and
-    disclosed rather than adopted (author decision 2026-07-29); adopting it
+    are rank-based. The date-ranged path is therefore available as an
+    alternative and disclosed rather than adopted; adopting it
     would require a full feature rebuild for an effect an order of magnitude
     inside the ±0.025 bootstrap CI.
 

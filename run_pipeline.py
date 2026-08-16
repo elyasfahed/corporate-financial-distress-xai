@@ -661,9 +661,9 @@ def main(args: argparse.Namespace) -> None:
 
     # ── Stage 15 — RC7 comparison figures (NN overlaid on primary models) ────
     # Opt-in only. Builds ROC, PR and calibration figures that show the neural
-    # network (RC7 extension) alongside the three frozen primary models, written
+    # network (RC7 extension) alongside the three original primary models, written
     # to outputs/figures/robustness/. The primary outputs/figures/model/ figures
-    # (frozen 3-model portfolio) are never touched. Requires the primary
+    # (original 3-model portfolio) remain unchanged. Requires the primary
     # 17-feature models on disk: if a robustness run last overwrote them, the
     # module raises a clear instruction to re-run Stage 3 first.
     if 15 in stages_to_run:

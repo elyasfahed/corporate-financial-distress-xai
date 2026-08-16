@@ -6,13 +6,10 @@ For each of the top 10 SHAP features, this module:
   (b) Reports the observed average SHAP direction on the test sample
   (c) Assigns a verdict: Consistent / Inconsistent / Ambiguous
 
-CRITICAL: This table must be COMPLETED BEFORE the SHAP results are
-discussed in the thesis. It must NOT be constructed retrospectively to
-match observed findings. Pre-specification is what makes H₃ and H₄
-falsifiable (design §3.3, §10.5).
-
-The pre-specified theoretical predictions below are locked and must not
-be changed after data work begins.
+This table is completed before the SHAP results are discussed. The theoretical
+predictions are fixed in advance rather than adjusted to match the observed
+findings; that prior commitment makes H₃ and H₄ falsifiable (design §3.3,
+§10.5).
 
 Design reference: §10.5
 """
@@ -26,7 +23,7 @@ from src.config import OUT_TABLES_SHAP
 from src.utils.tables import save_table
 
 # ---------------------------------------------------------------------------
-# Pre-specified theoretical sign predictions (LOCKED — do not change)
+# Pre-specified theoretical sign predictions
 # Reference: Altman (1968); Ohlson (1980); Shumway (2001);
 #            Campbell, Hilscher & Szilagyi (2008); Merton (1974); Leland (1994)
 # ---------------------------------------------------------------------------
