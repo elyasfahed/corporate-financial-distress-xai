@@ -1,7 +1,7 @@
 """
 Local SHAP analysis — firm-level waterfall explanations.
 =========================================================
-Implements §10.4 of the Pre-Specified Empirical Design.
+Implements §10.4 of the pre-specified study design.
 
 Produces SHAP waterfall plots for 3 substantively motivated firms:
   1. True positive from the held-out 2015-2024 test period
@@ -13,7 +13,7 @@ Case selection criterion: economic insight, NOT statistical averageness.
 The cases must be selected to illuminate the model's logic and illuminate
 tensions between prediction and economic theory.
 
-Design-specification reference: §10.4
+Design reference: §10.4
 """
 
 from __future__ import annotations
@@ -46,7 +46,7 @@ def select_cases(
     """
     Select three substantively motivated firm-year cases for local SHAP.
 
-    Selection criteria (Pre-Specified Empirical Design §10.4):
+    Selection criteria (design §10.4):
       - True positive  : distress=1, y_prob >= threshold; choose the highest
                          predicted probability in the held-out test period
       - False negative : distress=1, y_prob < threshold

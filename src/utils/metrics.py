@@ -6,7 +6,7 @@ and for subsample performance analysis (Chapter 6).
 
 The evaluation metrics used in model comparison are in src/models/evaluate.py.
 This module covers descriptive statistics, group comparisons, and
-diagnostic plots required by §8 of the Pre-Specified Empirical Design.
+diagnostic plots required by §8 of the pre-specified study design.
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ def summary_stats_by_group(
     """
     Compute summary statistics separately for distressed and non-distressed firms.
 
-    Required output for Pre-Specified Empirical Design §8.2:
+    Required output for design §8.2:
     mean, median, std, 10th percentile, 90th percentile for each feature,
     separately by group, with a t-statistic and Wilcoxon z-statistic for
     the between-group difference.
@@ -103,7 +103,7 @@ def annual_distress_rate(df: pd.DataFrame) -> pd.DataFrame:
     """
     Compute annual distress rate by fiscal year.
 
-    Required output for Pre-Specified Empirical Design §8.1 (Sample Composition Table).
+    Required output for design §8.1 (Sample Composition Table).
     Sanity check: rates should spike in 2001–02, 2008–09, and 2020.
 
     Parameters
@@ -138,7 +138,7 @@ def correlation_matrix(
     """
     Compute Pearson correlation matrix and flag highly correlated pairs.
 
-    Required output for Pre-Specified Empirical Design §8.3.
+    Required output for design §8.3.
     Pairs with |r| > high_corr_threshold are flagged — relevant for
     interpreting SHAP values for correlated feature pairs.
 
@@ -147,7 +147,7 @@ def correlation_matrix(
     df : pd.DataFrame
     features : list[str]
     high_corr_threshold : float
-        Default 0.70 per §8.3 of the Pre-Specified Empirical Design.
+        Default 0.70 per §8.3 of the pre-specified study design.
 
     Returns
     -------

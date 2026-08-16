@@ -1,7 +1,7 @@
 """
 Global SHAP analysis — sample-wide feature importance.
 =======================================================
-Implements §10.2 of the Pre-Specified Empirical Design:
+Implements §10.2 of the pre-specified study design:
 
   1. SHAP beeswarm plot (summary plot) — features ordered by mean |SHAP|;
      each point = one firm-year; colour = raw feature value.
@@ -13,9 +13,9 @@ Critical: SHAP values are model attributions, NOT causal effects.
 The question asked is strictly:
   "Do the attributions align DESCRIPTIVELY with the sign, ranking,
    and pattern predictions of established financial distress theory?"
-This is the three-layer rule (Pre-Specified Empirical Design §3.2, §10.1).
+This is the three-layer rule (design §3.2, §10.1).
 
-Design-specification reference: §10.2
+Design reference: §10.2
 """
 
 from __future__ import annotations
@@ -232,7 +232,7 @@ def compute_kendall_tau(
 
     High concordance (τ close to 1) suggests that ML and the linear model
     identify the same economic signals. Significant discordance requires
-    substantive investigation (Pre-Specified Empirical Design §10.2).
+    substantive investigation (design §10.2).
 
     Parameters
     ----------
@@ -247,9 +247,7 @@ def compute_kendall_tau(
     tau : float
     p_value : float
 
-    References
-    ----------
-    Pre-Specified Empirical Design §10.2
+    Design reference: §10.2
     """
     # Align on common features
     common = shap_ranking["feature"][shap_ranking["feature"].isin(logit_coef.index)]

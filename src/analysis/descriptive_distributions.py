@@ -4,7 +4,7 @@ Predictor distributions by distress status — thesis figure (Chapter 4).
 Produces ONE clean, publication-quality figure: the distribution of each
 continuous predictor for distressed vs. healthy firm-years, shown as a tidy
 grid of density histograms. This complements the required predictor
-summary-statistics table (Pre-Specified Empirical Design §8.2) by showing the same group
+summary-statistics table (design §8.2) by showing the same group
 differences visually.
 
 This is a REAL thesis figure (unlike src/utils/scratch.py output):

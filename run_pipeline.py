@@ -122,7 +122,7 @@ def stage_1_features() -> None:
 
 def stage_2_descriptive() -> None:
     """Descriptive statistics — 4 required outputs."""
-    _section(2, "Descriptive statistics (Pre-Specified Empirical Design §8)")
+    _section(2, "Descriptive statistics (design §8)")
     from src.analysis.descriptive import run_all_descriptive
     # Use the FINAL modeling sample (train+val+test) so all descriptive
     # tables reconcile exactly with the model samples (124,285 firm-years
@@ -190,7 +190,7 @@ def stage_4_h2(panel: pd.DataFrame | None = None) -> None:
 
 def stage_5_global_shap(trained_models: dict, test: pd.DataFrame) -> dict:
     """Global SHAP analysis."""
-    _section(5, "Global SHAP analysis (Pre-Specified Empirical Design §10.2)")
+    _section(5, "Global SHAP analysis (design §10.2)")
     from src.explainability.shap_global import (
         compute_shap_values,
         plot_beeswarm,
@@ -245,7 +245,7 @@ def stage_5_global_shap(trained_models: dict, test: pd.DataFrame) -> dict:
 
 def stage_6_nonlinear_shap(shap_artifacts: dict, test: pd.DataFrame) -> None:
     """Non-linear SHAP effects: dependence plots + LEV×ROA heatmap."""
-    _section(6, "Non-linear SHAP effects (Pre-Specified Empirical Design §10.3)")
+    _section(6, "Non-linear SHAP effects (design §10.3)")
     from src.explainability.shap_nonlinear import (
         plot_all_dependence_plots,
         plot_lev_roa_heatmap,
@@ -268,7 +268,7 @@ def stage_6_nonlinear_shap(shap_artifacts: dict, test: pd.DataFrame) -> None:
 
 def stage_7_local_shap(trained_models: dict, test: pd.DataFrame) -> None:
     """Local SHAP waterfall plots for 3 selected firm-years."""
-    _section(7, "Local SHAP explanations (Pre-Specified Empirical Design §10.4)")
+    _section(7, "Local SHAP explanations (design §10.4)")
     from src.explainability.shap_local import run_local_shap
 
     xgb_info = trained_models["xgboost"]
@@ -284,7 +284,7 @@ def stage_7_local_shap(trained_models: dict, test: pd.DataFrame) -> None:
 
 def stage_8_theory(shap_artifacts: dict, test: pd.DataFrame) -> None:
     """Theory-consistency validation table (H3 and H4)."""
-    _section(8, "Theory-consistency validation table (Pre-Specified Empirical Design §10.5)")
+    _section(8, "Theory-consistency validation table (design §10.5)")
     from src.explainability.theory_consistency import build_theory_consistency_table
 
     X_test_df = test[ALL_FEATURES]
@@ -303,7 +303,7 @@ def stage_9_robustness(
     primary_results: pd.DataFrame,
 ) -> pd.DataFrame:
     """All 5 pre-specified robustness checks."""
-    _section(9, "Robustness checks RC1–RC5 (Pre-Specified Empirical Design §11)")
+    _section(9, "Robustness checks RC1–RC5 (design §11)")
     from src.robustness.run_all_robustness import run_all_robustness
     return run_all_robustness(train, val, test, primary_results)
 
@@ -375,7 +375,7 @@ def stage_11_regime_and_calibration(
     test: pd.DataFrame,
 ) -> None:
     """
-    Academic-quality extensions addressing critical assessment weaknesses:
+    Additional diagnostics for regime stability and calibration:
 
       (a) Sub-period stability — PR-AUC for 2015–2019 vs. 2020–2024.
           A good model should not collapse under COVID or rising-rate regime.

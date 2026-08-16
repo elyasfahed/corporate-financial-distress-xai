@@ -1,9 +1,9 @@
 """
-Filing-date matched-vs-unmatched selection analysis — audit item 3.
+Filing-date matched-versus-unmatched selection analysis.
 ====================================================================
 The design drops, rather than imputes, firm-years without a real 10-K filing
 date (``attach_filing_dates(drop_missing_fdates=True)``), consistent with the
-Pre-Specified Empirical Design (§5.2). On the reported sample this removes a
+pre-specified study design (§5.2). On the reported sample this removes a
 large minority of firm-years, so
 the honest question is not *how many* were dropped but **whether the dropped
 firm-years differ systematically from the retained ones**.

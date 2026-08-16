@@ -85,7 +85,7 @@ OUT_MODELS_CONFIGS      = ROOT / "outputs" / "models" / "configs"
 OUT_SCRATCH = ROOT / "scratch"
 
 # ---------------------------------------------------------------------------
-# Sample periods  (Pre-Specified Empirical Design — frozen)
+# Sample periods  (fixed in advance)
 # ---------------------------------------------------------------------------
 SAMPLE_START_YEAR = 1990
 SAMPLE_END_YEAR   = 2024   # FY2024 distress window fully observable Apr 2026
@@ -94,7 +94,7 @@ VAL_END_YEAR      = 2014   # Validation: 2010–2014
 # Test:                     2015–2024  → evaluate ONCE, at the very end
 
 # ---------------------------------------------------------------------------
-# Universe & exclusions  (Pre-Specified Empirical Design §6.1)
+# Universe & exclusions  (design §6.1)
 # ---------------------------------------------------------------------------
 EXCLUDED_SIC_RANGES = [
     (6000, 6999),   # Financial firms — leverage is regulatory, not operational
@@ -140,7 +140,7 @@ CIZ_UNIVERSE_ELIGIBLE = {
 }
 
 # ---------------------------------------------------------------------------
-# Distress definition  (Pre-Specified Empirical Design §5)
+# Distress definition  (design §5)
 # ---------------------------------------------------------------------------
 # Primary: CRSP DLSTCD codes 400–499
 # Follows Shumway (2001) and Campbell, Hilscher & Szilagyi (2008)
@@ -191,14 +191,14 @@ FILING_DATE_SOURCE = "filingdates_10k"
 # (~16% of the panel under filingdates_10k; ~12k of these are foreign 20-F
 # filers that likely fall outside the US-domestic universe anyway).
 #   "drop"      → design-faithful: missing dates are dropped, not imputed
-#                 (Pre-Specified Empirical Design §5.2). DEFAULT.
+#                 (design §5.2). DEFAULT.
 #   "estimate"  → keep, impute datadate + FALLBACK_FILING_LAG_DAYS, tagged
 #   "broaden"   → fall back to 20-F / AR filing dates from the same file for
 #                 non-10-K filers; drop only what still has no date
 FILING_DATE_UNMATCHED_POLICY = "drop"
 
 # ---------------------------------------------------------------------------
-# Predictor set  (Pre-Specified Empirical Design §7 — 17 variables, frozen)
+# Predictor set  (design §7 — 17 variables, frozen)
 # ---------------------------------------------------------------------------
 ACCOUNTING_FEATURES = [
     "NITA",      # Net income / Total assets (ROA)
@@ -322,7 +322,7 @@ DATA_FEATURES_V2 = DATA_ROOT / "processed_final_primary" / "features"
 DATA_SAMPLES_V2  = DATA_ROOT / "processed_final_primary" / "samples"
 
 # ---------------------------------------------------------------------------
-# Modeling  (Pre-Specified Empirical Design §9)
+# Modeling  (design §9)
 # ---------------------------------------------------------------------------
 RANDOM_SEED   = 42
 CV_FOLDS      = 5                # Rolling-origin CV folds within training set

@@ -7,7 +7,7 @@ neural-network extension (RC7) on the three frozen primary models
 
 These are EXTENSION figures and are kept strictly separate from the primary
 ``outputs/figures/model/`` figures (which show only the frozen three-model
-portfolio specified in the Pre-Specified Empirical Design). They are written
+portfolio specified in the pre-specified study design). They are written
 to ``outputs/figures/robustness/``
 and are explicitly titled as the RC7 model-class sensitivity comparison. The
 primary figures are never touched.
@@ -29,7 +29,7 @@ reduced-feature robustness run (e.g. RC4 11-feature or RC6 16-feature), it
 raises a clear instruction to re-run Stage 3 first, rather than silently
 plotting wrong curves.
 
-Reference: extension to the Pre-Specified Empirical Design (§10; documented,
+Reference: extension to the pre-specified study design (§10; documented,
 not frozen).
 """
 

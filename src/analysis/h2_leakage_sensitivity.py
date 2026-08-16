@@ -4,7 +4,7 @@ Leakage Sensitivity Analysis — chronological vs random split designs.
 **Thesis mapping (2026-08-12). The hypothesis this module was built to test
 has been WITHDRAWN. This module has NOT.**
 
-The frozen hypothesis (Pre-Specified Empirical Design, §3.2) read:
+The hypothesis fixed in design §3.2 read:
 
   H2: The ML advantage documented in H1 is *smaller* than comparable
   estimates from studies using random train-test splits, reflecting
@@ -68,7 +68,7 @@ A table comparing PR-AUC (and optionally AUC-ROC) across the three
 designs. The difference  Δ = PR-AUC(random) − PR-AUC(chronological)
 quantifies the magnitude of design optimism and directly tests H2.
 
-Design-specification reference: §3.2, §6.3, §10.1 (H2)
+Design reference: §3.2, §6.3, §10.1 (H2)
 """
 
 from __future__ import annotations

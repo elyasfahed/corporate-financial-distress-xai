@@ -39,7 +39,7 @@ Run
 ---
     python -m src.analysis.distress_label_sensitivity
 
-Design-specification reference: §5.4 (label definition); §6.3 (design rule).
+Design reference: §5.4 (label definition); §6.3 (design rule).
 """
 
 from __future__ import annotations

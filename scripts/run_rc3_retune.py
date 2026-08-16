@@ -42,7 +42,7 @@ from src.utils.tables import save_table
 ROBUSTNESS_DIR = Path(OUT_TABLES_ROBUSTNESS) / V2_PROFILE["spec"]
 CONFIGS_DIR = Path(OUT_MODELS_CONFIGS) / RC3_SPEC
 
-#: Pre-Specified Empirical Design §9.3 budget. A run below this is a smoke test and writes nothing.
+#: design §9.3 budget. A run below this is a smoke test and writes nothing.
 FULL_TRIAL_BUDGET = 100
 
 

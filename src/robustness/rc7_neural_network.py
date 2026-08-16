@@ -7,8 +7,8 @@ Fixed  : All other design dimensions unchanged — same 17 predictors,
          same chronological splits, same seed, same Optuna PR-AUC tuning,
          same validation-F1 threshold, same evaluation metrics.
 
-This is a transparent post-specification extension (not one of the five
-robustness checks in the frozen Pre-Specified Empirical Design). It is framed
+This is a transparent post-specification extension, not one of the five
+robustness checks fixed in the original study design. It is framed
 as a model-class sensitivity
 analysis, analogous in spirit to the RC6 no-RSIZE sensitivity: it answers
 a question raised by the results rather than varying a frozen design
@@ -25,7 +25,7 @@ Interpretation
 The network does NOT replace XGBoost as the primary SHAP model. The primary
 explanation analysis remains on the frozen best-of-portfolio model.
 
-Reference: extension to the Pre-Specified Empirical Design (§11; documented,
+Reference: extension to the pre-specified study design (§11; documented,
 not frozen)
 """
 

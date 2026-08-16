@@ -1,7 +1,7 @@
 """
 Missing-value imputation for the 11 accounting predictors.
 ============================================================
-Pre-Specified Empirical Design §6.4 imputation protocol:
+Imputation protocol from design §6.4:
 
   1. Primary: SIC-2-digit industry cross-sectional median for the same
      fiscal year.
@@ -13,7 +13,7 @@ Pre-Specified Empirical Design §6.4 imputation protocol:
 Imputation is applied separately to each split (train / val / test) using
 ONLY the medians from the training sample. This prevents leakage.
 
-Design-specification reference: §6.4
+Design reference: §6.4
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ def compute_imputation_medians(
     """
     Compute imputation medians from the training sample ONLY.
 
-    F2 fix — the imputation hierarchy now has four levels (Pre-Specified Empirical Design §6.4):
+    F2 fix — the imputation hierarchy now has four levels (design §6.4):
       1. SIC-2 × fyear median (primary; requires ≥5 industry peers in
          the same fiscal year)
       2. SIC-2 median across all training years (NEW — F2 fix)

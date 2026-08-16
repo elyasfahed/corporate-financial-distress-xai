@@ -2,7 +2,7 @@
 Run all 5 pre-specified robustness checks (RC1–RC5).
 ======================================================
 Each check varies EXACTLY ONE design dimension; all others are held fixed.
-Results are presented in a single consolidated table (Pre-Specified Empirical Design §11).
+Results are presented in a single consolidated table (design §11).
 
 A finding is considered ROBUST if:
   (i)  The best-performing model retains its ranking.
@@ -12,7 +12,7 @@ A finding is considered ROBUST if:
 Material changes in any check are discussed SUBSTANTIVELY rather than
 dismissed as noise.
 
-Checks (Pre-Specified Empirical Design §11):
+Checks (design §11):
   RC1 : Distress definition — bankruptcy codes 572+574+584 vs. 400–499 primary
   RC2 : Prediction horizon — 6 months instead of 12 months
   RC3 : Class imbalance treatment — SMOTE instead of class weights
@@ -27,7 +27,7 @@ and re-run, any RC whose checkpoint file already exists is SKIPPED and
 its result is loaded from disk. Delete a checkpoint file to force a re-run
 of that specific check.
 
-Design-specification reference: §11
+Design reference: §11
 """
 
 from __future__ import annotations
@@ -227,7 +227,7 @@ def run_all_robustness(
         consolidated,
         OUT_TABLES_ROBUSTNESS / "robustness_consolidated",
         caption=(
-            "Consolidated robustness results (Pre-Specified Empirical Design §11). "
+            "Consolidated robustness results (design §11). "
             "Each row reports out-of-sample test-set metrics for one model "
             "under one robustness condition: \\textbf{primary} = frozen "
             "design; \\textbf{RC1} = bankruptcy-only DLSTCD codes "

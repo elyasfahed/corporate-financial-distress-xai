@@ -1,7 +1,7 @@
 """
 Post-hoc LR calibration via Platt scaling.
 ===========================================
-Addresses the calibration weakness identified in the critical assessment:
+Evaluates a calibration weakness in the logistic-regression model:
   LR Brier score = 0.2427 (very high — worst calibration of the three models)
   while LR PR-AUC = 0.1103 (best discrimination).
 
@@ -9,7 +9,7 @@ The model is a good ranker but a poor probability estimator. This matters
 for any practical application (credit risk management, portfolio screening)
 where predicted probabilities are interpreted as probability estimates.
 
-Fix: Platt scaling (sigmoid calibration) using the held-out validation set
+Method: Platt scaling (sigmoid calibration) using the held-out validation set
 (2010–2014). This is the correct procedure — we do NOT use the test set.
 
   CalibratedClassifierCV(lr_pipeline, cv='prefit', method='sigmoid')

@@ -17,7 +17,7 @@ PR-AUC bootstrap test:
 Output: one table with z-statistic, p-value, and significance stars
 for every pairwise comparison (RF vs LR, XGB vs LR, RF vs XGB).
 
-Design-specification reference: §9.4
+Design reference: §9.4
 """
 
 from __future__ import annotations
