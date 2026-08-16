@@ -88,10 +88,9 @@ def _compute_dependence_support(
       - mean SHAP value in the region
       - mean feature value in the region
 
-    The motivating example is TLTA: the SHAP dependence often shows a
-    reversal at TLTA > 1.0 that is driven by very few observations.
-    Examiners will press on the reversal — this table makes the supporting
-    sample size explicit.
+    The motivating example is TLTA: the SHAP dependence plot may show a
+    reversal above TLTA = 1.0 based on relatively few observations.
+    This table reports regional sample sizes to support cautious interpretation.
     """
     edges = DEPENDENCE_SUPPORT_BINS.get(feature)
     mask = np.isfinite(feature_values) & np.isfinite(shap_values_feat)

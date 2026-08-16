@@ -163,7 +163,7 @@ def plot_waterfall(
     # max_display=17 shows every predictor individually (no "N other features"
     # aggregate bar). Appropriate here because all 17 predictors are
     # theoretically motivated (Blueprint v4 predictor table) and full
-    # transparency pre-empts examiner questions about hidden contributions.
+    # Displaying each predictor separately makes all contributions transparent.
     shap.plots.waterfall(explanation, max_display=17, show=False)
     fig = plt.gcf()
     fig.suptitle(
