@@ -3,7 +3,7 @@ Winsorisation convention: realised censoring and its effect on the ordering.
 ============================================================================
 **Classification: post-hoc supplementary (robustness).**
 
-The frozen design computes 1st/99th-percentile winsorisation bounds on the
+The pre-specified design computes 1st/99th-percentile winsorisation bounds on the
 1990--2008 training sample and applies them unchanged to validation and test.
 That is the correct leakage-free rule and it is not in question here. What was
 never measured is its *realised* effect on the evaluation sample: because the
@@ -32,7 +32,7 @@ compared against the frozen pipeline:
   values only, never an outcome and never a future period, and a forecaster
   standing at fiscal year-end $t$ observes the year-$t$ cross-section -- and it
   is a common convention in the accounting literature. It is nonetheless a
-  *deviation* from the frozen design, reported as a sensitivity and not as a
+  *deviation* from the pre-specified design, reported as a sensitivity and not as a
   correction.
 * ``YP`` -- ``Y`` with ``PRICE`` included.
 

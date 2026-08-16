@@ -342,7 +342,7 @@ def run_filing_date_selection(comp: pd.DataFrame, filing: pd.DataFrame,
             "Filing-date attrition: firm-years entering the 10-K filing-date "
             "merge, matched to an actual filing date, and dropped. Unmatched "
             "firm-years are dropped rather than imputed, faithful to the "
-            "frozen design.",
+            "pre-specified design.",
         "filing_date_selection_by_year":
             "Filing-date match rate by fiscal year. A monotone trend indicates "
             "the selection is not stationary and must be read alongside the "

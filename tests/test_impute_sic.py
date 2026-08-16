@@ -1,8 +1,8 @@
 """
 Regression tests — sic_col + per-feature peer counts in imputation
 ===================================================================
-A prior audit found that the frozen pipeline derived the SIC-2 imputation group
-from `sich`, which is zero for every row of the frozen panel, so the
+The original pipeline derived the SIC-2 imputation group from `sich`, which
+is zero for every row of the original panel, so the
 "industry median" silently collapsed to a pooled annual median. The fix
 adds sic_col (default "sich" = frozen bytes; "_sic" = corrected) and a
 per-feature peer-count rule (default "rows" = frozen).

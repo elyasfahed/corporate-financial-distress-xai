@@ -1,6 +1,6 @@
 """
-Regression tests — XAI estimand fixes (Phase 5 audit remediation)
-==================================================================
+Regression tests for XAI estimands
+==================================
 1. select_dependence_features returns the model's EMPIRICAL top-k by
    mean |SHAP| plus the pre-specified H4 trio.
 2. compute_interaction_contrast is exactly zero for a purely additive

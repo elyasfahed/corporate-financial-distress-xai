@@ -1,7 +1,7 @@
 """
-Regression tests — H2 advantage-differential estimand (Phase 5 fix)
-====================================================================
-The frozen H2 table reported per-model Δ(PR-AUC), which conflates
+Regression tests for the H2 advantage-differential estimand
+===========================================================
+The original H2 table reported per-model Δ(PR-AUC), which conflates
 design effects common to all models with the quantity H2 asserts
 something about: the change in the ML-over-LR ADVANTAGE. These tests
 pin compute_advantage_differential on synthetic results, including the

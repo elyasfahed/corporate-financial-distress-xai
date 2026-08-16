@@ -45,8 +45,8 @@ from src.config import (
 from src.utils.plots import save_figure
 from src.utils.tables import save_table
 
-# Pre-specified support regions for the SHAP dependence support diagnostic
-# (E4 fix). Edges chosen on theoretical grounds: TLTA=0.6 is the
+# Pre-specified support regions for the SHAP dependence diagnostic.
+# Edges are chosen on theoretical grounds: TLTA=0.6 is the
 # debt-overhang threshold (Leland 1994); TLTA=1.0 is the OENEG boundary.
 DEPENDENCE_SUPPORT_BINS: dict[str, list[float]] = {
     "TLTA":  [-float("inf"), 0.6, 1.0,  float("inf")],
@@ -80,7 +80,7 @@ def _compute_dependence_support(
     feature: str,
 ) -> pd.DataFrame:
     """
-    Build the support-diagnostic table for a SHAP dependence plot (E4 fix).
+    Build the support-diagnostic table for a SHAP dependence plot.
 
     For each pre-specified region of the feature's value range, report:
       - n observations
@@ -131,13 +131,13 @@ def plot_dependence(
 ) -> None:
     """
     SHAP dependence plot for a single feature, with a marginal histogram
-    (E4 fix) that exposes tail thinning at the edges of the feature range.
+    that exposes tail thinning at the edges of the feature range.
 
     Each point is one firm-year. The x-axis is the raw feature value;
     the y-axis is the SHAP value for that feature. Optional colour coding
     by an interaction feature reveals interaction effects. A marginal
-    histogram strip is drawn beneath the scatter so reviewers can see at
-    a glance which regions of the dependence curve are supported by data.
+    histogram strip beneath the scatter shows which regions of the
+    dependence curve have adequate data support.
 
     The plot is interpreted against the pre-specified theoretical prediction
     in THEORETICAL_PREDICTIONS[feature]. A support-diagnostic CSV is also
@@ -166,7 +166,7 @@ def plot_dependence(
     feat_idx = feature_names.index(feature)
     interact_arg = interaction_feature if interaction_feature else "auto"
 
-    # E4 fix: figure with two stacked axes — dependence scatter on top,
+    # Two stacked axes: dependence scatter on top and a
     # marginal histogram of feature support on the bottom.
     fig, (ax_dep, ax_hist) = plt.subplots(
         nrows=2, ncols=1, figsize=(7, 5.8),
@@ -204,7 +204,7 @@ def plot_dependence(
     # SHAP draws an x-label on the top axis; hide it since we share x
     ax_dep.set_xlabel("")
 
-    # ── Marginal histogram (E4 fix) ───────────────────────────────────────
+    # ── Marginal histogram ────────────────────────────────────────────────
     feat_vals_raw = X_test[feature].astype(float).fillna(0).values
     shap_vals_feat = shap_values[:, feat_idx].astype(float)
     finite_vals = feat_vals_raw[np.isfinite(feat_vals_raw)]
@@ -252,10 +252,10 @@ def select_dependence_features(
     k: int = 5,
 ) -> list[str]:
     """
-    Phase 5 audit fix — select the dependence-plot features EMPIRICALLY.
+    Select the dependence-plot features from empirical importance.
 
     The design says "dependence plots for the 5 highest-importance
-    features", but the frozen implementation hard-coded
+    features", but the original implementation hard-coded
     DEPENDENCE_FEATURES; the model's actual top-5 by mean |SHAP| can
     differ. Returns the empirical top-k UNION the three pre-specified
     H4 hypothesis features (TLTA, NITA, SIGMA), which must always be
@@ -372,8 +372,8 @@ def plot_lev_roa_heatmap(
     )
     save_figure(fig, OUT_FIGURES_SHAP / f"lev_roa_heatmap_{model_name}")
 
-    # Phase 5 audit fix — the raw heatmap cannot TEST super-additivity
-    # (H4): elevated corner cells are equally consistent with additive
+    # The raw heatmap cannot test super-additivity (H4): elevated corner
+    # cells are equally consistent with additive
     # marginal effects. Save the interaction contrast alongside it.
     contrast = compute_interaction_contrast(heatmap_df)
     save_table(

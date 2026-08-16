@@ -224,7 +224,7 @@ def assign_verdict(
 
 
 # ---------------------------------------------------------------------------
-# Collinearity diagnostics for the top-K features  (E1 fix)
+# Collinearity diagnostics for the top-K features
 # ---------------------------------------------------------------------------
 
 def _topk_collinearity(
@@ -355,7 +355,7 @@ def build_theory_consistency_table(
     """
     observed = compute_observed_shap_directions(shap_values, X_test, top_n)
 
-    # E1 fix: collinearity diagnostic across the top-K features
+    # Collinearity diagnostic across the top-K features
     topk_features = observed["feature"].tolist()
     collinearity = _topk_collinearity(X_test, topk_features, corr_threshold=0.7)
     collinearity = collinearity.set_index("feature")

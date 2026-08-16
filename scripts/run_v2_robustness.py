@@ -1,9 +1,8 @@
 """
-v2 robustness re-runs — RC1-corrected, RC3-SMOTENC, H2 (corrected estimand).
-=============================================================================
-The last v2 evidence gap. Runs the three audit-flagged
-robustness/secondary analyses on the corrected v2 data, using the Phase-5
-repaired machinery. Sequential (one CPU-heavy stage at a time), resumable
+v2 robustness runs — corrected RC1, RC3-SMOTENC and the H2 estimand.
+====================================================================
+Runs three robustness and secondary analyses on the corrected v2 data.
+The workflow is sequential (one CPU-heavy stage at a time) and resumable
 (a stage is skipped when its results CSV exists), all outputs v2_-prefixed
 — no v1 artifact is touched.
 

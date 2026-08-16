@@ -111,7 +111,7 @@ def test_apply_filter_any_rule_per_permno():
 
 
 # ---------------------------------------------------------------------------
-# Date-ranged (as-of) mode — 2026-07-12 second-audit fix
+# Date-ranged (as-of) mode
 # ---------------------------------------------------------------------------
 
 def make_dated_secinfo():

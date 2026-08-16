@@ -1,7 +1,7 @@
 """
 Central configuration for the thesis project.
 =========================================================
-All paths, constants, and frozen design parameters live here.
+All paths, constants, and pre-specified design parameters live here.
 Import this module everywhere — never hardcode paths or magic numbers.
 
 Data path resolution order:
@@ -123,8 +123,8 @@ MIN_CONSECUTIVE_YEARS = 2        # Drop firms with <2 consecutive fiscal years
 #   IssuerType      {CORP 128,933 | ACOR 58,394 | REIT 3,721}
 # IssuerType matters: REITs are EQTY/COM/NS and would otherwise pass, but
 # SHRCD 10/11 (and the ch04 design prose) excludes them.
-# Exchange (added 2026-07-12, second-audit fix): the design restricts the
-# universe to NYSE/AMEX/NASDAQ listings, which the pipeline never enforced.
+# The study universe is restricted to NYSE, AMEX and NASDAQ listings.
+# Earlier pipeline versions did not enforce this exchange restriction.
 # Pinned against the raw_v2 exchcd_src letter counts (same a2 dump):
 #   {Q 91,584 | N 39,760 | X 31,810 | A 14,492 | R 10,035 | B 3,366}
 # N=NYSE, A=NYSE American (AMEX), Q=NASDAQ per CRSP's exchange letter
@@ -292,8 +292,8 @@ V2_PROFILE = {
     "eligible_index":      True,              # §17(ii) index/RSIZE denominator
     "market_min_obs":      12,                # §9 full-window EXRET/SIGMA
     "sample_end_year":     SAMPLE_END_YEAR_V2,  # §18c censoring cutoff
-    # feature layer (2026-07-12 second-audit blocker fixes)
-    "feature_set":         ALL_FEATURES_V2,   # 18 = frozen 17 + MB_MISSING
+    # feature layer
+    "feature_set":         ALL_FEATURES_V2,   # 18 = original 17 + MB_MISSING
     "impute_market":       True,              # §8 principled fix: EXRET/
                                               # SIGMA/MB through imputation
     "missing_policy":      "strict",          # OENEG/INTWO -> NA when their

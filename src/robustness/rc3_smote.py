@@ -10,10 +10,10 @@ SMOTE is NOT the primary approach because it generates synthetic observations
 that may not correspond to real firm characteristics. Class weights are
 preferred as they do not alter the data distribution (design §9.2).
 
-Corrected mode (2026-07-12 audit remediation, Phase 5)
-------------------------------------------------------
-The frozen implementation has three defects, disclosed and fixed behind
-``corrected=True`` (default False reproduces the frozen behaviour):
+Corrected mode
+--------------
+The original implementation has three limitations addressed behind
+``corrected=True`` (default False reproduces the original behaviour):
 
 1. Plain SMOTE interpolates the binary indicators (OENEG, INTWO) into
    impossible fractional values. Corrected: SMOTENC, which treats them
@@ -46,12 +46,11 @@ from src.config import ALL_FEATURES, OUT_MODELS_CONFIGS, RANDOM_SEED
 
 #: Binary predictors that SMOTE must not interpolate.
 #:
-#: 2026-07-29 audit fix — ``MB_MISSING`` was absent from this list while the
-#: final-primary feature set (ALL_FEATURES_V2 = 17 + MB_MISSING) carries it as
-#: a 0/1 indicator. SMOTENC therefore treated it as continuous and interpolated
-#: it to fractional values, i.e. exactly the defect this module documents itself
-#: as fixing, applied to only two of the three binaries. The list is now the
-#: union over every supported feature set and is validated against the data by
+#: ``MB_MISSING`` belongs here because the final-primary feature set
+#: (ALL_FEATURES_V2 = 17 + MB_MISSING) carries it as a 0/1 indicator.
+#: If omitted, SMOTENC treats it as continuous and interpolates it to
+#: fractional values. The list covers every supported feature set and is
+#: validated against the data by
 #: :func:`binary_feature_indices`, so a future feature addition cannot silently
 #: reintroduce the bug.
 BINARY_FEATURES = ["OENEG", "INTWO", "MB_MISSING"]
@@ -159,8 +158,8 @@ def run_rc3(
     train, val, test : pd.DataFrame
     features : list[str]
     corrected : bool, default False
-        False reproduces the frozen behaviour (plain SMOTE in raw space,
-        library-default models). True applies the audit fixes: SMOTENC,
+        False reproduces the original behaviour (plain SMOTE in raw space,
+        library-default models). True uses SMOTENC,
         standardised continuous space, tuned hyperparameters.
     params_dir : Path or None
         Where corrected mode loads the tuned configs from. None = the

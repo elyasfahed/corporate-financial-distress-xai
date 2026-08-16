@@ -1,7 +1,7 @@
 """
 Runtime guard on repeated test-set evaluation.
 ==============================================
-The frozen design promises the test sample is *evaluated exactly once* per
+The pre-specified design evaluates the test sample *exactly once* per
 specification. Until now that promise was documented and audited after the fact
 but never enforced: ``evaluate_on_test`` appended a manifest row and returned,
 so a second call on an identical specification was recorded but not prevented.
@@ -157,7 +157,7 @@ def check_evaluation_permitted(identity: dict, manifest_path: Path,
             f"  test data hash : {identity['test_data_hash']}\n"
             f"  identity       : {ident}\n"
             "This tuple is already recorded in the evaluation manifest. The "
-            "frozen design evaluates the test sample once per specification. "
+            "pre-specified design evaluates the test sample once per specification. "
             "If the repeat is genuinely warranted, pass an explicit "
             "override_reason=... to evaluate_on_test(); it will be recorded in "
             "the manifest. Changing the data, the label, the horizon or the "

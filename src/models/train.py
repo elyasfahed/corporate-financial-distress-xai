@@ -220,9 +220,9 @@ def train_all_models(
         v2 profile passes ACCOUNTING + EXRET/SIGMA/MB — §8).
     samples_dir : Path or None
         Directory whose train/val/test parquets the run manifest should
-        hash. None = the frozen primary DATA_SAMPLES. The v2 rebuild
+        hash. None = the primary DATA_SAMPLES. The v2 rebuild
         MUST pass DATA_SAMPLES_V2, otherwise the manifest records v1
-        data hashes for a v2 run (2026-07-12 second-audit fix).
+        data hashes for a v2 run.
     manifest_input_files : iterable[Path] or None
         Additional immutable inputs whose hashes are required to reproduce
         the run (for example the delisting extract used by an RC relabel).

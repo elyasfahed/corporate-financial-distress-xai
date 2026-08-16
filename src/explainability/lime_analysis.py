@@ -177,8 +177,8 @@ def run_lime_analysis(
     X_test  = test[features].astype(float).fillna(0).values
 
     # LIME explainer — background = training distribution (no leakage; train only).
-    # Phase 5 audit fix: declare the binary indicators categorical so LIME's
-    # perturbation samples them as {0, 1} instead of drawing continuous
+    # Declare binary indicators categorical so LIME's perturbation samples
+    # them as {0, 1} instead of drawing continuous
     # values around them.
     categorical_idx = [i for i, f in enumerate(features)
                        if f in ("OENEG", "INTWO")]

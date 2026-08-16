@@ -11,7 +11,7 @@ This is a transparent post-specification extension, not one of the five
 robustness checks fixed in the original study design. It is framed
 as a model-class sensitivity
 analysis, analogous in spirit to the RC6 no-RSIZE sensitivity: it answers
-a question raised by the results rather than varying a frozen design
+a question raised by the results rather than varying a pre-specified design
 dimension.
 
 Interpretation

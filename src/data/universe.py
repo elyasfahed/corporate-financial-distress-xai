@@ -1,7 +1,7 @@
 """
 Universe eligibility — CIZ letter-field equivalent of SHRCD 10/11.
 ===================================================================
-The frozen design restricts the universe to CRSP share codes 10/11
+The pre-specified design restricts the universe to CRSP share codes 10/11
 (US-incorporated ordinary common shares). The local CIZ-format data
 drop has no numeric SHRCD; share type and incorporation are encoded in
 letter fields (ShareType, USIncFlg, SecurityType, SecuritySubType),
@@ -19,12 +19,12 @@ The v2 mapping follows CRSP's published SHRCD <-> CIZ crosswalk:
 shrcd 10/11 corresponds to an ordinary common share (SecurityType EQTY,
 SecuritySubType COM), no special share type (ShareType NS), issued by a
 US-incorporated company (USIncFlg Y), and — per the design's universe
-statement — listed on NYSE/AMEX/NASDAQ (exchcd_src N/A/Q; added
-2026-07-12, second-audit fix). Rows with missing letter fields are
+statement — listed on NYSE/AMEX/NASDAQ (exchcd_src N/A/Q). Rows with
+missing letter fields are
 treated as INELIGIBLE under v2 (conservative: eligibility must be
 demonstrated, not assumed).
 
-Eligibility can be evaluated two ways (2026-07-12, second-audit fix):
+Eligibility can be evaluated in two ways:
 
   PERMNO-level ("any-time"): a PERMNO is eligible if ANY of its
     security-info rows passes. Used for the market-index / RSIZE
@@ -124,7 +124,7 @@ def apply_universe_filter(
     """
     Filter a PERMNO-keyed frame to the eligible universe.
 
-    Two modes (2026-07-12 second-audit fix — see module docstring):
+    Two modes are available (see the module docstring):
 
     date_col=None (PERMNO-level, "any-time"): a PERMNO is eligible if
       ANY of its security-info rows is eligible. Appropriate for the

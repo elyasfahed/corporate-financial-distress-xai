@@ -327,7 +327,7 @@ def run_feature_pipeline(
     lag_donor : pd.DataFrame or None
         Raw Compustat rows of the pre-sample fiscal year (FY1989), used
         only as lag donors for the first sample year and removed before
-        any split (2026-07-12 second-audit fix; v2 only).
+        any split (v2 only).
     impute_market : bool
         If True (v2), EXRET/SIGMA/MB are routed through the standard
         train-fitted imputation hierarchy instead of reaching the models
@@ -434,9 +434,8 @@ def run_feature_pipeline(
         sic2_med.to_parquet(med_dir / "imputation_sic2_medians.parquet", index=False)
         sic2_only_med.to_parquet(med_dir / "imputation_sic2_only_medians.parquet", index=False)
         annual_med.to_parquet(med_dir / "imputation_annual_medians.parquet", index=False)
-        # Global (Level-4) fall-back medians were never persisted before
-        # the 2026-07-12 audit fix — without them a saved model's
-        # preprocessing cannot be reproduced exactly.
+        # Persist the global (Level-4) fallback medians; without them a
+        # saved model's preprocessing cannot be reproduced exactly.
         import yaml
         with open(med_dir / "imputation_global_medians.yaml", "w") as f:
             yaml.dump({k: float(v) for k, v in global_med.items()}, f)
