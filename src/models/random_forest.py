@@ -6,9 +6,9 @@ interactions without requiring feature engineering beyond the 17 predictors.
 Compared against logistic regression to quantify the non-linear gain.
 
 Class imbalance is handled via class_weight='balanced', consistent
-with the primary specification (Pre-Specified Empirical Design §9.2).
+with the primary specification (design §9.2).
 
-Design-specification reference: §9.1 (Model Portfolio)
+Design reference: §9.1 (Model Portfolio)
 """
 
 from __future__ import annotations

@@ -1,5 +1,5 @@
 """
-Tests for paired clustered ROC-AUC inference (audit item 8).
+Tests for paired clustered ROC-AUC inference.
 """
 
 from __future__ import annotations

@@ -8,7 +8,7 @@ all three models in each:
   - Pre-COVID   : fyear 2015–2019  (stable expansion, low rates)
   - COVID+      : fyear 2020–2024  (shock + recovery + rate hikes)
 
-Motivation (from critical assessment):
+Motivation:
   A model trained on 1990–2009 may behave differently across regimes.
   If PR-AUC drops materially in one sub-period, this indicates regime
   non-stationarity — a genuine limitation requiring disclosure.

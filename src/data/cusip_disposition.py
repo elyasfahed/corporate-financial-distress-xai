@@ -1,5 +1,5 @@
 """
-CUSIP mismatch disposition — closing audit item 1 (2026-07-29).
+CUSIP mismatch disposition analysis.
 ================================================================
 ``merge_crsp_compustat.validate_cusip`` flags firm-years where the CCM link
 and the CUSIP cross-check disagree, writes them to ``cusip_mismatches.csv``

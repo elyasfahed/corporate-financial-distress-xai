@@ -4,7 +4,7 @@ Construct the 6 market-based predictors.
 All variables follow Campbell, Hilscher & Szilagyi (2008).
 Market data comes from the CRSP Monthly Stock File.
 
-Variable definitions (Pre-Specified Empirical Design §7):
+Variable definitions (design §7):
   EXRET  = 12-month cumulative excess return over CRSP value-weighted index
   SIGMA  = Std dev of raw monthly returns over trailing 12 months
   LNMK   = log(market cap in constant 2012 USD)
@@ -18,7 +18,7 @@ Timing convention:
   These predictors reflect information available to investors at fiscal year-end,
   before the 10-K is filed on F_{i,t}.
 
-Design-specification reference: §7 (Market-Based Predictors)
+Design reference: §7 (Market-Based Predictors)
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ def _restrict_to_eligible(
     trending upward through the test decade). eligible_permnos=None
     reproduces the frozen behaviour byte-for-byte.
 
-    Two eligibility modes (``eligible_segments`` added 2026-07-29, audit item 4):
+    Two eligibility modes:
 
     PERMNO-level "any-time" (``eligible_segments=None``) — a PERMNO enters the
       aggregate in every month it has an MSF row, provided ANY of its

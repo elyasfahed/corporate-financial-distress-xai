@@ -1,5 +1,5 @@
 """
-Paired firm-cluster inference for ROC-AUC differences — audit item 8.
+Paired firm-cluster inference for ROC-AUC differences.
 ======================================================================
 Why this exists
 ---------------

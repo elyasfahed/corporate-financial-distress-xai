@@ -17,7 +17,7 @@ Critical rule: The test set is evaluated EXACTLY ONCE after all models
 are trained and thresholds are locked. No design decisions may be
 revisited after test-set results are seen.
 
-Design-specification reference: §9
+Design reference: §9
 """
 
 from __future__ import annotations
@@ -461,8 +461,7 @@ def _append_evaluation_manifest(
     each time evaluate_on_test() is called.
 
     Provides an auditable record of every test-set evaluation, addressing
-    the Pre-Specified Empirical Design §6.3 "test set evaluated exactly once" design rule
-    and editorial review comment #7 ("the code cannot enforce it").
+    the evaluate-once rule in design §6.3.
 
     Each row records: ISO timestamp (UTC), run label (primary / RC1-RC6 /
     ad_hoc), output CSV path, test sample size, distress count, feature
@@ -518,7 +517,7 @@ def evaluate_on_test(
     Evaluate all trained models on the held-out test set.
 
     *** THIS FUNCTION MUST BE CALLED EXACTLY ONCE PER (config, label, horizon). ***
-    The test set is sacred (Pre-Specified Empirical Design §6.3 design freeze rule). Robustness
+    The test set is reserved for final evaluation under design §6.3. Robustness
     checks call this function under DIFFERENT specifications, so each call is
     a distinct evaluation, not a re-evaluation of the same model.
 

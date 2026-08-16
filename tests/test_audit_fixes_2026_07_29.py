@@ -1,11 +1,11 @@
 """
-Regression tests for the 2026-07-29 independent-audit fixes.
+Regression tests for corrections adopted on 2026-07-29.
 
 Covers:
-  * RC3 SMOTENC binary handling (audit item 5)
-  * date-ranged market-index restriction (audit item 4)
-  * CUSIP mismatch disposition rules (audit item 1)
-  * protocol §19 abort guards (audit items 2, 11)
+  * RC3 SMOTENC binary handling
+  * date-ranged market-index restriction
+  * CUSIP mismatch disposition rules
+  * protocol §19 abort guards
 """
 
 from __future__ import annotations

@@ -70,7 +70,7 @@ def apply_post_winsor_missingness_filter(
 ) -> pd.DataFrame:
     """
     F4 fix — strict ≥`min_nonmissing`-of-11 ACCOUNTING_FEATURES filter
-    applied *after winsorisation* (Pre-Specified Empirical Design §6.4).
+    applied *after winsorisation* (design §6.4).
 
     A firm-year is dropped if fewer than `min_nonmissing` of the 11
     constructed accounting predictors (NITA, TLTA, WCTA, ...) are
@@ -181,7 +181,7 @@ def split_panel(panel: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Dat
     """
     Split the panel into chronological train / validation / test sets.
 
-    Split boundaries (Pre-Specified Empirical Design §3.4, frozen):
+    Split boundaries (design §3.4, frozen):
       Train      : fyear <= TRAIN_END_YEAR  (1990–2009)
       Validation : TRAIN_END_YEAR < fyear <= VAL_END_YEAR  (2010–2014)
       Test       : fyear > VAL_END_YEAR  (2015–2024)  ← evaluate ONCE
@@ -408,7 +408,7 @@ def run_feature_pipeline(
     test  = apply_thresholds(test,  thresholds)
 
     # ── 6b. F4 fix — post-winsorisation ≥8-of-11 features filter ──────────
-    # Pre-Specified Empirical Design §6.4 says the strict missingness filter is applied AFTER
+    # Design §6.4 requires the strict missingness filter to be applied AFTER
     # winsorisation on the constructed accounting features (NITA, TLTA, ...).
     print("\nApplying post-winsorisation ≥8-of-11 features filter (F4 fix) ...")
     train = apply_post_winsor_missingness_filter(train, "train")

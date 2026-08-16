@@ -1,8 +1,8 @@
 """
 Neural network (multi-layer perceptron) — extension model.
 ============================================================
-This raw network was added after the three-model portfolio specified in the
-frozen Pre-Specified Empirical Design.
+This raw network was added after the original three-model portfolio had been
+fixed in the study design.
 Following the author's post-freeze decision, a neural network is presented as
 a fourth co-primary model. The fair headline comparison uses the separate RC7b
 imbalance-matched network; this raw RC7 model is retained as a sensitivity
@@ -40,7 +40,7 @@ a Pipeline(StandardScaler + MLPClassifier). The scaler is fit on training
 data only (inside the pipeline), preventing leakage — identical to the
 logistic-regression pipeline.
 
-Design-specification reference: extension to §9.1 (documented, not frozen)
+Design reference: extension to §9.1 (documented, not frozen)
 """
 
 from __future__ import annotations
@@ -204,7 +204,7 @@ def tune_neural_network(
         Full training set (1990–2009).
     features : list[str]
     n_trials : int
-        Optuna trials (default 100, per §9.3 of the Pre-Specified Empirical Design).
+        Optuna trials (default 100, per §9.3 of the pre-specified study design).
 
     Returns
     -------

@@ -2,7 +2,7 @@
 SHAP feature ranking stability analysis.
 =========================================
 Addresses the SHAP-instability limitation stated in §10.5 of the
-Pre-Specified Empirical Design:
+pre-specified study design:
 
   "SHAP instability: test by bootstrapping the test period; material
    ranking changes must be reported, not suppressed."
@@ -19,7 +19,7 @@ XGBoost) and rank features by mean |SHAP|. Report:
 A feature whose rank CI spans more than 3 positions is flagged as
 UNSTABLE and must be interpreted conservatively in the thesis.
 
-Design-specification reference: §10.5
+Design reference: §10.5
 """
 
 from __future__ import annotations

@@ -14,13 +14,12 @@ distress prediction using CRSP/Compustat data.
 - `outputs/models/configs/`: lightweight final model configurations
 - `outputs/verification/`: lightweight verification records
 
-## Design terminology
+## Study design
 
-Code comments use **Pre-Specified Empirical Design** to denote the study's
-methodological specification fixed before final estimation. It covers sample
-construction, predictors, model selection, evaluation, robustness checks and
-explainability analyses. Section references document where each implementation
-choice originated in that specification.
+References to the pre-specified study design identify choices fixed before the
+final models were estimated: sample construction, predictors, model selection,
+evaluation, robustness checks and explainability analysis. Numbered references
+link implementation details to the relevant part of that design.
 
 ## Data availability
 

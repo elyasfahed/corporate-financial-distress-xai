@@ -1,5 +1,5 @@
 """
-Model evaluation — all metrics required by §9.4 of the Pre-Specified Empirical Design.
+Model evaluation — all metrics required by §9.4 of the pre-specified study design.
 ==============================================================
 Primary metric : PR-AUC (most informative for severely imbalanced data;
                  random-classifier baseline = prevalence rate ~3–5%)
@@ -8,7 +8,7 @@ Secondary      : Precision, Recall, F1 (at optimal threshold)
                  KS statistic (standard in credit risk)
                  Brier Score (probability calibration)
 
-Key design rules (Pre-Specified Empirical Design):
+Key design rules (pre-specified study design):
   - Accuracy is NOT reported (misleading under class imbalance).
   - All tables must state the prevalence-baseline PR-AUC explicitly.
   - AUC-ROC significance: DeLong et al. (1988) test.
@@ -17,7 +17,7 @@ Key design rules (Pre-Specified Empirical Design):
   - Classification threshold: selected on VALIDATION set to maximise F1;
     locked before test evaluation.
 
-Design-specification reference: §9.4
+Design reference: §9.4
 """
 
 from __future__ import annotations
@@ -58,7 +58,7 @@ def select_threshold(
     y_prob : np.ndarray
         Predicted distress probabilities.
     metric : str
-        'f1' (default, per §9.2 of the Pre-Specified Empirical Design),
+        'f1' (default, per §9.2 of the pre-specified study design),
         'precision', or 'recall'.
 
     Returns
@@ -179,7 +179,7 @@ def compute_all_metrics(
     model_name: str = "",
 ) -> dict:
     """
-    Compute the full metric set required by §9.4 of the Pre-Specified Empirical Design.
+    Compute the full metric set required by §9.4 of the pre-specified study design.
 
     Parameters
     ----------
@@ -320,7 +320,7 @@ def bootstrap_pr_auc_ci(
     Block resampling by firm (rather than by observation) accounts for the
     panel structure: all observations from a resampled firm are included
     together. This avoids artificially inflating precision by splitting
-    a firm's time-series across bootstrap train/test (Pre-Specified Empirical Design §9.4).
+    a firm's time-series across bootstrap train/test (design §9.4).
 
     Parameters
     ----------

@@ -24,7 +24,7 @@ After running, re-run Stage 9 to populate rc5_results.csv with real numbers:
     Remove-Item outputs/tables/robustness/rc5_results.csv
     python run_pipeline.py --stages 9
 
-Design-specification reference: §11, RC5
+Design reference: §11, RC5
 """
 
 from __future__ import annotations
