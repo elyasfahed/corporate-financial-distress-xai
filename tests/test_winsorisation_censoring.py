@@ -1,7 +1,7 @@
 """
 Tests for the realised-winsorisation-censoring measure.
 =======================================================
-The measure exists because the audit previously reported clipped cells as a
+The measure replaces a summary that reported clipped cells as a
 single share of (rows x features) per split, which diluted a feature censoring
 4% of the test sample below visibility and could not fail.
 

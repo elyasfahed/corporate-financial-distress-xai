@@ -331,7 +331,7 @@ def _default_params(model_name: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Within-design preprocessing (Phase 5 audit fix)
+# Within-design preprocessing
 # ---------------------------------------------------------------------------
 
 def preprocess_within_design(
@@ -363,7 +363,7 @@ def preprocess_within_design(
 
 
 # ---------------------------------------------------------------------------
-# Advantage differential (the H2 estimand — Phase 5 audit fix)
+# Advantage differential (the H2 estimand)
 # ---------------------------------------------------------------------------
 
 def compute_advantage_differential(results: pd.DataFrame) -> pd.DataFrame:

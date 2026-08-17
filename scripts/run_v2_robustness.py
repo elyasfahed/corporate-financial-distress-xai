@@ -1,18 +1,17 @@
 """
-v2 robustness re-runs — RC1-corrected, RC3-SMOTENC, H2 (corrected estimand).
-=============================================================================
-The last v2 evidence gap. Runs the three audit-flagged
-robustness/secondary analyses on the corrected v2 data, using the Phase-5
-repaired machinery. Sequential (one CPU-heavy stage at a time), resumable
+v2 robustness runs — corrected RC1, RC3-SMOTENC and the H2 estimand.
+====================================================================
+Runs three robustness and secondary analyses on the corrected v2 data.
+The workflow is sequential (one CPU-heavy stage at a time) and resumable
 (a stage is skipped when its results CSV exists), all outputs v2_-prefixed
 — no v1 artifact is touched.
 
   RC1  Nested bankruptcy-only label (DISTRESS_CODES_RC1_CORRECTED = [470],
-       genuinely NESTED in the corrected 400-499 primary label, unlike the
+       nested in the corrected 400-499 primary label, unlike the
        frozen v1 RC1 which was disjoint). Relabels the v2 splits from the
-       corrected raw_v2 delisting extract and RE-TUNES LR/RF/XGB
+       corrected raw_v2 delisting extract and retunes LR/RF/XGB
        (100-trial Optuna, spec="v2_rc1" artifact namespace) — the
-       per-check re-tune convention of the frozen RC set. NOTE: RC tuning
+       per-check retuning convention of the original RC set. RC tuning
        uses the standard (non-fold-safe) CV on the preprocessed training
        frame, as in v1's RC1-RC5; the primary v2 spec alone uses
        fold-safe tuning — same per-check asymmetry already disclosed in
@@ -26,7 +25,7 @@ repaired machinery. Sequential (one CPU-heavy stage at a time), resumable
        -> outputs/tables/robustness/v2_rc3_results.{csv,tex}
 
   H2   Design-optimism experiment with the corrected estimand: the change
-       in the ML-over-LR ADVANTAGE under leaky split designs (not raw
+       in the ML-over-LR advantage under leaky split designs (not raw
        PR-AUC levels), 5 seeds for the random designs, preprocessing
        fitted within each design's training split, _sic industry
        imputation. Uses the full v2 feature panel.

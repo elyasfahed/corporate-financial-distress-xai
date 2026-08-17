@@ -1,6 +1,6 @@
 """
-Regression tests — FY1989 lag donors (2026-07-12 second-audit fix)
-===================================================================
+Regression tests for FY1989 lag donors
+======================================
 The loader keeps SAMPLE_START_YEAR-1 (FY1989) explicitly for lag
 construction, but the merge dropped it before features were built, so
 every FY1990 lagged predictor (NITA_LAG, CHIN, INTWO) was needlessly

@@ -1,8 +1,7 @@
 """
 Fold-safe rolling-origin CV — in-fold preprocessing + label-maturity purging.
 =============================================================================
-Two audit findings about the hyperparameter-tuning CV (2026-07-11 audit,
-now addressed):
+This module addresses two problems in the original hyperparameter-tuning CV:
 
 1. **In-fold preprocessing leak.** Winsorisation thresholds and imputation
    medians are fitted ONCE on all 1990–2009 observations before the rolling
@@ -20,8 +19,8 @@ now addressed):
    origin (the earliest validation filing date), the standard purged-CV rule
    (Lopez de Prado 2018).
 
-Both behaviours are OFF by default: tune.py's frozen code path is unchanged
-and the frozen results remain byte-reproducible. The v2 rebuild passes
+Both behaviours are OFF by default: tune.py's original path is unchanged
+and the original results remain byte-reproducible. The v2 rebuild passes
 fold_safe=True + purge_horizon_days=DISTRESS_HORIZON_DAYS (V2_PROFILE
 ["cv_fold_safe"]) and tunes on the RAW (pre-winsorisation, pre-imputation)
 training frame.
@@ -58,7 +57,7 @@ def purge_fold_train(
     tr_idx, val_idx : pd.Index
         One (train, validation) fold from rolling_origin_cv_splits().
     horizon_days : int
-        Label horizon (frozen primary: 365).
+        Label horizon (primary specification: 365).
     date_col : str
         Filing-date column anchoring the label window.
 
@@ -120,8 +119,8 @@ def fold_safe_preprocess(
         ACCOUNTING_FEATURES + MARKET_IMPUTE_FEATURES — §8).
     coverage_filter : bool
         Apply the post-winsorisation ≥8-of-11 accounting-feature filter
-        inside the fold (2026-07-12 second-audit fix: the raw splits are
-        saved BEFORE the outer filter, so without this the tuning folds
+        inside the fold. The raw splits are saved BEFORE the outer filter,
+        so without this the tuning folds
         include firm-years the final training set drops). Default True;
         the frozen tuning path never calls this function, so frozen
         results are unaffected.

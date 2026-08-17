@@ -1,7 +1,8 @@
 """
 Regression tests — fold-safe CV (in-fold preprocessing + purging)
 ==================================================================
-Audit findings on the tuning CV: (a) winsorisation/imputation were fitted
+The original tuning CV had two timing problems: (a) winsorisation and
+imputation were fitted
 once on all 1990–2009 data before the rolling folds were formed, leaking
 future distributions into earlier folds; (b) fyear-based folds are not
 point-in-time — training rows filed shortly before the fold origin carry
@@ -17,8 +18,8 @@ OFF by default.
   4. fold_safe_preprocess imputes from fold-train medians only.
   5. End-to-end: tune_model(fold_safe=True, purge_horizon_days=365) runs
      on a tiny raw frame and returns valid params (wiring proof).
-  6. The in-fold >=8-of-11 coverage filter (2026-07-12 second-audit fix)
-     drops under-covered rows exactly as the outer pipeline does — the
+  6. The in-fold >=8-of-11 coverage filter drops under-covered rows exactly
+     as the outer pipeline does — the
      raw splits are saved BEFORE the outer filter, so without this the
      tuning folds include firm-years the final training set drops.
 """

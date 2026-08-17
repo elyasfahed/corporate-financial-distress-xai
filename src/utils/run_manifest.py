@@ -165,8 +165,7 @@ def write_run_manifest(
         "code_fingerprint": _code_fingerprint(),
         "versions": _package_versions(),
         # Record WHICH samples directory was hashed, so a v2 manifest can
-        # never be silently mistaken for one hashing the v1 splits
-        # (2026-07-12 second-audit fix).
+        # never be silently mistaken for one hashing the v1 splits.
         "data_dir": str(samples_dir or DATA_SAMPLES),
         "data": _data_hashes(samples_dir or DATA_SAMPLES),
         "input_files": _input_hashes(input_files),

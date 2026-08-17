@@ -1,8 +1,8 @@
 """
 Regression tests — spec-aware artifact directories + primary-overwrite guard
 ============================================================================
-A prior provenance audit found that every train_all_models() caller wrote
-models and config YAMLs to the same shared primary paths, which let a robustness
+A previous implementation let every train_all_models() caller write models
+and config YAMLs to the same shared primary paths, so a robustness
 re-tune silently replace the primary hyperparameter configs. These tests
 pin the fix:
 

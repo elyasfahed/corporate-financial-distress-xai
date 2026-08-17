@@ -71,7 +71,7 @@ def run_shap_stability(
     explainer = shap.TreeExplainer(model)
 
     rank_matrix = []   # shape: (n_bootstrap, n_features)
-    mag_matrix  = []   # shape: (n_bootstrap, n_features)  — mean |SHAP| per feature (E2 fix)
+    mag_matrix  = []   # shape: (n_bootstrap, n_features) — mean |SHAP| per feature
 
     for b in range(n_bootstrap):
         sampled = rng.choice(unique_firms, size=n_firms, replace=True)
@@ -134,7 +134,7 @@ def run_shap_stability(
             "ci_upper_rank":         round(rank_hi, 1),
             "ci_width_rank":         round(rank_hi - rank_lo, 1),
             "rank_stable":           bool((rank_hi - rank_lo) <= 3.0),
-            # Magnitude stability (E2 fix)
+            # Magnitude stability
             "mean_abs_shap_mean":    round(mag_mean, 6),
             "mean_abs_shap_std":     round(mag_std,  6),
             "mean_abs_shap_ci_lo":   round(mag_lo,   6),
@@ -158,7 +158,7 @@ def run_shap_stability(
               "adjacent features is large, so rank stability alone is not "
               "informative — see magnitude_cv below.")
 
-    # Flag magnitude-unstable features (E2 fix — the substantive signal)
+    # Flag features with unstable attribution magnitudes.
     mag_unstable = stability_df[~stability_df["magnitude_stable"]]
     if len(mag_unstable) > 0:
         print(f"\n  Magnitude CV > 0.30 in {len(mag_unstable)} features "

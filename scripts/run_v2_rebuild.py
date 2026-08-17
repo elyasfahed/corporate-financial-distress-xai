@@ -1,8 +1,8 @@
 """
-v2 corrected rebuild — one coherent run of every adopted data-layer fix.
-========================================================================
-Phase 4 of the 2026-07-11 audit remediation (V2_PROFILE).
-Everything writes to v2-specific paths; the frozen v1 raw parquets,
+Corrected v2 rebuild with the adopted data-layer changes.
+=========================================================
+The configuration is defined by V2_PROFILE. Everything writes to v2-specific
+paths; the original v1 raw parquets,
 processed data, and model artifacts are NEVER touched.
 
 Stages (resumable — a stage is skipped if its outputs exist, unless
@@ -12,7 +12,7 @@ Stages (resumable — a stage is skipped if its outputs exist, unless
       DATA_ROOT/raw_v2/ (standard Jan–May FYE dating, corrected
       delisting mapping, letter-field security names).
   a2  Universe pinning gate: dump the CIZ letter-field value counts and
-      the eligibility match rates; ABORTS if the configured
+      the eligibility match rates; stops if the configured
       CIZ_UNIVERSE_ELIGIBLE values do not plausibly match the data.
       Review the report before running stage b.
   b   Merge: corrected panel into processed_v2/merged/ (date-ranged
@@ -32,13 +32,13 @@ Stages (resumable — a stage is skipped if its outputs exist, unless
       training frame). Run manifest hashes the V2 splits and is
       refreshed after LR Platt calibration.
 
-  NN (v2) is intentionally NOT part of this script — run it after the
-  three-model stage completes (adapt rc7b machinery; multi-hour Optuna).
+  The v2 neural network is run separately after the three-model stage
+  completes (using the RC7b machinery; multi-hour Optuna search).
 
-  IMPORTANT: run with the project .venv interpreter
-  (./.venv/Scripts/python.exe), NOT the system Python — the 2026-07-12
-  audit found a stage-d run under Python 3.13 while the pinned project
-  environment is 3.11 (requirements-lock.txt).
+  Run with the project .venv interpreter
+  (./.venv/Scripts/python.exe), not the system Python. A stage-d run under
+  Python 3.13 prompted this check; the pinned project
+  environment is Python 3.11 (requirements-lock.txt).
 
 Usage:
   python -m scripts.run_v2_rebuild --stages a
@@ -241,7 +241,7 @@ def _build_lag_donor() -> pd.DataFrame:
 
     The corrected extraction keeps SAMPLE_START_YEAR-1 (FY1989) exactly for
     this purpose, but the merge drops it before features are built, leaving
-    every FY1990 lag needlessly missing (2026-07-12 second-audit fix). The
+    every FY1990 lag needlessly missing. The
     donor rows are restricted to gvkeys present in the merged panel and are
     removed again inside build_accounting_features — they can never enter
     the modelling sample.
@@ -262,7 +262,7 @@ def _splits_are_current() -> bool:
     Trust existing v2 splits only if they postdate the merged panel AND
     carry the v2 feature signature (MB_MISSING). Guards against stale
     artifacts resurrected by cloud-sync (observed 2026-07-13: Google
-    Drive restored the quarantined pre-blockerfix splits next to their
+    Drive restored an older set of quarantined splits next to their
     quarantine copy, and the plain exists() check skipped stage c).
     """
     test_p = DATA_SAMPLES_V2 / "test.parquet"
@@ -274,7 +274,7 @@ def _splits_are_current() -> bool:
     import pyarrow.parquet as pq
     cols = pq.read_schema(test_p).names
     if "MB_MISSING" not in cols:
-        print("  Existing v2 splits lack MB_MISSING (pre-blockerfix vintage) — rebuilding.")
+        print("  Existing v2 splits lack MB_MISSING and will be rebuilt.")
         return False
     return True
 
@@ -313,7 +313,7 @@ def _stage_d_complete(saved_dir, configs_dir) -> bool:
     """
     A resumed stage d counts as finished only when the COMPLETE artifact
     set exists: all three models + configs, the results table, and the
-    run manifest (2026-07-12 second-audit fix — previously the presence
+    run manifest. Previously, the presence
     of xgboost.joblib alone skipped the stage, so an interrupted run
     could be treated as done without results or provenance).
     """
@@ -419,8 +419,7 @@ def stage_d(force: bool = False, n_trials: int | None = None) -> None:
     )
 
     # Refresh the manifest AFTER Platt calibration re-saved the LR joblib,
-    # so the recorded model checksums match what is on disk (2026-07-12
-    # second-audit fix).
+    # so the recorded model checksums match what is on disk.
     write_run_manifest(
         configs_dir=configs_dir,
         saved_dir=saved_dir,

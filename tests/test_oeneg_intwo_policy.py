@@ -1,6 +1,6 @@
 """
-Regression tests — OENEG/INTWO missing-input policy (2026-07-12 audit fix)
-===========================================================================
+Regression tests for the OENEG/INTWO missing-input policy
+=========================================================
 Two silent-zero defects in the binary accounting indicators:
 
   OENEG = (lt > at).astype(int): a NaN comparison evaluates False, so a

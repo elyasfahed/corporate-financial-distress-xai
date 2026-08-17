@@ -8,7 +8,7 @@ bankruptcies at 572 (outside the primary 400--499 label range) and let
 liquidations ('GLI') fall through to the 500 default -- so the primary
 distress label excluded exactly the two least ambiguous distress classes,
 and RC1 (bankruptcy-only) was DISJOINT from the primary label instead of
-the nested subset the frozen design describes. See Implementation Status
+the nested subset in the pre-specified design. See Implementation Status
 paragraph 17.
 
 These tests pin the frozen mapping byte-for-byte and verify that the

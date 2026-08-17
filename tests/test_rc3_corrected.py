@@ -1,7 +1,7 @@
 """
-Regression tests — RC3 corrected SMOTE mode (Phase 5 audit remediation)
-========================================================================
-Frozen RC3 defects: plain SMOTE interpolates binary indicators into
+Regression tests for the corrected RC3 SMOTE mode
+=================================================
+In the original RC3 implementation, plain SMOTE interpolates binary indicators into
 fractional values, kNN runs in raw feature space dominated by size
 variables, and models used library defaults. Tests pin the corrected
 mode and the frozen default's unchanged behaviour.

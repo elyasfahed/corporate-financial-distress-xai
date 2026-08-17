@@ -24,7 +24,7 @@ Two data-construction defects were found in the local-RDS extraction layer
       (DelActionType 'GLI') fall through to the 500 default. The primary
       distress label therefore excluded the two least ambiguous distress
       classes, and RC1 (bankruptcy-only) was disjoint from the primary label
-      instead of the nested subset the frozen design describes.
+      instead of the nested subset in the pre-specified design.
 
 This script quantifies the materiality of both corrections by re-fitting the
 four headline models (LR, RF, XGBoost, balanced NN) with their FROZEN
@@ -219,7 +219,7 @@ def footprint_fye(frozen: dict[str, pd.DataFrame]) -> pd.DataFrame:
 def footprint_delisting(panel: pd.DataFrame,
                         delist_raw: pd.DataFrame,
                         frozen: dict[str, pd.DataFrame]) -> pd.DataFrame:
-    """Count in-window BKPY / GLI events the frozen primary label excludes."""
+    """Count in-window BKPY / GLI events excluded by the original primary label."""
     dl = delist_raw.copy()
     dl["action"] = dl["DelActionType"].astype(str).str.strip()
     dl["reason"] = dl["DelReasonType"].astype(str).str.strip()

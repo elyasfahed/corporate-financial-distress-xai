@@ -392,11 +392,11 @@ def build_accounting_features(
         BEFORE the sample start (FY1989 for the 1990–… panel), used only
         as lag donors so the first sample year's lagged predictors
         (NITA_LAG, CHIN, INTWO) are genuine rather than needlessly
-        missing (2026-07-12 second-audit fix: the loader keeps
-        SAMPLE_START_YEAR−1 for exactly this purpose, but the merge
-        dropped it before features were built). Donor rows are appended
+        missing. The loader keeps SAMPLE_START_YEAR−1 for exactly this
+        purpose, but the merge previously dropped it before features were
+        built. Donor rows are appended
         for the lag computation and REMOVED before returning — they can
-        never enter the modelling panel. None (frozen) = no donors.
+        never enter the modelling panel. None means no donor rows.
 
     Returns
     -------

@@ -612,7 +612,7 @@ def build_distress_label(
     let the model observe the filing date's information content before it is
     publicly available.
 
-    Alternative, fix-ready anchor (anchor="datadate"): A_{i,t} = fiscal
+    Alternative anchor (anchor="datadate"): A_{i,t} = fiscal
     year-end (datadate) and reach = reach_days (default horizon_days). This
     relaxes the 10-K-filing requirement (documented robustness concern /
     Status §10): it recovers "went-dark" failures whose for-cause delisting
@@ -914,7 +914,7 @@ def main_with_overrides(
         None (frozen/PERMNO-level) keeps the any-time-eligible rule.
         The v2 rebuild passes "datadate" so eligibility is evaluated
         as-of each firm-year's fiscal year-end against the security-
-        info validity ranges (2026-07-12 second-audit fix).
+        information validity ranges.
     """
     tracker = AttritionTracker()
 

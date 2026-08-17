@@ -3,8 +3,8 @@
 # Python 3.11 | PyCharm | Miniconda
 # Install: pip install -r requirements.txt
 #
-# REPRODUCIBILITY (2026-07-12 audit fix): the ranges below express
-# intent only. The exact environment the results were produced with is
+# REPRODUCIBILITY: the ranges below express intent only. The exact
+# environment used to produce the results is
 # pinned in requirements-lock.txt (pip freeze of the project .venv,
 # Python 3.11.9). To reproduce: pip install -r requirements-lock.txt.
 # Always run pipeline scripts with ./.venv/Scripts/python.exe — NOT the

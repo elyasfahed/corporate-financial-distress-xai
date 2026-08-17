@@ -1,7 +1,7 @@
 """
-Regression tests — run-manifest data provenance (2026-07-12 audit fix)
-=======================================================================
-The 2026-07-12 audit found that a v2 training run would write a manifest
+Regression tests for run-manifest data provenance
+=================================================
+The previous v2 training path wrote a manifest
 hashing the V1 splits: write_run_manifest defaulted to DATA_SAMPLES and
 train_all_models never passed samples_dir. The manifest now records the
 hashed directory explicitly (data_dir) and callers thread samples_dir.

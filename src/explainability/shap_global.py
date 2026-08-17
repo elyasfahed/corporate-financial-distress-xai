@@ -265,7 +265,7 @@ def compute_kendall_tau(
 
 
 # ---------------------------------------------------------------------------
-# Kendall's tau — top-K and weighted variants  (E3 fix)
+# Kendall's tau — top-K and weighted variants
 # ---------------------------------------------------------------------------
 
 def _tau_on_subset(
@@ -406,8 +406,8 @@ def run_global_shap(
     if hasattr(logit_model, "_base") and hasattr(logit_model._base, "named_steps"):
         lr_pipeline = logit_model._base
     clf_lr    = lr_pipeline.named_steps["clf"]
-    # Phase 5 audit fix (double-rescaling bug): the LR is FITTED ON
-    # SCALED inputs (StandardScaler inside the pipeline), so clf.coef_
+    # The LR is fitted on scaled inputs (StandardScaler inside the pipeline),
+    # so clf.coef_
     # is already the standardised coefficient vector. The previous code
     # multiplied it by the raw feature std a second time, which distorts
     # the |coefficient| ranking used for the Kendall concordance

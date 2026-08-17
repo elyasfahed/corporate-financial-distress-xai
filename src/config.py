@@ -1,7 +1,7 @@
 """
 Central configuration for the thesis project.
 =========================================================
-All paths, constants, and frozen design parameters live here.
+All paths, constants, and pre-specified design parameters live here.
 Import this module everywhere — never hardcode paths or magic numbers.
 
 Data path resolution order:
@@ -104,14 +104,14 @@ VALID_SHRCDS = [10, 11]          # Ordinary common shares of domestic US compani
 MAX_FILING_LAG_DAYS  = 180       # Drop obs where 10-K filed >180 days after fiscal year-end
 MIN_CONSECUTIVE_YEARS = 2        # Drop firms with <2 consecutive fiscal years
 
-# --- CIZ letter-field equivalent of SHRCD 10/11 (Implementation Status §18e) -
+# --- CIZ letter-field equivalent of SHRCD 10/11 -----------------------------
 # The local CIZ data drop has no numeric SHRCD; share type / incorporation are
-# letter fields, which the frozen extraction nulled via numeric coercion — so
-# VALID_SHRCDS never bound. universe_eligibility() (src/data/universe.py)
+# letter fields, which the original extraction nulled via numeric coercion, so
+# VALID_SHRCDS did not bind. universe_eligibility() (src/data/universe.py)
 # implements the corrected filter using the sets below.
 # CAVEAT: the official CIZ value dictionary (MetaFlagInfo) is not in the local
-# drop; these values follow CRSP's published SHRCD<->CIZ crosswalk and MUST be
-# pinned against the flag dictionary before the v2 rebuild is run (same caveat
+# drop; these values follow CRSP's published SHRCD<->CIZ crosswalk and should be
+# checked against the flag dictionary before the v2 rebuild is run (same caveat
 # as the §17 delisting mnemonics).
 # PINNED 2026-07-12 against the actual raw_v2 extract (stage a2 of
 # scripts/run_v2_rebuild.py; full counts in
@@ -123,8 +123,8 @@ MIN_CONSECUTIVE_YEARS = 2        # Drop firms with <2 consecutive fiscal years
 #   IssuerType      {CORP 128,933 | ACOR 58,394 | REIT 3,721}
 # IssuerType matters: REITs are EQTY/COM/NS and would otherwise pass, but
 # SHRCD 10/11 (and the ch04 design prose) excludes them.
-# Exchange (added 2026-07-12, second-audit fix): the design restricts the
-# universe to NYSE/AMEX/NASDAQ listings, which the pipeline never enforced.
+# The study universe is restricted to NYSE, AMEX and NASDAQ listings.
+# Earlier pipeline versions did not enforce this exchange restriction.
 # Pinned against the raw_v2 exchcd_src letter counts (same a2 dump):
 #   {Q 91,584 | N 39,760 | X 31,810 | A 14,492 | R 10,035 | B 3,366}
 # N=NYSE, A=NYSE American (AMEX), Q=NASDAQ per CRSP's exchange letter
@@ -149,10 +149,10 @@ DISTRESS_CODES_PRIMARY  = list(range(400, 500))
 # RC1 secondary: formal bankruptcy only (Chapter 7 and 11)
 DISTRESS_CODES_RC1      = [572, 574, 584]
 
-# --- Corrected CIZ delisting-code mapping (Implementation Status §17) -------
+# --- Corrected CIZ delisting-code mapping -----------------------------------
 # The local CRSP CIZ v2 file has no numeric DLSTCD; codes are synthesized
 # from DelActionType/DelReasonType (src/data/load_local_rds.synthesize_dlstcd).
-# Under the frozen mapping, bankruptcies were coded 572 (outside the primary
+# Under the original mapping, bankruptcies were coded 572 (outside the primary
 # 400-499 range -> excluded from the primary label) and liquidations fell to
 # the 500 default (also excluded). The corrected mapping places all three
 # distress classes inside 400-499 so the primary label captures them and the
@@ -228,8 +228,7 @@ ALL_FEATURES = ACCOUNTING_FEATURES + MARKET_FEATURES   # 17 total
 # RC4: accounting-only model (remove all 6 market features)
 ACCOUNTING_ONLY_FEATURES = ACCOUNTING_FEATURES         # 11 features
 
-# --- v2 predictor-set extension (Implementation Status §8 principled fix,
-# adopted for the corrected rebuild 2026-07-12) ------------------------------
+# --- v2 predictor-set extension ---------------------------------------------
 # Under v1 the market features escape imputation and reach the models as
 # fillna(0); on the v1 test split the 2,525 MB-missing rows contain 168 of
 # 434 distress events (6.65% vs 0.95% distress rate), so the zero is an
@@ -238,7 +237,7 @@ ACCOUNTING_ONLY_FEATURES = ACCOUNTING_FEATURES         # 11 features
 # explicit MB_MISSING indicator so the MNAR mechanism (book equity <= 0,
 # non-positive book equity) is encoded deliberately rather than accidentally.
 # PRICE and market cap are still never imputed (missing -> row dropped
-# upstream, unchanged). The frozen 17-variable set is untouched.
+# upstream, unchanged). The original 17-variable set is unchanged.
 MARKET_IMPUTE_FEATURES = ["EXRET", "SIGMA", "MB"]
 MB_MISSING_COL = "MB_MISSING"
 ALL_FEATURES_V2 = ALL_FEATURES + [MB_MISSING_COL]      # 18 total (v2 only)
@@ -250,15 +249,15 @@ MIN_ACCOUNTING_NONMISSING = 8   # out of 11 accounting predictors
 DEFLATOR_BASE_YEAR = 2012
 
 # ---------------------------------------------------------------------------
-# v2 corrected-rebuild profile  (Implementation Status §17/§18 — Phase 3)
+# v2 corrected-rebuild profile
 # ---------------------------------------------------------------------------
 # One coherent bundle of every adopted data-layer correction, so the corrected
 # rebuild is a single documented switch rather than seven ad-hoc flags. The
-# frozen v1 pipeline NEVER reads this profile: every parameter below has a
-# frozen default at its point of use, and v1 outputs are byte-reproducible
+# original v1 pipeline does not read this profile: every parameter below has an
+# original default at its point of use, and v1 outputs are byte-reproducible
 # without it. The v2 rebuild must
 # thread these values through run_pipeline and write to the *_V2 paths and the
-# spec="v2" artifact namespace — never over the frozen artifacts.
+# spec="v2" artifact namespace rather than over the original artifacts.
 SAMPLE_END_YEAR_V2 = 2023   # FY2024 is right-censored: delisting extract ends
                             # 2025-12-30 while 2,392/2,982 FY2024 test windows
                             # run into 2026 (§18c). Under the corrected FYE
@@ -267,13 +266,13 @@ SAMPLE_END_YEAR_V2 = 2023   # FY2024 is right-censored: delisting extract ends
                             # the extract is refreshed.
 
 V2_PROFILE = {
-    # data layer (wired — fix-ready code paths exist)
+    # data layer
     "datadate_convention": "standard",        # §17a Jan–May FYE June rule
     # Direct CIZ classification.  GDR means "Dropped" and is classified by
     # DelReasonType; it is never assigned one synthetic distress code.
     "delisting_mapping":   "academic",
     # Cleaned primary label (Phase B, 2026-07-23): performance delistings
-    # EXCLUDING the clearly-voluntary/administrative GDR reasons (CORQ
+    # excluding the voluntary/administrative GDR reasons (CORQ
     # company-request and MVOT venue move). MTMK is retained as a listing-
     # standard failure after dictionary verification. The broad performance label
     # (which retains them) is kept as a documented sensitivity.
@@ -292,8 +291,8 @@ V2_PROFILE = {
     "eligible_index":      True,              # §17(ii) index/RSIZE denominator
     "market_min_obs":      12,                # §9 full-window EXRET/SIGMA
     "sample_end_year":     SAMPLE_END_YEAR_V2,  # §18c censoring cutoff
-    # feature layer (2026-07-12 second-audit blocker fixes)
-    "feature_set":         ALL_FEATURES_V2,   # 18 = frozen 17 + MB_MISSING
+    # feature layer
+    "feature_set":         ALL_FEATURES_V2,   # 18 = original 17 + MB_MISSING
     "impute_market":       True,              # §8 principled fix: EXRET/
                                               # SIGMA/MB through imputation
     "missing_policy":      "strict",          # OENEG/INTWO -> NA when their
@@ -301,7 +300,7 @@ V2_PROFILE = {
     "lag_buffer":          True,              # FY1989 rows fed to the lag
                                               # construction as donors
     # training layer
-    # Keep the corrected re-estimation isolated from the frozen top-level
+    # Keep the corrected re-estimation isolated from the original top-level
     # primary artifacts.  This tag controls storage provenance only.
     "spec":                "final_primary",
     # Figure-title wording for the final reported specification.

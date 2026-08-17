@@ -1,9 +1,9 @@
 """
 Regression tests — CIZ letter-field universe filter (§18e)
 ===========================================================
-The frozen pipeline never applied the SHRCD 10/11 restriction because
+The original pipeline never applied the SHRCD 10/11 restriction because
 the CIZ letter fields were nulled during numeric coercion. These tests
-pin the fix-ready filter in src/data/universe.py:
+cover the date-aware filter in src/data/universe.py:
 
   1. policy="frozen" is a no-op (reproduces the pipeline as run).
   2. policy="v2" keeps exactly the US-incorporated ordinary common
@@ -111,7 +111,7 @@ def test_apply_filter_any_rule_per_permno():
 
 
 # ---------------------------------------------------------------------------
-# Date-ranged (as-of) mode — 2026-07-12 second-audit fix
+# Date-ranged (as-of) mode
 # ---------------------------------------------------------------------------
 
 def make_dated_secinfo():
